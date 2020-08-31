@@ -1,0 +1,28 @@
+ defaults write com.apple.dock size-immutable -boolean true; killall Dock
+ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+ defaults write com.apple.finder CreateDesktop -boolean false; killall Finder
+ defaults delete com.apple.finder CreateDesktop; killall Finder
+ ll | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/) *2^(8-i));if(k)printf("%0o ",k);print}'
+ #find ./ -type d \( -name '.git' -o -name 'node_modules' -o -name 'dist' \) -prune -o -type f -print0 | xargs -0 chmod 644
+ #find ./ -type d \( -name '.git' -o -name 'node_modules' -o -name 'dist' \) -prune -o -type d -print0 | xargs -0 chmod 755
+ rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
+ tree -aF -I ".git|node_modules|dist"
+ #find . -name '.DS_Store' -type f -delete
+ vi ~/.gitconfig
+ vi ~/.zshrc
+ vi ~/.zsh_history
+ brew upgrade; brew cleanup
+ php -S localhost:3000 -t .
+ git archive --format=zip --prefix=`date '+%Y%m%d_%H%M%S'`/ HEAD `git diff --diff-filter=d --name-only HEAD^ HEAD` -o ~/Desktop/`date '+%Y%m%d_%H%M%S'`.zip
+ git diff --staged --ignore-all-space
+ git commit --amend
+ git commit -m ""
+ git rebase --continue
+ git rebase --abort
+ git clean -fdx -e node_modules
+ git clean -fdxn -e node_modules
+ git -C ~/dotfiles commit -am "update" && git -C ~/dotfiles push
+ git -C ~/dotfiles/ status
+ git -C ~/dotfiles/ diff
+ git -C ~/dotfiles/ pull
+ exec $SHELL -l

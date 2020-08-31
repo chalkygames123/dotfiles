@@ -1,0 +1,15 @@
+- clean: ['~']
+
+- link:
+    ~/.config:
+    ~/.gitconfig:
+    ~/.vimrc:
+    ~/.zsh_history:
+    ~/.zshrc:
+
+- shell:
+    - defaults write -g InitialKeyRepeat -int 10
+    - defaults write -g KeyRepeat -int 1
+    - mkdir -p ~/.zsh/completion
+    - curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
+    - curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > ~/.zsh/completion/_docker-compose

@@ -1,0 +1,27 @@
+[alias]
+	a = add
+	b = branch
+	c = checkout
+	d = diff
+	f = fetch
+	l = log
+	ll = log --graph --pretty=format:'%C(auto)%h%d %s %Cgreen(%cr) %Cblue<%an>' --abbrev-commit --date=relative --
+	m = merge
+	p = pull
+	r = rebase
+	s = status
+	sh = show
+	st = stash
+[core]
+	pager = delta
+[fetch]
+	prune = true
+[hub]
+	protocol = https
+[pull]
+	rebase = true
+[push]
+	default = simple
+[user]
+	name = Takuya Fukuju
+	email = chalkygames123@gmail.com

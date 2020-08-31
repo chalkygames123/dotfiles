@@ -1,0 +1,3 @@
+Brewfile.lock.json
+config/*
+!config/git
