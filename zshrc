@@ -10,6 +10,8 @@ export LESSHISTFILE=-
 export BAT_THEME=ansi-light
 export NVS_HOME=~/.nvs
 
+[[ -f ~/.credentials ]] && . ~/.credentials
+
 fpath=(
   ~/.zsh/completion
   /usr/local/share/zsh-completions
