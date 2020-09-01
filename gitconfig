@@ -5,7 +5,6 @@
 	d = diff
 	f = fetch
 	l = log
-	ll = log --graph --pretty=format:'%C(auto)%h%d %s %Cgreen(%cr) %Cblue<%an>' --abbrev-commit --date=relative --
 	m = merge
 	p = pull
 	r = rebase
