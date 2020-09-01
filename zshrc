@@ -41,7 +41,7 @@ alias git=hub
 alias g=git
 alias a='git add .'
 alias d='git diff --ignore-space-change'
-alias l='git log --abbrev-commit'
+alias l='git log --graph --pretty=format:"%C(auto)%h%d %s %Cgreen(%cr) %Cblue<%an>"'
 alias p='git pull --all'
 alias s='git status'
 alias y=yarn
