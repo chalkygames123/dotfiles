@@ -25,19 +25,21 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 gc() {
-  local DIR=$(ghq list --full-path | fzf --reverse)
+  local DIR=$(ghq list | fzf)
 
-  [[ -n $DIR ]] && cd $DIR
+  [[ -n $DIR ]] && cd $(ghq root)/$DIR
 }
 
 gb() {
-  local DIR=$(ghq list --full-path | fzf --reverse)
+  local DIR=$(ghq list | fzf)
 
-  [[ -n $DIR ]] && npx open $(git -C $DIR remote get-url origin | sed -e s/\.git$//)
+  [[ -n $DIR ]] && npx open $(git -C $(ghq root)/$DIR remote get-url origin | sed -e s/\.git$//)
 }
 
 alias ll='ls -ghloAFG'
+alias o='open .'
 alias git=hub
+alias hb='hub browse'
 alias g=git
 alias a='git add .'
 alias d='git diff'
