@@ -14,7 +14,7 @@
  brew upgrade; brew cleanup
  php -S localhost:3000 -t .
  git archive --format=zip --prefix=`date '+%Y%m%d_%H%M%S'`/ HEAD `git diff --diff-filter=d --name-only HEAD^ HEAD` -o ~/Desktop/`date '+%Y%m%d_%H%M%S'`.zip
- git diff --staged --ignore-all-space
+ git diff --staged
  git commit --amend
  git commit -m ""
  git rebase --continue
