@@ -38,8 +38,8 @@ gb() {
 
 alias ll='ls -ghloAFG'
 alias o='open .'
+alias b='npx open $(git remote get-url origin | sed -e s/\.git$//)'
 alias git=hub
-alias hb='hub browse'
 alias g=git
 alias a='git add .'
 alias d='git diff'
