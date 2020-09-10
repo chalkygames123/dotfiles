@@ -15,7 +15,7 @@
  php -S localhost:3000 -t .
  git archive --format=zip --prefix=`date '+%Y%m%d_%H%M%S'`/ HEAD `git diff --diff-filter=d --name-only HEAD^ HEAD` -o ~/Desktop/`date '+%Y%m%d_%H%M%S'`.zip
  git diff --staged
- git commit --amend
+ git commit --amend --no-edit
  git commit -m ""
  git rebase --continue
  git rebase --abort
