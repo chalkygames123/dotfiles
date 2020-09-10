@@ -36,6 +36,16 @@ gb() {
   [[ -n $DIR ]] && npx open $(git -C $(ghq root)/$DIR remote get-url origin | sed -e s/\.git$//)
 }
 
+gs() {
+  local DIRS=$(ghq list)
+  local ESC=$(printf '\033')
+
+  echo $DIRS | while IFS= read -r DIR; do
+    printf "\n${ESC}[1;34m%s:${ESC}[m\n\n" $DIR
+    git -C $(ghq root)/$DIR status --ignored --show-stash
+  done
+}
+
 alias ll='ls -ghloAFG'
 alias o='open .'
 alias b='npx open $(git remote get-url origin | sed -e s/\.git$//)'
