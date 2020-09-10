@@ -24,16 +24,16 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-gc() {
-  local DIR=$(ghq list | fzf)
-
-  [[ -n $DIR ]] && cd $(ghq root)/$DIR
-}
-
 gb() {
   local DIR=$(ghq list | fzf)
 
-  [[ -n $DIR ]] && npx open $(git -C $(ghq root)/$DIR remote get-url origin | sed -e s/\.git$//)
+  [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e s/\.git$//)
+}
+
+gc() {
+  local DIR=$(ghq list | fzf)
+
+  [[ -n $DIR ]] && cd "$(ghq root)/$DIR"
 }
 
 gs() {
@@ -42,7 +42,17 @@ gs() {
 
   echo $DIRS | while IFS= read -r DIR; do
     printf "\n${ESC}[1;34m%s:${ESC}[m\n\n" $DIR
-    git -C $(ghq root)/$DIR status --ignored --show-stash
+    git -C "$(ghq root)/$DIR" status --show-stash
+  done
+}
+
+gss() {
+  local DIRS=$(ghq list)
+  local ESC=$(printf '\033')
+
+  echo $DIRS | while IFS= read -r DIR; do
+    printf "\n${ESC}[1;34m%s:${ESC}[m\n\n" $DIR
+    git -C "$(ghq root)/$DIR" status --ignored --show-stash
   done
 }
 
