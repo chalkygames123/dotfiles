@@ -27,7 +27,7 @@ fi
 gb() {
   local DIR=$(ghq list | fzf)
 
-  [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e s/\.git$//)
+  [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')
 }
 
 gc() {
