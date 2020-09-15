@@ -46,10 +46,10 @@ gs() {
   echo $DIRS | while IFS= read -r DIR; do
     printf "\n${ESC}[1;34m%s:${ESC}[m\n\n" $DIR
 
-    if [[ $SHOULD_VERBOSE == 1 ]]; then
-      git -C "$(ghq root)/$DIR" status --ignored --show-stash
-    else
+    if [[ $SHOULD_VERBOSE == 0 ]]; then
       git -C "$(ghq root)/$DIR" status
+    else
+      git -C "$(ghq root)/$DIR" status --ignored --show-stash
     fi
   done
 }
