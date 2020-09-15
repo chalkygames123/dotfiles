@@ -98,6 +98,6 @@ autoload -U compinit && compinit -u
 
 eval "$(direnv hook zsh)"
 
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh" && nvs auto && nvs auto on
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh" && nvs auto on && nvs auto
 
 command -v pyenv &> /dev/null && eval "$(pyenv init -)"
