@@ -10,8 +10,6 @@ export LESSHISTFILE=-
 export BAT_THEME=ansi-light
 export NVS_HOME=~/.nvs
 
-[[ -f ~/.credentials ]] && . ~/.credentials
-
 fpath=(
   ~/.zsh/completion
   /usr/local/share/zsh-completions
@@ -23,6 +21,8 @@ fpath=(
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+eval "$(direnv hook zsh)"
 
 gb() {
   local DIR=$(ghq list | fzf)
