@@ -30,7 +30,6 @@ gc() {
 
 gs() {
   local DIRS=$(ghq list)
-  local ESC=$(printf '\033')
   local SHOULD_VERBOSE=0
 
   for arg in "$@"
@@ -42,6 +41,8 @@ gs() {
       ;;
     esac
   done
+
+  local ESC=$(printf '\033')
 
   echo $DIRS | while IFS= read -r DIR; do
     printf "\n${ESC}[1;34m%s:${ESC}[m\n\n" $DIR
