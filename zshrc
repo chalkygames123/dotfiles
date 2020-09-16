@@ -43,15 +43,20 @@ gs() {
   done
 
   local ESC=$(printf '\033')
+  local COLUMNS=$(tput cols)
 
   echo $DIRS | while IFS= read -r DIR; do
-    printf "\n${ESC}[1;34m%s:${ESC}[m\n\n" $DIR
+    printf "\n${ESC}[34m%s:${ESC}[m\n" $DIR
+    printf "${ESC}[34m─%.0s${ESC}[m" {1..$COLUMNS}
+    printf '\n\n'
 
     if [[ $SHOULD_VERBOSE == 0 ]]; then
       git -C "$(ghq root)/$DIR" status
     else
       git -C "$(ghq root)/$DIR" status --ignored --show-stash
     fi
+
+    printf '\n'
   done
 }
 
