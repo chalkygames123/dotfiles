@@ -21,7 +21,7 @@
  git rebase --abort
  git clean -fdx -e node_modules
  git clean -fdxn -e node_modules
- git -C ~/dotfiles/ commit -am "Update $(echo $(git -C ~/dotfiles/ diff --name-only) | sed -e 's/ /, /g' | sed -e 's/\(.*\), /\1 and /')" && git -C ~/dotfiles/ push
+ git -C ~/dotfiles/ commit -am "Update $(git -C ~/dotfiles/ diff --name-only | sed -e 's/$/, /' | tr -d '\n' | sed -e 's/\(.*\), /\1/' | sed -e 's/\(.*\), /\1 and /')" && git -C ~/dotfiles/ push
  git -C ~/dotfiles/ status
  git -C ~/dotfiles/ diff
  git -C ~/dotfiles/ pull
