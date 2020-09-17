@@ -85,16 +85,15 @@ PS1='
 HISTFILE=~/dotfiles/zsh_history
 HISTSIZE=256
 SAVEHIST=256
-
-export LESSHISTFILE=-
-export BAT_THEME=ansi-light
-export NVS_HOME=~/.nvs
-
 fpath=(
   ~/.zsh/completion
   /usr/local/share/zsh-completions
   $fpath
 )
+
+export LESSHISTFILE=-
+export BAT_THEME=ansi-light
+export NVS_HOME=~/.nvs
 
 # https://github.com/github/hub/issues/1956
 [[ -s '/usr/local/share/zsh/site-functions/_git' ]] &&
@@ -104,6 +103,6 @@ autoload -U compinit && compinit -u
 
 eval "$(direnv hook zsh)"
 
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh" && nvs auto on && nvs auto
+[[ -s "$NVS_HOME/nvs.sh" ]] && . "$NVS_HOME/nvs.sh" && nvs auto on && nvs auto
 
 command -v pyenv &> /dev/null && eval "$(pyenv init -)"
