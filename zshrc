@@ -5,7 +5,6 @@
 alias ll='ls -ghloAFG'
 alias o='open .'
 alias b='npx open $(git remote get-url origin | sed -e s/\.git$//)'
-alias git=hub
 alias g=git
 alias a='git add .'
 alias d='git diff'
@@ -94,10 +93,6 @@ fpath=(
 export LESSHISTFILE=-
 export BAT_THEME=ansi-light
 export NVS_HOME=~/.nvs
-
-# https://github.com/github/hub/issues/1956
-[[ -s '/usr/local/share/zsh/site-functions/_git' ]] &&
-   rm '/usr/local/share/zsh/site-functions/_git'
 
 autoload -U compinit && compinit -u
 
