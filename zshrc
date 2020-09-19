@@ -14,12 +14,9 @@ alias s='git status'
 alias y=yarn
 alias c='code .'
 alias dcu='docker-compose up'
-
-gb() {
-  local DIR=$(ghq list | fzf)
-
-  [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')
-}
+alias ggs='gg status'
+alias ggsv='gg status --ignored --show-stash'
+alias ggf='gg fetch --all'
 
 gc() {
   local DIR=$(ghq list | fzf)
@@ -27,20 +24,8 @@ gc() {
   [[ -n $DIR ]] && cd "$(ghq root)/$DIR"
 }
 
-gs() {
+gg() {
   local DIRS=$(ghq list)
-  local SHOULD_VERBOSE=0
-
-  for arg in "$@"
-  do
-    case $arg in
-      -v|--verbose)
-      SHOULD_VERBOSE=1
-      shift
-      ;;
-    esac
-  done
-
   local ESC=$(printf '\033')
   local COLUMNS=$(tput cols)
 
@@ -51,12 +36,14 @@ gs() {
     printf '\n\n'
     printf "${ESC}[m"
 
-    if [[ $SHOULD_VERBOSE == 0 ]]; then
-      git -C "$(ghq root)/$DIR" status
-    else
-      git -C "$(ghq root)/$DIR" status --ignored --show-stash
-    fi
+    git -C "$(ghq root)/$DIR" "$@"
   done
+}
+
+go() {
+  local DIR=$(ghq list | fzf)
+
+  [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')
 }
 
 default-backward-delete-word() {
