@@ -47,7 +47,7 @@ go() {
 }
 
 my-backward-delete-word() {
-  local WORDCHARS=${WORDCHARS/\//}
+  local WORDCHARS=${WORDCHARS//[-\/]/}
   zle backward-delete-word
 }
 
