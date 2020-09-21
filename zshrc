@@ -46,14 +46,13 @@ go() {
   [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')
 }
 
-default-backward-delete-word() {
-  local WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+my-backward-delete-word() {
+  local WORDCHARS=${WORDCHARS/\//}
   zle backward-delete-word
 }
 
-zle -N default-backward-delete-word
-bindkey '^W' default-backward-delete-word
-bindkey '^[^?' default-backward-delete-word
+zle -N my-backward-delete-word
+bindkey '^W' my-backward-delete-word
 bindkey "^[[Z" reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
