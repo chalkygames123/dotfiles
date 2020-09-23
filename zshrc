@@ -53,6 +53,7 @@ my-backward-delete-word() {
 
 zle -N my-backward-delete-word
 bindkey '^W' my-backward-delete-word
+bindkey '^U' backward-kill-line
 bindkey "^[[Z" reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
