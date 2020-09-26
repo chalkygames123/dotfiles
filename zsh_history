@@ -2,7 +2,7 @@
  #find ./ -type d \( -name '.git' -o -name 'node_modules' -o -name 'dist' \) -prune -o -type f -print0 | xargs -0 chmod 644
  #find ./ -type d \( -name '.git' -o -name 'node_modules' -o -name 'dist' \) -prune -o -type d -print0 | xargs -0 chmod 755
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
- tree -aF -I ".git|node_modules|dist"
+ tree -aF -I '.git|node_modules|dist'
  #find . -name '.DS_Store' -type f -delete
  vi ~/.gitconfig
  vi ~/.zshrc
@@ -11,7 +11,7 @@
  git archive --format=zip --prefix=`date '+%Y%m%d_%H%M%S'`/ HEAD `git diff --diff-filter=d --name-only HEAD^ HEAD` -o ~/Desktop/`date '+%Y%m%d_%H%M%S'`.zip
  git diff --staged
  git commit --amend --no-edit
- git commit -m ""
+ git commit -m ''
  git clean -fdx -e node_modules
  git clean -fdxn -e node_modules
  git -C ~/dotfiles/ commit -am "Update $(git -C ~/dotfiles/ diff --name-only | sed -e 's/$/, /' | tr -d '\n' | sed -e 's/\(.*\), /\1/' | sed -e 's/\(.*\), /\1 and /')" && git -C ~/dotfiles/ push
