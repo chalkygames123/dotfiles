@@ -51,6 +51,12 @@ my-backward-delete-word() {
   zle backward-delete-word
 }
 
+touchp() {
+  for arg in "$@"; do
+    mkdir -p $(dirname $arg) && touch $arg
+  done
+}
+
 zle -N my-backward-delete-word
 bindkey '^W' my-backward-delete-word
 bindkey '^U' backward-kill-line
