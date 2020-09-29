@@ -5,6 +5,7 @@
     ~/.gitconfig:
     ~/.vimrc:
     ~/.zsh_history:
+      force: true
     ~/.zshrc:
 
 - shell:

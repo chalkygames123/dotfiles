@@ -9,6 +9,7 @@
  vi ~/.zsh_history
  brew upgrade; brew cleanup
  git archive --format=zip --prefix=`date '+%Y%m%d_%H%M%S'`/ HEAD `git diff --diff-filter=d --name-only HEAD^ HEAD` -o ~/Desktop/`date '+%Y%m%d_%H%M%S'`.zip
+ git reflog expire --expire=now --all
  git diff --staged
  git commit --amend --no-edit
  git commit -m ''

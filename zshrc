@@ -87,6 +87,10 @@ export LESSHISTFILE=-
 export BAT_THEME=ansi-light
 export NVS_HOME=~/.nvs
 
+# https://github.com/github/hub/issues/1956
+[[ -L '/usr/local/share/zsh/site-functions/_git' ]] &&
+  rm '/usr/local/share/zsh/site-functions/_git'
+
 autoload -U compinit && compinit -u
 
 eval "$(direnv hook zsh)"
