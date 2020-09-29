@@ -13,8 +13,6 @@
 	st = stash
 [core]
 	pager = delta
-[diff]
-	indentHeuristic = true
 [fetch]
 	prune = true
 [hub]
