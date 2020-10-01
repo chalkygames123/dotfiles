@@ -2,7 +2,7 @@
 
 # User specific aliases and functions
 
-alias ll='ls -ghloAFG'
+alias ll='ls -AFG'
 alias o='open .'
 alias b='npx open $(git remote get-url origin | sed -e s/\.git$//)'
 alias g=git
