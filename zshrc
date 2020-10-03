@@ -8,7 +8,7 @@ alias b='npx open $(git remote get-url origin | sed -e s/\.git$//)'
 alias g=git
 alias a='git add .'
 alias d='git diff'
-alias l='git log --abbrev-commit --date=iso8601 --graph'
+alias l='git log --graph'
 alias p='git pull --all'
 alias s='git status'
 alias y=yarn

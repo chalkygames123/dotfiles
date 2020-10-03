@@ -17,6 +17,9 @@
 	prune = true
 [hub]
 	protocol = https
+[log]
+	abbrevCommit = true
+	date = iso8601
 [pull]
 	rebase = true
 [push]
