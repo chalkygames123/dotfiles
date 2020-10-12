@@ -14,9 +14,7 @@ alias s='git status'
 alias y=yarn
 alias c='code .'
 alias dcu='docker-compose up'
-alias ggs='gg status'
 alias ggsv='gg status --ignored --show-stash'
-alias ggf='gg fetch --all'
 
 gc() {
   local DIR=$(ghq list | fzf)
