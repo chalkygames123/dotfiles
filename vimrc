@@ -28,7 +28,7 @@ set shiftwidth=2
 set ignorecase
 set smartcase
 set incsearch
-set wrapscan
+set nowrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
