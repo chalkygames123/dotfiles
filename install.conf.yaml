@@ -1,15 +1,14 @@
-- clean: ['~']
+- clean:
+    ~:
 
 - link:
     ~/.config:
     ~/.gitconfig:
     ~/.vimrc:
     ~/.zsh_history:
-      force: true
     ~/.zshrc:
 
 - shell:
-    - unset HISTFILE
     - defaults write -g InitialKeyRepeat -int 10
     - defaults write -g KeyRepeat -int 1
     - defaults write com.apple.dock size-immutable -boolean true; killall Dock
