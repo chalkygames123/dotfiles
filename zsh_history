@@ -15,7 +15,7 @@
  git commit -m ''
  git clean -fdx -e node_modules
  git clean -fdxn -e node_modules
- git -C ~/dotfiles/ commit -am "Update $(git -C ~/dotfiles/ diff --name-only | sed -e 's/$/, /' | tr -d '\n' | sed -e 's/\(.*\), /\1/' | sed -e 's/\(.*\), /\1 and /')" && git -C ~/dotfiles/ push
+ (cd ~/dotfiles/ && git add . && git commit -m "Update $(git diff --name-only --staged | sed -e 's/$/, /' | tr -d '\n' | sed -e 's/\(.*\), /\1/' | sed -e 's/\(.*\), /\1 and /')" && git push)
  git -C ~/dotfiles/ status
  git -C ~/dotfiles/ diff
  git -C ~/dotfiles/ pull

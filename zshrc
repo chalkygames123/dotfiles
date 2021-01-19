@@ -2,9 +2,9 @@
 
 # User specific aliases and functions
 
-alias ll='ls -AFG'
+alias ll='ls -lAFG'
 alias o='open .'
-alias b='npx open $(git remote get-url origin | sed -e s/\.git$//)'
+alias b='npx --package=open open "$(git remote get-url origin | sed -e s/\.git$//)"'
 alias g=git
 alias a='git add .'
 alias d='git diff'
@@ -19,31 +19,44 @@ alias dcu='docker-compose up'
 alias ggsv='gg status --ignored --show-stash'
 
 gc() {
-  local DIR=$(ghq list | fzf)
+  local DIR
 
-  [[ -n $DIR ]] && cd "$(ghq root)/$DIR"
+  DIR=$(ghq list | sort | fzf)
+
+  [[ -n $DIR ]] && cd "$(ghq root)/$DIR" || exit
+}
+
+go() {
+  local DIR
+
+  DIR=$(ghq list | fzf)
+
+  [[ -n $DIR ]] && npx --package=open open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')"
 }
 
 gg() {
-  local DIRS=$(ghq list)
-  local ESC=$(printf '\033')
-  local COLUMNS=$(tput cols)
+  local DIRS
+  local ESC
+  local COLUMNS
 
-  echo $DIRS | while IFS= read -r DIR; do
-    printf "${ESC}[34m"
-    printf "\n%s\n" $DIR
-    printf '─%.0s' {1..$COLUMNS}
-    printf '\n\n'
-    printf "${ESC}[m"
+  DIRS=$(ghq list | sort)
+  ESC=$(printf '\033')
+  COLUMNS=$(tput cols)
+
+  echo "$DIRS" | while IFS= read -r DIR; do
+    printf '%s[34m' "${ESC}"
+    printf '\n%s\n' "$DIR"
+    printf '─%.0s' {1.."$COLUMNS"}
+    printf '\n\n%s[m' "${ESC}"
 
     git -C "$(ghq root)/$DIR" "$@"
   done
 }
 
-go() {
-  local DIR=$(ghq list | fzf)
-
-  [[ -n $DIR ]] && npx open $(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')
+touchp() {
+  for arg in "$@"; do
+    mkdir -p "$(dirname "$arg")" && touch "$arg"
+  done
 }
 
 _my-backward-delete-word() {
@@ -51,16 +64,10 @@ _my-backward-delete-word() {
   zle backward-delete-word
 }
 
-touchp() {
-  for arg in "$@"; do
-    mkdir -p $(dirname $arg) && touch $arg
-  done
-}
-
 zle -N _my-backward-delete-word
 bindkey '^W' _my-backward-delete-word
 bindkey '^U' backward-kill-line
-bindkey "^[[Z" reverse-menu-complete
+bindkey '^[[Z' reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 
@@ -72,12 +79,10 @@ setopt INC_APPEND_HISTORY
 
 # User specific environment and startup programs
 
-PS1='
+export PS1='
 %B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
-HISTFILE=~/dotfiles/zsh_history
-HISTSIZE=256
-SAVEHIST=256
-fpath=(
+export HISTFILE=~/dotfiles/zsh_history
+export fpath=(
   ~/.zsh/completion
   /usr/local/share/zsh-completions
   $fpath
