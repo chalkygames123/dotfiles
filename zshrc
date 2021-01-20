@@ -115,7 +115,7 @@ zinit wait lucid as'program' for \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' BurntSushi/ripgrep \
   from'gh-r' bpick'*.tar.gz' pick'yarn/bin/yarn' mv'yarn* -> yarn' yarnpkg/yarn
 
-zinit wait lucid blockf as'completion' for \
-  https://github.com/zsh-users/zsh-completions/blob/master/src/_yarn \
+zinit wait lucid as'completion' for \
   https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
-  atinit'zicompinit' https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose
+  https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose \
+  atinit'zicompinit' https://github.com/zsh-users/zsh-completions/blob/master/src/_yarn
