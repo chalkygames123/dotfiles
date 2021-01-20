@@ -18,6 +18,12 @@ alias c='code .'
 alias dcu='docker-compose up'
 alias ggsv='gg status --ignored --show-stash'
 
+touchp() {
+  for arg in "$@"; do
+    mkdir -p "$(dirname "$arg")" && touch "$arg"
+  done
+}
+
 gc() {
   local DIR
 
@@ -50,12 +56,6 @@ gg() {
     printf '\n\n%s[m' "${ESC}"
 
     git -C "$(ghq root)/$DIR" "$@"
-  done
-}
-
-touchp() {
-  for arg in "$@"; do
-    mkdir -p "$(dirname "$arg")" && touch "$arg"
   done
 }
 
