@@ -35,7 +35,7 @@ gc() {
 go() {
   local DIR
 
-  DIR=$(ghq list | fzf)
+  DIR=$(ghq list | sort | fzf)
 
   [[ -n $DIR ]] && npx --package=open open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')"
 }
