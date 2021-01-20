@@ -13,7 +13,3 @@
     - defaults write -g InitialKeyRepeat -int 10
     - defaults write -g KeyRepeat -int 1
     - defaults write com.apple.dock size-immutable -boolean true
-    - mkdir -p ~/.zsh/completion
-    - curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > ~/.zsh/completion/_docker
-    - curl https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
-    - '[[ -z $NVS_HOME ]] && export NVS_HOME="$HOME/.nvs" && git clone https://github.com/jasongin/nvs "$NVS_HOME" && . "$NVS_HOME/nvs.sh" install || exit 0'

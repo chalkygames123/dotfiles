@@ -82,24 +82,40 @@ setopt INC_APPEND_HISTORY
 export PS1='
 %B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 export HISTFILE=~/dotfiles/zsh_history
-export fpath=(
-  ~/.zsh/completion
-  /usr/local/share/zsh-completions
-  $fpath
-)
 
 export LESSHISTFILE=-
 export BAT_THEME=ansi-light
-export NVS_HOME=~/.nvs
 
-# https://github.com/github/hub/issues/1956
-[[ -L '/usr/local/share/zsh/site-functions/_git' ]] &&
-  rm '/usr/local/share/zsh/site-functions/_git'
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-autoload -U compinit && compinit -u
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
-eval "$(direnv hook zsh)"
+zinit lucid for \
+  pick'nvs.sh' atload'[[ ! -L default ]] && nvs add latest && nvs link latest; nvs auto on && nvs use auto' light-mode jasongin/nvs
 
-[[ -s "$NVS_HOME/nvs.sh" ]] && . "$NVS_HOME/nvs.sh" && nvs auto on && nvs use auto
+zinit wait lucid as'program' for \
+  from'gh-r' pick'bat/bat' mv'bat* -> bat' @sharkdp/bat \
+  from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' cli/cli \
+  from'gh-r' pick'delta/delta' mv'delta* -> delta' dandavison/delta \
+  from'gh-r' pick'direnv' src'zhook.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' direnv/direnv \
+  from'gh-r' pick'dust/dust' mv'dust* -> dust' bootandy/dust \
+  from'gh-r' pick'fzf' junegunn/fzf \
+  from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
+  pick'bin/pyenv' src'zinit.zsh' atclone'./bin/pyenv init - > zinit.zsh' atpull'%atclone' atinit'export PYENV_ROOT=$(pwd)' pyenv/pyenv \
+  from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' BurntSushi/ripgrep \
+  from'gh-r' bpick'*.tar.gz' pick'yarn/bin/yarn' mv'yarn* -> yarn' yarnpkg/yarn
 
-command -v pyenv &> /dev/null && eval "$(pyenv init -)"
+zinit wait lucid blockf as'completion' for \
+  https://github.com/zsh-users/zsh-completions/blob/master/src/_yarn \
+  https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
+  atinit'zicompinit' https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose
