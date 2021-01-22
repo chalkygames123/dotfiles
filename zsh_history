@@ -1,8 +1,6 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
- #find ./ -type d \( -name '.git' -o -name 'node_modules' -o -name 'dist' \) -prune -o -type f -print0 | xargs -0 chmod 644
- #find ./ -type d \( -name '.git' -o -name 'node_modules' -o -name 'dist' \) -prune -o -type d -print0 | xargs -0 chmod 755
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
- tree -aF -I '.git|node_modules|dist'
+ tree -aF -I '.git|dist|node_modules'
  #find . -name '.DS_Store' -type f -delete
  vi ~/.gitconfig
  vi ~/.zshrc
@@ -12,7 +10,6 @@
  git -C ~/dotfiles/ status
  git -C ~/dotfiles/ diff
  git -C ~/dotfiles/ pull
- git archive --format=zip --prefix=`date '+%Y%m%d_%H%M%S'`/ HEAD `git diff --diff-filter=d --name-only HEAD^ HEAD` -o ~/Desktop/`date '+%Y%m%d_%H%M%S'`.zip
  git reflog expire --expire=now --all
  git clean -fdx -e node_modules
  git clean -fdxn -e node_modules

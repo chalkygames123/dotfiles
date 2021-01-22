@@ -4,7 +4,7 @@
 
 alias ll='ls -lAFG'
 alias o='open .'
-alias b='npx --package=open open "$(git remote get-url origin | sed -e s/\.git$//)"'
+alias b='npx --package=open open "$(git remote get-url origin | sed s/\.git$//)"'
 alias g=git
 alias a='git add .'
 alias d='git diff'
@@ -29,7 +29,7 @@ gc() {
 
   DIR=$(ghq list | sort | fzf)
 
-  [[ -n $DIR ]] && cd "$(ghq root)/$DIR" || exit
+  [[ -n $DIR ]] && cd "$(ghq root)/$DIR" || return
 }
 
 go() {
@@ -37,7 +37,7 @@ go() {
 
   DIR=$(ghq list | sort | fzf)
 
-  [[ -n $DIR ]] && npx --package=open open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed -e 's/\.git$//')"
+  [[ -n $DIR ]] && npx --package=open open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
 }
 
 gg() {
@@ -50,10 +50,10 @@ gg() {
   COLUMNS=$(tput cols)
 
   echo "$DIRS" | while IFS= read -r DIR; do
-    printf '%s[34m' "${ESC}"
+    printf '%s[34m' "$ESC"
     printf '\n%s\n' "$DIR"
     printf '─%.0s' {1.."$COLUMNS"}
-    printf '\n\n%s[m' "${ESC}"
+    printf '\n\n%s[m' "$ESC"
 
     git -C "$(ghq root)/$DIR" "$@"
   done
@@ -84,7 +84,6 @@ export PS1='
 export HISTFILE=~/dotfiles/zsh_history
 
 export LESSHISTFILE=-
-export BAT_THEME=ansi-light
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -104,15 +103,16 @@ zinit lucid for \
   pick'nvs.sh' atload'[[ ! -L default ]] && nvs add latest && nvs link latest; nvs auto on && nvs use auto' light-mode jasongin/nvs
 
 zinit wait lucid as'program' for \
-  from'gh-r' pick'bat/bat' mv'bat* -> bat' @sharkdp/bat \
-  from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' cli/cli \
+  from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi-light' @sharkdp/bat \
+  from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' cli/cli \
   from'gh-r' pick'delta/delta' mv'delta* -> delta' dandavison/delta \
   from'gh-r' pick'direnv' src'zhook.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' direnv/direnv \
   from'gh-r' pick'dust/dust' mv'dust* -> dust' bootandy/dust \
-  from'gh-r' pick'fzf' junegunn/fzf \
+  from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' @sharkdp/fd \
+  pick'bin/fzf' atclone'./install --bin' atpull'%atclone' junegunn/fzf \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
-  pick'bin/pyenv' src'zinit.zsh' atclone'./bin/pyenv init - > zinit.zsh' atpull'%atclone' atinit'export PYENV_ROOT=$(pwd)' pyenv/pyenv \
-  from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' BurntSushi/ripgrep \
+  pick'bin/pyenv' src'zinit.zsh' atclone'./bin/pyenv init - > zinit.zsh' atpull'%atclone' atinit'export PYENV_ROOT="$(pwd)"' pyenv/pyenv \
+  from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' BurntSushi/ripgrep \
   from'gh-r' bpick'*.tar.gz' pick'yarn/bin/yarn' mv'yarn* -> yarn' yarnpkg/yarn
 
 zinit wait lucid as'completion' for \
