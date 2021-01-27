@@ -1,7 +1,7 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+ fd -H '^\.DS_Store$' -tf -X rm
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
  tree -aF -I '.git|dist|node_modules'
- #find . -name '.DS_Store' -type f -delete
  vi ~/.gitconfig
  vi ~/.zshrc
  vi ~/.zsh_history

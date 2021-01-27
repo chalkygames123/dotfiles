@@ -2,7 +2,7 @@
 
 # User specific aliases and functions
 
-alias ll='ls -lAFG'
+alias ll='ls -AFGl'
 alias o='open .'
 alias b='npx --package=open open "$(git remote get-url origin | sed s/\.git$//)"'
 alias g=git
@@ -61,21 +61,20 @@ gg() {
 
 _my-backward-delete-word() {
   local WORDCHARS=${WORDCHARS//[-\/]/}
+
   zle backward-delete-word
 }
 
 zle -N _my-backward-delete-word
 bindkey '^W' _my-backward-delete-word
-bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 
-setopt MAGIC_EQUAL_SUBST
-setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
 setopt INC_APPEND_HISTORY
+setopt MAGIC_EQUAL_SUBST
+unsetopt FLOW_CONTROL
 
 # User specific environment and startup programs
 
