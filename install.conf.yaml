@@ -10,7 +10,7 @@
     ~/.zshrc:
 
 - shell:
-    - brew bundle
     - defaults write -g InitialKeyRepeat -int 10
     - defaults write -g KeyRepeat -int 1
     - defaults write com.apple.dock size-immutable -boolean true
+    - brew bundle

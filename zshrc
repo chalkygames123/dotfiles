@@ -105,12 +105,12 @@ zinit wait lucid as'program' for \
   from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi-light' @sharkdp/bat \
   from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' cli/cli \
   from'gh-r' pick'delta/delta' mv'delta* -> delta' dandavison/delta \
-  from'gh-r' pick'direnv' src'zhook.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' direnv/direnv \
+  from'gh-r' pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' direnv/direnv \
   from'gh-r' pick'dust/dust' mv'dust* -> dust' bootandy/dust \
   from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' @sharkdp/fd \
   pick'bin/fzf' atclone'./install --bin' atpull'%atclone' junegunn/fzf \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
-  pick'bin/pyenv' src'zinit.zsh' atclone'./bin/pyenv init - > zinit.zsh' atpull'%atclone' atinit'export PYENV_ROOT="$(pwd)"' pyenv/pyenv \
+  pick'bin/pyenv' src'zpyenv.zsh' atclone'PYENV_ROOT="$PWD" ./bin/pyenv init - > zpyenv.zsh' atpull'%atclone' atinit'export PYENV_ROOT="$PWD"' pyenv/pyenv \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' BurntSushi/ripgrep \
   from'gh-r' bpick'*.tar.gz' pick'yarn/bin/yarn' mv'yarn* -> yarn' yarnpkg/yarn
 

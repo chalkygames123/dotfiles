@@ -15,8 +15,6 @@
 	pager = delta
 [fetch]
 	prune = true
-[hub]
-	protocol = https
 [log]
 	abbrevCommit = true
 	date = iso8601
