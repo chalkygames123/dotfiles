@@ -4,19 +4,19 @@
 
 alias ll='ls -AFGl'
 alias o='open .'
-alias b='npx --package=open open "$(git remote get-url origin | sed s/\.git$//)"'
 alias g=git
 alias a='git add .'
 alias d='git diff'
 alias l='git log --graph'
 alias p='git pull --all'
 alias s='git status'
+alias dot='git -C ~/dotfiles/'
 alias n=npm
 alias nr='npm run'
+alias b='npx --package=open open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
 alias y=yarn
+alias v=volta
 alias c='code .'
-alias dcu='docker-compose up'
-alias ggsv='gg status --ignored --show-stash'
 
 touchp() {
   for arg in "$@"; do
@@ -98,9 +98,6 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-zinit lucid for \
-  pick'nvs.sh' atload'[[ ! -L default ]] && nvs add latest && nvs link latest; nvs auto on && nvs use auto' light-mode jasongin/nvs
-
 zinit wait lucid as'program' for \
   from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi-light' @sharkdp/bat \
   from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' cli/cli \
@@ -112,6 +109,7 @@ zinit wait lucid as'program' for \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
   pick'bin/pyenv' src'zpyenv.zsh' atclone'PYENV_ROOT="$PWD" ./bin/pyenv init - > zpyenv.zsh' atpull'%atclone' atinit'export PYENV_ROOT="$PWD"' pyenv/pyenv \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' BurntSushi/ripgrep \
+  from'gh-r' bpick'*macos.tar.gz' pick'volta' atclone'VOLTA_HOME="$PWD" ./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' volta-cli/volta \
   from'gh-r' bpick'*.tar.gz' pick'yarn/bin/yarn' mv'yarn* -> yarn' yarnpkg/yarn
 
 zinit wait lucid as'completion' for \
