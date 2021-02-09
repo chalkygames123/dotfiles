@@ -10,7 +10,7 @@ alias d='git diff'
 alias l='git log --graph'
 alias p='git pull --all'
 alias s='git status'
-alias dot='git -C ~/dotfiles/'
+alias dg='git -C ~/dotfiles/'
 alias n=npm
 alias nr='npm run'
 alias b='npx --package=open open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
