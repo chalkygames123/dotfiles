@@ -11,6 +11,7 @@ alias l='git log --graph'
 alias p='git pull --all'
 alias s='git status'
 alias dg='git -C ~/dotfiles/'
+alias ggsv='gg status --ignored --show-stash'
 alias n=npm
 alias nr='npm run'
 alias b='npx --package=open open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
