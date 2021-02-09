@@ -18,4 +18,5 @@
     - defaults write com.apple.dock showhidden -bool true
     - defaults write com.apple.dock size-immutable -bool true
     - defaults write com.apple.dock static-only -bool true
+    - killall Dock
     - brew bundle
