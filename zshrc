@@ -21,6 +21,12 @@ touchp() {
   done
 }
 
+cdf() {
+  DIR=$(dirname "$(fzf)")
+
+  [[ -n $DIR ]] && cd "$DIR" || return
+}
+
 gc() {
   local DIR
 
@@ -100,7 +106,7 @@ zinit wait lucid as'program' for \
   from'gh-r' pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' direnv/direnv \
   from'gh-r' pick'dust/dust' mv'dust* -> dust' bootandy/dust \
   from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' @sharkdp/fd \
-  pick'bin/fzf' atclone'./install --bin' atpull'%atclone' junegunn/fzf \
+  pick'bin/fzf' atclone'./install --bin' atpull'%atclone' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' junegunn/fzf \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
   pick'bin/pyenv' src'zpyenv.zsh' atclone'PYENV_ROOT="$PWD" ./bin/pyenv init - > zpyenv.zsh' atpull'%atclone' atinit'export PYENV_ROOT="$PWD"' pyenv/pyenv \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' BurntSushi/ripgrep \
