@@ -1,7 +1,3 @@
-# .zshrc
-
-# User specific aliases and functions
-
 alias ll='ls -AFGl'
 alias o='open .'
 alias g=git
@@ -67,8 +63,8 @@ _my-backward-delete-word() {
 }
 
 zle -N _my-backward-delete-word
-bindkey '^W' _my-backward-delete-word
 bindkey '^[[Z' reverse-menu-complete
+bindkey '^[^?' _my-backward-delete-word
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 
@@ -76,8 +72,6 @@ setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 setopt MAGIC_EQUAL_SUBST
 unsetopt FLOW_CONTROL
-
-# User specific environment and startup programs
 
 export PS1='
 %B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
