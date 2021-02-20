@@ -10,7 +10,7 @@ alias dg='git -C ~/dotfiles/'
 alias ggsv='gg status --ignored --show-stash'
 alias n=npm
 alias nr='npm run'
-alias b='npx --package=open open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
+alias b='open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
 alias y=yarn
 alias v=volta
 alias c='code .'
@@ -40,7 +40,7 @@ go() {
 
   DIR=$(ghq list | sort | fzf)
 
-  [[ -n $DIR ]] && npx --package=open open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
+  [[ -n $DIR ]] && open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
 }
 
 gg() {
