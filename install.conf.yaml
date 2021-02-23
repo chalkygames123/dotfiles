@@ -2,10 +2,13 @@
     ~/:
 
 - link:
-    ~/.config:
+    ~/.config/git/ignore:
+      create: true
+      path: config/git/ignore
     ~/.gitconfig:
     ~/.vimrc:
     ~/.zsh_history:
+      force: true
     ~/.zshenv:
     ~/.zshrc:
 
@@ -19,4 +22,4 @@
     - defaults write com.apple.dock size-immutable -bool true
     - defaults write com.apple.dock static-only -bool true
     - killall Dock
-    - brew bundle
+    - chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
