@@ -22,4 +22,3 @@
     - defaults write com.apple.dock size-immutable -bool true
     - defaults write com.apple.dock static-only -bool true
     - killall Dock
-    - chmod g-w /usr/local/share/zsh
