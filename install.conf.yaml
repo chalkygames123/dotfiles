@@ -22,3 +22,8 @@
     - defaults write com.apple.dock size-immutable -bool true
     - defaults write com.apple.dock static-only -bool true
     - killall Dock
+    - command: |-
+        echo 'NOTE: Some of the changes will take effect the next time you log in.'
+      description: ''
+      quiet: true
+      stdout: true
