@@ -30,7 +30,7 @@ cdf() {
 gc() {
   local DIR
 
-  DIR=$(ghq list | sort | fzf)
+  DIR=$(ghq list | fzf)
 
   [[ -n $DIR ]] && cd "$(ghq root)/$DIR" || return
 }
@@ -38,7 +38,7 @@ gc() {
 go() {
   local DIR
 
-  DIR=$(ghq list | sort | fzf)
+  DIR=$(ghq list | fzf)
 
   [[ -n $DIR ]] && open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
 }
@@ -48,7 +48,7 @@ gg() {
   local ESC
   local COLUMNS
 
-  DIRS=$(ghq list | sort)
+  DIRS=$(ghq list)
   ESC=$(printf '\033')
   COLUMNS=$(tput cols)
 
