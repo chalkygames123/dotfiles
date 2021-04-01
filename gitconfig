@@ -13,6 +13,9 @@
 	st = stash
 [core]
 	pager = delta
+[delta]
+	side-by-side = true
+	syntax-theme = GitHub
 [fetch]
 	prune = true
 [init]
