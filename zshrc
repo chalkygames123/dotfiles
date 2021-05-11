@@ -35,7 +35,7 @@ gc() {
   [[ -n $DIR ]] && cd "$(ghq root)/$DIR" || return
 }
 
-go() {
+gb() {
   local DIR
 
   DIR=$(ghq list | fzf)
@@ -59,6 +59,20 @@ gg() {
     printf '\n\n%s[m' "$ESC"
 
     git -C "$(ghq root)/$DIR" "$@"
+  done
+}
+
+ggb() {
+  local DIRS
+  local ESC
+  local COLUMNS
+
+  DIRS=$(ghq list)
+  ESC=$(printf '\033')
+  COLUMNS=$(tput cols)
+
+  echo "$DIRS" | while IFS= read -r DIR; do
+    open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
   done
 }
 
