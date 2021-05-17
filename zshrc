@@ -131,9 +131,9 @@ zinit wait lucid as'program' for \
   from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' @sharkdp/fd \
   pick'bin/fzf' atclone'./install --bin' atpull'%atclone' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' junegunn/fzf \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
-  pick'bin/pyenv' src'zpyenv.zsh' atclone'PYENV_ROOT="$PWD" ./bin/pyenv init - > zpyenv.zsh' atpull'%atclone' atinit'export PYENV_ROOT="$PWD"' pyenv/pyenv \
+  pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' atload'eval "$(pyenv init --path)"; eval "$(pyenv init -)"' pyenv/pyenv \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' BurntSushi/ripgrep \
-  from'gh-r' bpick'*macos.tar.gz' pick'volta' atclone'VOLTA_HOME="$PWD" ./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' volta-cli/volta \
+  from'gh-r' bpick'*macos.tar.gz' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' volta-cli/volta \
   from'gh-r' bpick'*.tar.gz' pick'yarn/bin/yarn' mv'yarn* -> yarn' yarnpkg/yarn
 
 zinit wait lucid as'completion' for \
