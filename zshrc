@@ -6,11 +6,11 @@ alias d='git diff'
 alias l='git log --graph'
 alias p='git pull --all'
 alias s='git status'
-alias sv='git status --ignored --show-stash'
+alias ss='git status --ignored --show-stash'
 alias dg='git -C ~/dotfiles/'
+alias b='open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
 alias n=npm
 alias nr='npm run'
-alias b='open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
 alias y=yarn
 alias v=volta
 alias c='code .'
@@ -44,25 +44,6 @@ gb() {
 }
 
 gg() {
-  local DIRS
-  local ESC
-  local COLUMNS
-
-  DIRS=$(ghq list)
-  ESC=$(printf '\033')
-  COLUMNS=$(tput cols)
-
-  echo "$DIRS" | while IFS= read -r DIR; do
-    printf '%s[34m' "$ESC"
-    printf '\n%s\n' "$DIR"
-    printf '─%.0s' {1.."$COLUMNS"}
-    printf '\n\n%s[m' "$ESC"
-
-    git -C "$(ghq root)/$DIR" "$@"
-  done
-}
-
-ggx() {
   [[ -z "$@" ]] && return
 
   local DIRS
@@ -73,16 +54,18 @@ ggx() {
   ESC=$(printf '\033')
   COLUMNS=$(tput cols)
 
-  echo "$DIRS" | while IFS= read -r DIR; do
-    printf '%s[34m' "$ESC"
-    printf '\n%s\n' "$DIR"
-    printf '─%.0s' {1.."$COLUMNS"}
-    printf '\n\n%s[m' "$ESC"
+  (
+    echo "$DIRS" | while IFS= read -r DIR; do
+      printf '%s[34m' "$ESC"
+      printf '\n%s\n' "$DIR"
+      printf '─%.0s' {1.."$COLUMNS"}
+      printf '\n\n%s[m' "$ESC"
 
-    cd "$(ghq root)/$DIR"
-    eval "$@"
-    cd - > /dev/null
-  done
+      cd "$(ghq root)/$DIR"
+      eval "$@"
+      cd - > /dev/null
+    done
+  )
 }
 
 _my-backward-delete-word() {
