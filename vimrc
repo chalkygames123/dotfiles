@@ -20,9 +20,9 @@ set wildmode=longest,full
 syntax enable
 
 " tab
-set expandtab
 set tabstop=2
-set shiftwidth=2
+set softtabstop=-1
+set shiftwidth=0
 
 " search
 set ignorecase

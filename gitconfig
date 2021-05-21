@@ -16,6 +16,7 @@
 [delta]
 	side-by-side = true
 	syntax-theme = GitHub
+	tabs = 2
 [fetch]
 	prune = true
 [init]
