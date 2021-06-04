@@ -13,6 +13,7 @@
 	st = stash
 [core]
 	pager = delta
+	quotepath = false
 [delta]
 	side-by-side = true
 	syntax-theme = GitHub
