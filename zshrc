@@ -106,18 +106,30 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 zinit wait lucid as'program' for \
-  from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi' @sharkdp/bat \
-  from'gh-r' ver'latest' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' cli/cli \
-  from'gh-r' pick'delta/delta' mv'delta* -> delta' dandavison/delta \
-  from'gh-r' pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' direnv/direnv \
-  from'gh-r' pick'dust/dust' mv'dust* -> dust' bootandy/dust \
-  from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' @sharkdp/fd \
-  pick'bin/fzf' atclone'./install --bin' atpull'%atclone' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' junegunn/fzf \
-  from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' x-motemen/ghq \
-  pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' atload'eval "$(pyenv init --path)"; eval "$(pyenv init -)"' pyenv/pyenv \
-  from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' BurntSushi/ripgrep \
-  from'gh-r' bpick'*macos.tar.gz' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' volta-cli/volta \
-  from'gh-r' pick'watchexec/watchexec' mv'watchexec* -> watchexec' atclone'mkdir -p man/man1 && ln -fs ../../watchexec/watchexec.1 man/man1; ln -fs watchexec/completions/zsh _watchexec' atpull'%atclone' watchexec/watchexec
+  from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi' \
+    @sharkdp/bat \
+  from'gh-r' ver'latest' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' \
+    cli/cli \
+  from'gh-r' pick'delta/delta' mv'delta* -> delta' \
+    dandavison/delta \
+  from'gh-r' pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' \
+    direnv/direnv \
+  from'gh-r' pick'dust/dust' mv'dust* -> dust' \
+    bootandy/dust \
+  from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' \
+    @sharkdp/fd \
+  pick'bin/fzf' atclone'./install --bin' atpull'%atclone' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
+    junegunn/fzf \
+  from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
+    x-motemen/ghq \
+  pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' atload'eval "$(pyenv init --path)"; eval "$(pyenv init -)"' \
+    pyenv/pyenv \
+  from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
+    BurntSushi/ripgrep \
+  from'gh-r' bpick'*macos.tar.gz' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' \
+    volta-cli/volta \
+  from'gh-r' pick'watchexec/watchexec' mv'watchexec* -> watchexec' atclone'mkdir -p man/man1 && ln -fs ../../watchexec/watchexec.1 man/man1; ln -fs watchexec/completions/zsh _watchexec' atpull'%atclone' \
+    watchexec/watchexec
 
 zinit wait lucid as'completion' for \
   https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
