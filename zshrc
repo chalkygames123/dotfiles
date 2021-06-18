@@ -14,6 +14,7 @@ alias nr='npm run'
 alias y=yarn
 alias v=volta
 alias c='code .'
+alias dcu='docker-compose up'
 
 touchp() {
   for arg in "$@"; do
