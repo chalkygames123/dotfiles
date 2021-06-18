@@ -9,6 +9,7 @@
  brew upgrade; brew cleanup
  (cd ~/dotfiles/ && git commit -m "Update $(echo ${(j:, :)$(git diff --name-only --staged)} | sed 's/\(.*\), /\1 and /')")
  git reflog expire --expire=now --all
+ git rebase --interactive --autosquash
  git clean -fdx -e node_modules
  git clean -fdxn -e node_modules
  git diff --staged
