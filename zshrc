@@ -22,10 +22,20 @@ touchp() {
   done
 }
 
-cdf() {
+fzcd() {
+  local DIR
+
   DIR=$(dirname "$(fzf)")
 
-  [[ -n $DIR ]] && cd "$DIR" || return
+  [[ $DIR ]] && cd "$DIR" || return
+}
+
+fzr() {
+  local FILE
+
+  FILE=$(fzf)
+
+  [[ $FILE ]] && open -R "$FILE" || return
 }
 
 gc() {
@@ -33,7 +43,7 @@ gc() {
 
   DIR=$(ghq list | fzf)
 
-  [[ -n $DIR ]] && cd "$(ghq root)/$DIR" || return
+  [[ $DIR ]] && cd "$(ghq root)/$DIR" || return
 }
 
 gb() {
@@ -41,17 +51,39 @@ gb() {
 
   DIR=$(ghq list | fzf)
 
-  [[ -n $DIR ]] && open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
+  [[ $DIR ]] && open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
 }
 
 gg() {
-  [[ -z "$@" ]] && return
+  [[ $# = 0 ]] && return
+
+  local QUERY
+  local COMMAND=()
+
+  while (( $# )); do
+    case $1 in
+      -q=* | --query=*)
+      QUERY="${1#*=}"
+      shift
+      ;;
+      -q | --query)
+      QUERY="$2"
+      shift 2
+      ;;
+      *)
+      COMMAND+=("$1")
+      shift
+      ;;
+    esac
+  done
+
+  [[ -z "${COMMAND[*]}" ]] && return
 
   local DIRS
   local ESC
   local COLUMNS
 
-  DIRS=$(ghq list)
+  DIRS=$(ghq list "$QUERY")
   ESC=$(printf '\033')
   COLUMNS=$(tput cols)
 
@@ -62,9 +94,9 @@ gg() {
       printf '─%.0s' {1.."$COLUMNS"}
       printf '\n\n%s[m' "$ESC"
 
-      cd "$(ghq root)/$DIR"
-      eval "$@"
-      cd - > /dev/null
+      cd "$(ghq root)/$DIR" || return
+      eval "${COMMAND[@]}"
+      cd - > /dev/null || return
     done
   )
 }
