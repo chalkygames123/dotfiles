@@ -22,20 +22,12 @@ touchp() {
   done
 }
 
-fzcd() {
+fzc() {
   local DIR
 
   DIR=$(dirname "$(fzf)")
 
   [[ $DIR ]] && cd "$DIR" || return
-}
-
-fzr() {
-  local FILE
-
-  FILE=$(fzf)
-
-  [[ $FILE ]] && open -R "$FILE" || return
 }
 
 gc() {
@@ -44,14 +36,6 @@ gc() {
   DIR=$(ghq list | fzf)
 
   [[ $DIR ]] && cd "$(ghq root)/$DIR" || return
-}
-
-gb() {
-  local DIR
-
-  DIR=$(ghq list | fzf)
-
-  [[ $DIR ]] && open "$(git -C "$(ghq root)/$DIR" remote get-url origin | sed 's/\.git$//')"
 }
 
 gg() {
