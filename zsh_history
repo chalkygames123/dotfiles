@@ -15,6 +15,6 @@
  git diff --staged
  git commit --amend --no-edit
  git commit -m ''
- mkdir "../$(basename "$(pwd)")-docs"
- open "../$(basename "$(pwd)")-docs"
+ mkdir "../$(basename "$PWD")-docs"
+ open "../$(basename "$PWD")-docs"
  exec $SHELL -l
