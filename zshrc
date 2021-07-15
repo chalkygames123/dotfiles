@@ -105,6 +105,7 @@ unsetopt FLOW_CONTROL
 export PS1='
 %B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 export HISTFILE=~/dotfiles/zsh_history
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 export LESSHISTFILE=-
 
