@@ -11,6 +11,7 @@ alias dg='git -C ~/dotfiles/'
 alias b='open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
 alias n=npm
 alias nr='npm run'
+alias nd='npm run dev'
 alias y=yarn
 alias v=volta
 alias c='code .'
