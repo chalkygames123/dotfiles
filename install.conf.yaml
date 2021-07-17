@@ -25,7 +25,7 @@
     - defaults write com.apple.dock "static-only" -bool "true"
     - killall Dock
     - command: |-
-        echo 'NOTE: Some of the changes will take effect the next time you log in.'
-      description: ''
+        echo 'NOTE: Some of the changes will take effect the next time you log in.\n'
+      description: ""
       quiet: true
       stdout: true
