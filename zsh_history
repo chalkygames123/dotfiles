@@ -8,7 +8,7 @@
  vi ~/.zsh_history
  brew upgrade; brew cleanup
  zi self-update; zinit update --parallel
- (cd ~/dotfiles/ && git commit -m "Update $(echo "${(j:, :)$(git diff --name-only --staged)}" | sed 's/\(.*\), /\1 and /')")
+ (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
  git reflog expire --expire=now --all
  git rebase --interactive --autosquash
  git clean -fdx -e node_modules
