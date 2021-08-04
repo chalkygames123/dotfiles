@@ -7,7 +7,7 @@
  vi ~/.zshrc
  vi ~/.zsh_history
  brew upgrade; brew cleanup
- zi self-update; zinit update --parallel
+ zinit self-update; zinit update --parallel
  (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
  git reflog expire --expire=now --all
  git rebase --interactive --autosquash
@@ -19,3 +19,4 @@
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
  exec $SHELL -l
+/e9ba66a
