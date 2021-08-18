@@ -20,4 +20,3 @@
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
  exec $SHELL -l
-/e9ba66a
