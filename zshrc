@@ -2,6 +2,7 @@ alias ll='ls -AFGl'
 alias o='open .'
 alias g=git
 alias a='git add .'
+alias bb='git branch --all --verbose --verbose'
 alias d='git diff --ignore-space-change'
 alias l='git log --graph'
 alias p='git pull --all'
