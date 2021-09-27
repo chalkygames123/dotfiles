@@ -17,7 +17,7 @@
  git commit --reuse-message=@ --edit
  git commit --amend --no-edit
  git commit -m ''
- npm run build -- --dist-dir="$(date "+%Y%m%d%H%M%S")"
+ npm run build -- --dist-dir="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")"
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
  exec $SHELL -l
