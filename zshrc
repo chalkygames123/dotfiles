@@ -1,6 +1,6 @@
 alias ll='ls -AFGl'
 alias o='open .'
-alias g=git
+alias g='git'
 alias a='git add .'
 alias bb='git branch --all --verbose --verbose'
 alias d='git diff --ignore-space-change'
@@ -10,14 +10,13 @@ alias s='git status'
 alias ss='git status --ignored --show-stash'
 alias dg='git -C ~/dotfiles/'
 alias b='open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
-alias n=npm
-alias nr='npm run'
+alias n='npm'
 alias nd='npm run dev'
 alias nb='npm run build'
-alias y=yarn
+alias y='yarn'
 alias yd='yarn dev'
 alias yb='yarn build'
-alias v=volta
+alias v='volta'
 alias c='code .'
 alias dcu='docker-compose up'
 
