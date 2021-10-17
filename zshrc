@@ -9,7 +9,7 @@ alias p='git pull --all'
 alias s='git status'
 alias ss='git status --ignored --show-stash'
 alias dg='git -C ~/dotfiles/'
-alias b='open "$(git remote get-url origin | sed '\''s/\.git$//'\'')"'
+alias b='open "${$(git remote get-url origin)%.git}"'
 alias n='npm'
 alias nd='npm run dev'
 alias nb='npm run build'
@@ -20,13 +20,13 @@ alias v='volta'
 alias c='code .'
 alias dcu='docker-compose up'
 
-touchp() {
+function touchp() {
   for arg in "$@"; do
     mkdir -p "$(dirname "$arg")" && touch "$arg"
   done
 }
 
-fzc() {
+function fzc() {
   local DIR
 
   DIR=$(dirname "$(fzf)")
@@ -34,7 +34,7 @@ fzc() {
   [[ $DIR ]] && cd "$DIR" || return
 }
 
-gc() {
+function gc() {
   local DIR
 
   DIR=$(ghq list | fzf)
@@ -42,7 +42,7 @@ gc() {
   [[ $DIR ]] && cd "$(ghq root)/$DIR" || return
 }
 
-gg() {
+function gg() {
   [[ $# = 0 ]] && return
 
   local QUERY
@@ -89,7 +89,7 @@ gg() {
   )
 }
 
-_my-backward-delete-word() {
+function _my-backward-delete-word() {
   local WORDCHARS=${WORDCHARS//[-\/]/}
 
   zle backward-delete-word
