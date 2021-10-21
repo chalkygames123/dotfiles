@@ -44,29 +44,11 @@ function gc() {
 }
 
 function gg() {
-  [[ $# = 0 ]] && return
+  if [[ $# = 0 ]]; then
+    echo 'fatal: You must specify a command to run.'
 
-  local QUERY
-  local COMMAND=()
-
-  while (( $# )); do
-    case $1 in
-      -q=* | --query=*)
-      QUERY="${1#*=}"
-      shift
-      ;;
-      -q | --query)
-      QUERY="$2"
-      shift 2
-      ;;
-      *)
-      COMMAND+=("$1")
-      shift
-      ;;
-    esac
-  done
-
-  [[ -z "${COMMAND[*]}" ]] && return
+    return
+  fi
 
   local DIRS
   local ESC
@@ -84,7 +66,7 @@ function gg() {
       printf '\n\n%s[m' "$ESC"
 
       cd "$(ghq root)/$DIR" || return
-      eval "${COMMAND[@]}"
+      eval "$*"
       cd - > /dev/null || return
     done
   )
