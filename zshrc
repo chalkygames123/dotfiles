@@ -133,8 +133,6 @@ zinit wait lucid as'program' for \
     junegunn/fzf \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
     x-motemen/ghq \
-  pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' atload'eval "$(pyenv init --path)"; eval "$(pyenv init -)"' \
-    pyenv/pyenv \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
     BurntSushi/ripgrep \
   from'gh-r' pick'shellcheck/shellcheck' mv'shellcheck* -> shellcheck' \
