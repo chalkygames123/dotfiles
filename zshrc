@@ -135,6 +135,8 @@ zinit wait lucid as'program' for \
     x-motemen/ghq \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
     BurntSushi/ripgrep \
+  from'gh-r' pick'rnr/rnr' mv'rnr* -> rnr' \
+    ismaelgv/rnr \
   from'gh-r' pick'shellcheck/shellcheck' mv'shellcheck* -> shellcheck' \
     koalaman/shellcheck \
   from'gh-r' bpick'*macos.tar.gz' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' \
