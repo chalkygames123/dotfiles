@@ -28,7 +28,7 @@
 [pull]
 	rebase = true
 [push]
-	default = upstream
+	default = current
 [user]
 	name = Takuya Fukuju
 	email = chalkygames123@gmail.com
