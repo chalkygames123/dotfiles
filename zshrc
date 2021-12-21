@@ -116,7 +116,7 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 zinit wait lucid as'program' for \
-  from'gh-r' bpick'*arm64*' pick'actionlint' atclone'mkdir -p man/man1 && ln -fs ../actionlint.1 man/man1' atpull'%atclone' \
+  from'gh-r' bpick$([[ $(arch) == 'arm64' ]] && echo '*arm64*') pick'actionlint' atclone'mkdir -p man/man1 && ln -fs ../actionlint.1 man/man1' atpull'%atclone' \
     rhysd/actionlint \
   from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi' \
     @sharkdp/bat \
@@ -124,7 +124,7 @@ zinit wait lucid as'program' for \
     cli/cli \
   from'gh-r' pick'delta/delta' mv'delta* -> delta' \
     dandavison/delta \
-  from'gh-r' bpick'*arm64*' pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' \
+  from'gh-r' bpick$([[ $(arch) == 'arm64' ]] && echo '*arm64*') pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' \
     direnv/direnv \
   from'gh-r' pick'dust/dust' mv'dust* -> dust' \
     bootandy/dust \
@@ -134,7 +134,7 @@ zinit wait lucid as'program' for \
     junegunn/fzf \
   from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
     x-motemen/ghq \
-  from'gh-r' bpick'*arm64*' pick'lazygit/lazygit' mv'lazygit* -> lazygit' \
+  from'gh-r' bpick$([[ $(arch) == 'arm64' ]] && echo '*arm64*') pick'lazygit/lazygit' mv'lazygit* -> lazygit' \
     jesseduffield/lazygit \
   from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
     BurntSushi/ripgrep \
@@ -142,7 +142,7 @@ zinit wait lucid as'program' for \
     ismaelgv/rnr \
   from'gh-r' pick'shellcheck/shellcheck' mv'shellcheck* -> shellcheck' \
     koalaman/shellcheck \
-  from'gh-r' bpick'*aarch64*' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' \
+  from'gh-r' bpick$([[ $(arch) == 'arm64' ]] && echo '*aarch64*') pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' \
     volta-cli/volta \
   from'gh-r' pick'watchexec/watchexec' mv'watchexec* -> watchexec' atclone'mkdir -p man/man1 && ln -fs ../../watchexec/watchexec.1 man/man1; ln -fs watchexec/completions/zsh _watchexec' atpull'%atclone' \
     watchexec/watchexec
