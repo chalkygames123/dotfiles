@@ -2,7 +2,7 @@
  fd --hidden --no-ignore --type file --exec-batch rm \; '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User
  fd --hidden --no-ignore --type file --exec-batch rm \; '^\.DS_Store$' .
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
- tree -aF -I '.git|dist|node_modules'
+ tree -aF -I '.git' --gitignore
  vi ~/.gitconfig
  vi ~/.zshrc
  vi ~/.zsh_history
