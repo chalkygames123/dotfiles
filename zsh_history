@@ -17,6 +17,7 @@
  git commit --amend --no-edit
  git commit -m ''
  npm run build -- --dist-dir="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")"
+ pbpaste | svgo --config=~/dotfiles/svgo.config.js - | pbcopy
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
  exec $SHELL -l
