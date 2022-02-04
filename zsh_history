@@ -6,12 +6,11 @@
  vi ~/.gitconfig
  vi ~/.zshrc
  vi ~/.zsh_history
- brew upgrade; brew cleanup
- zinit self-update; zinit update --parallel
+ brew upgrade; brew cleanup; zinit self-update; zinit update --parallel
  (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
  git reflog expire --expire=now --all
  git rebase --interactive --autosquash
- git clean -fdx -e node_modules -n
+ git clean -fdx -e .husky -e node_modules -n
  git diff --staged --ignore-space-change
  git commit --reuse-message=@ --edit
  git commit --amend --no-edit
