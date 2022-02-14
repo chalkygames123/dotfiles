@@ -12,10 +12,12 @@
  git rebase --interactive --autosquash
  git clean -fdx -e .husky -e node_modules -n
  git diff --staged --ignore-space-change
+ git show --ignore-space-change
  git commit --reuse-message=@ --edit
  git commit --amend --no-edit
  git commit -m ''
  npm run build -- --dist-dir="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")"
+ sirv dist --dev --etag
  pbpaste | svgo --config=~/dotfiles/svgo.config.js --datauri=unenc - | pbcopy
  pbpaste | svgo --config=~/dotfiles/svgo.config.js --pretty - | pbcopy
  mkdir "../$(basename "$PWD")-docs"
