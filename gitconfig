@@ -8,6 +8,7 @@
 	m = merge
 	p = pull
 	r = rebase
+	re = revert
 	s = status
 	sh = show
 	st = stash
