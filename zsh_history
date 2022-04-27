@@ -13,6 +13,7 @@
  git clean -fdx -e .husky -e node_modules -n
  git diff --staged --ignore-space-change
  git show --ignore-space-change
+ pbpaste | git commit -F - --edit
  git commit --reuse-message=@ --edit
  git commit --amend --no-edit
  git commit -m ''
