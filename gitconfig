@@ -19,6 +19,10 @@
 	side-by-side = true
 	syntax-theme = GitHub
 	tabs = 2
+[diff]
+	algorithm = histogram
+	colorMoved = dimmed-zebra
+	colorMovedWS = ignore-space-change
 [fetch]
 	prune = true
 [init]
@@ -26,6 +30,8 @@
 [log]
 	abbrevCommit = true
 	date = iso8601
+[merge]
+	conflictStyle = zdiff3
 [pull]
 	rebase = true
 [push]
