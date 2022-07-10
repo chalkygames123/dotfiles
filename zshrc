@@ -20,7 +20,7 @@ alias yd='yarn dev'
 alias yb='yarn build'
 alias v='volta'
 alias c='code .'
-alias dcu='docker-compose up'
+alias dcu='docker compose up'
 
 function touchp() {
   for arg in "$@"; do
@@ -149,5 +149,4 @@ zinit wait lucid as'program' for \
 
 zinit wait lucid as'completion' for \
   https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
-  https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose \
   atinit'zicompinit' https://github.com/zsh-users/zsh-completions/blob/master/src/_yarn
