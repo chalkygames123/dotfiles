@@ -6,6 +6,7 @@
  vi ~/.zshrc
  vi ~/.zsh_history
  brew upgrade; brew cleanup; zinit self-update; zinit update --parallel; rehash
+ volta install node@latest npm-check-updates sirv-cli svgo
  (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
  git config --global --edit
  git reflog expire --expire=now --all
