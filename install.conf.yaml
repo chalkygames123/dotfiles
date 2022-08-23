@@ -2,10 +2,7 @@
     ~/:
 
 - link:
-    ~/.config/git/ignore:
-      create: true
-      path: config/git/ignore
-    ~/.gitconfig:
+    ~/.config:
     ~/.vimrc:
     ~/.zsh_history:
       force: true

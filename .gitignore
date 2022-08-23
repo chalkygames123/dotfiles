@@ -1,1 +1,5 @@
+config/configstore
+config/filezilla
+config/gh
+config/wakatime
 Brewfile.lock.json
