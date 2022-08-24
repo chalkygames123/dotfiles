@@ -4,7 +4,11 @@
 - link:
     ~/.config:
     ~/.vimrc:
+    ~/.zprofile:
+    ~/.zsh_history:
+      force: true
     ~/.zshenv:
+    ~/.zshrc:
 
 - shell:
     - defaults write -g "InitialKeyRepeat" -float "10"

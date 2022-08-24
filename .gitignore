@@ -2,5 +2,4 @@ config/configstore
 config/filezilla
 config/gh
 config/wakatime
-config/zsh/.zcompdump
 Brewfile.lock.json

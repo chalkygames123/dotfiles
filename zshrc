@@ -81,6 +81,19 @@ function _my-backward-delete-word() {
   zle backward-delete-word
 }
 
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PS1='
+%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
+export HISTFILE="$HOME/dotfiles/zsh_history"
+
+export LESSHISTFILE=-
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+
 zle -N _my-backward-delete-word
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^[^?' _my-backward-delete-word
@@ -91,18 +104,6 @@ setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 setopt MAGIC_EQUAL_SUBST
 unsetopt FLOW_CONTROL
-
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-export PS1='
-%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
-
-export LESSHISTFILE=-
-
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 if type brew &>/dev/null; then
   fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
