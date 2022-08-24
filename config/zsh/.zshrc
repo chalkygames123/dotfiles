@@ -9,7 +9,6 @@ alias p='git pull --all'
 alias rr='git remote --verbose'
 alias s='git status'
 alias ss='git status --ignored --show-stash'
-alias dg='git -C ~/dotfiles/'
 alias b='open "${$(git remote get-url origin)%.git}"'
 alias n='npm'
 alias nr='npm run'
@@ -93,16 +92,16 @@ setopt INC_APPEND_HISTORY
 setopt MAGIC_EQUAL_SUBST
 unsetopt FLOW_CONTROL
 
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PS1='
 %B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
-export HISTFILE=~/dotfiles/zsh_history
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 export LESSHISTFILE=-
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 if type brew &>/dev/null; then
