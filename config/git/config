@@ -23,7 +23,6 @@
 [diff]
 	algorithm = histogram
 	colorMoved = dimmed-zebra
-	colorMovedWS = ignore-space-change
 [fetch]
 	prune = true
 [init]
