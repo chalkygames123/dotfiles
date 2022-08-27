@@ -1,6 +1,6 @@
 {
-  "git.detectSubmodules": false,
-  "search.exclude": {
-    "dotbot": true
-  }
+	"git.detectSubmodules": false,
+	"search.exclude": {
+		"dotbot": true
+	}
 }
