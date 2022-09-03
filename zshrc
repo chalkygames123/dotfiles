@@ -139,7 +139,7 @@ zinit wait lucid as'program' for \
 		bootandy/dust \
 	from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' \
 		@sharkdp/fd \
-	pick'bin/fzf' atclone'./install --bin' atpull'%atclone' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
+	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
 		junegunn/fzf \
 	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
 		x-motemen/ghq \
