@@ -11,6 +11,8 @@
  git config --global --edit
  git reflog expire --expire=now --all
  git clean -fdx -e .husky -e node_modules -n
+ git ls-files . --exclude-standard --others
+ git ls-files . --exclude-standard --others --ignored --exclude='!node_modules'
  git diff --staged --ignore-space-change
  git show --ignore-space-change
  git rebase --interactive --autosquash
@@ -23,6 +25,7 @@
  sirv dist --dev --etag
  pbpaste | svgo --config=~/svgo.config.js --datauri=unenc - | pbcopy
  pbpaste | svgo --config=~/svgo.config.js --pretty - | pbcopy
+ svgo --config=~/svgo/svgo.config.js --pretty "$(pbpaste)"
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
  exec $SHELL -l
