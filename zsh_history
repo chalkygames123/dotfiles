@@ -16,6 +16,7 @@
  git diff --staged --ignore-space-change
  git show --ignore-space-change
  git rebase --interactive --autosquash
+ git commit --fixup=
  pbpaste | git commit -F - --edit
  git commit --reuse-message=@ --edit
  git commit --amend --no-edit
