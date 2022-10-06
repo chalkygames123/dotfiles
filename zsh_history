@@ -1,6 +1,7 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
  fd --hidden --no-ignore --type file --exec-batch rm \; '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User
  fd --hidden --no-ignore --type file --exec-batch rm \; '^\.DS_Store$' .
+ find . -type f -perm -744 | xargs -I {} sh -c 'chmod -x {}; xattr -c {}'
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
  tree -aF -I '.git' --gitignore
  vi ~/.zshrc
