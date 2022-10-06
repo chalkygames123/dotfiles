@@ -1,28 +1,15 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+ volta install @antfu/ni node@latest npm-check-updates sirv-cli svgo
+ brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
+ (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
+ git config --global --edit
+ vi ~/.zshrc
+ vi ~/.zsh_history
+ rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
  fd --hidden --no-ignore --type file --exec-batch rm \; '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User
  fd --hidden --no-ignore --type file --exec-batch rm \; '^\.DS_Store$' .
  find . -type f -perm -744 | xargs -I {} sh -c 'chmod -x {}; xattr -c {}'
- rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
  tree -aF -I '.git' --gitignore
- vi ~/.zshrc
- vi ~/.zsh_history
- brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
- volta install @antfu/ni node@latest npm-check-updates sirv-cli svgo
- (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
- git config --global --edit
- git reflog expire --expire=now --all
- git clean -fdx -e .husky -e node_modules -n
- git ls-files . --exclude-standard --others
- git ls-files . --exclude-standard --others --ignored --exclude='!node_modules'
- git diff --staged --ignore-space-change
- git show --ignore-space-change
- git rebase --interactive --autosquash
- git commit --fixup=
- pbpaste | git commit -F - --edit
- git commit --reuse-message=@ --edit
- git commit --amend --no-edit
- git commit -m ''
- git push --push-option=ci.skip
  npm run build -- --dist-dir="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")"
  sirv dist --dev --etag
  pbpaste | svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri=unenc - | pbcopy
@@ -30,4 +17,17 @@
  svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
+ git reflog expire --expire=now --all
+ git push --push-option=ci.skip
+ git ls-files . --exclude-standard --others
+ git ls-files . --exclude-standard --others --ignored --exclude='!node_modules'
+ git clean -fdx -e .husky -e node_modules -n
+ git show --ignore-space-change
+ git diff --staged --ignore-space-change
+ git rebase --interactive --autosquash
+ git commit --fixup=
+ git commit --amend --no-edit
+ pbpaste | git commit -F - --edit
+ git commit --reuse-message=@ --edit
+ git commit -m ''
  exec $SHELL -l
