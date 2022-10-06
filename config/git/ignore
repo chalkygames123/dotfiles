@@ -1,6 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos
+# Created by https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode
 
 ### macOS ###
 # General
@@ -31,4 +30,33 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.toptal.com/developers/gitignore/api/macos
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
+.vscode/*.code-snippets
+
+# Ignore code-workspaces
+*.code-workspace
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
