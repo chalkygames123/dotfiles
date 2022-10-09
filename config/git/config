@@ -10,6 +10,7 @@
 	pu = push
 	r = rebase
 	re = revert
+	res = reset
 	s = status
 	sh = show
 	st = stash
