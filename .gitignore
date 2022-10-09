@@ -1,6 +1,7 @@
 config/configstore
 config/filezilla
 config/gh
+config/grammarly-languageserver
 config/lazygit/state.yml
 config/wakatime
 Brewfile.lock.json
