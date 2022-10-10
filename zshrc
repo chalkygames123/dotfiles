@@ -23,23 +23,31 @@ function touchp() {
 	done
 }
 
-function fzc() {
+function cdfzf() {
 	local DIR
 
-	DIR=$(dirname "$(fzf)")
+	if ! DIR=$(fzf); then
+		return
+	fi
 
-	[[ $DIR ]] && cd "$DIR" || return
+	if [[ -d $DIR ]]; then
+		cd "$DIR" || return
+	else
+		cd "$(dirname "$DIR")" || return
+	fi
 }
 
-function gc() {
+function gitcd() {
 	local DIR
 
-	DIR=$(ghq list | fzf)
+	if ! DIR=$(ghq list | fzf); then
+		return
+	fi
 
-	[[ $DIR ]] && cd "$(ghq root)/$DIR" || return
+	cd "$(ghq root)/$DIR" || return
 }
 
-function gg() {
+function gitxargs() {
 	if [[ $# = 0 ]]; then
 		echo 'fatal: You must specify a command to run.'
 
@@ -50,7 +58,7 @@ function gg() {
 	local ESC
 	local COLUMNS
 
-	DIRS=$(ghq list "$QUERY")
+	DIRS=$(ghq list "$GHQ_ARGS")
 	ESC=$(printf '\033')
 	COLUMNS=$(tput cols)
 
@@ -63,7 +71,6 @@ function gg() {
 
 			cd "$(ghq root)/$DIR" || return
 			eval "$*"
-			cd - > /dev/null || return
 		done
 	)
 }
@@ -132,7 +139,7 @@ zinit wait lucid as'program' for \
 		@sharkdp/fd \
 	from'gh-r' mv'bin/ec* -> ec' cp'ec -> editorconfig-checker' \
 		editorconfig-checker/editorconfig-checker \
-	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --type file --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
+	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
 		junegunn/fzf \
 	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
 		x-motemen/ghq \
