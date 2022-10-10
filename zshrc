@@ -89,8 +89,10 @@ export NODE_REPL_HISTORY=-
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 zle -N _my-backward-delete-word
-bindkey '^[[Z' reverse-menu-complete
 bindkey '^[^?' _my-backward-delete-word
+bindkey '^U' backward-kill-line
+bindkey '^^' redo
+bindkey '^[[Z' reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 
