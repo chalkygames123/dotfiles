@@ -138,8 +138,6 @@ zinit wait lucid as'program' for \
 		junegunn/fzf \
 	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
 		x-motemen/ghq \
-	from'gh-r' pick'lazygit/lazygit' mv'lazygit* -> lazygit' \
-		jesseduffield/lazygit \
 	from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
 		BurntSushi/ripgrep \
 	from'gh-r' pick'rnr/rnr' mv'rnr* -> rnr' \
