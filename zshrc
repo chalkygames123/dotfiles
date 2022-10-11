@@ -18,33 +18,35 @@ alias c='code .'
 alias dcu='docker compose up'
 
 function touchp() {
+	declare arg
+
 	for arg in "$@"; do
 		mkdir -p "$(dirname "$arg")" && touch "$arg"
 	done
 }
 
 function cdfzf() {
-	local DIR
+	declare selected
 
-	if ! DIR=$(fzf); then
+	if ! selected=$(fzf); then
 		return
 	fi
 
-	if [[ -d $DIR ]]; then
-		cd "$DIR" || return
+	if [[ -d $selected ]]; then
+		cd "$selected" || return
 	else
-		cd "$(dirname "$DIR")" || return
+		cd "$(dirname "$selected")" || return
 	fi
 }
 
 function gitcd() {
-	local DIR
+	declare selected
 
-	if ! DIR=$(ghq list | fzf); then
+	if ! selected=$(ghq list | fzf); then
 		return
 	fi
 
-	cd "$(ghq root)/$DIR" || return
+	cd "$(ghq root)/$selected" || return
 }
 
 function gitxargs() {
@@ -54,29 +56,25 @@ function gitxargs() {
 		return
 	fi
 
-	local DIRS
-	local ESC
-	local COLUMNS
+	declare dirs
 
-	DIRS=$(ghq list "$GHQ_ARGS")
-	ESC=$(printf '\033')
-	COLUMNS=$(tput cols)
+	dirs=$(ghq list "$GHQ_LIST_ARGS")
 
 	(
-		echo "$DIRS" | while IFS= read -r DIR; do
-			printf '%s[34m' "$ESC"
-			printf '\n%s\n' "$DIR"
-			printf '─%.0s' {1.."$COLUMNS"}
-			printf '\n\n%s[m' "$ESC"
+		echo "$dirs" | while IFS= read -r dir; do
+			printf '\e[34m%s\n' "$dir"
+			printf '─%.s' $(seq 1 "$COLUMNS")
+			printf '\e[m\n'
 
-			cd "$(ghq root)/$DIR" || return
-			eval "$*"
+			cd "$(ghq root)/$dir" && eval "$*"
+
+			printf '\n'
 		done
 	)
 }
 
 function _my-backward-delete-word() {
-	local WORDCHARS=${WORDCHARS//[-\/]/}
+	declare WORDCHARS=${WORDCHARS//[-\/]/}
 
 	zle backward-delete-word
 }
