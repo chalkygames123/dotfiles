@@ -122,7 +122,7 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-zinit wait lucid as'program' for \
+zinit as'program' light-mode for \
 	from'gh-r' pick'actionlint' atclone'mkdir -p man/man1 && ln -fs ../actionlint.1 man/man1' atpull'%atclone' \
 		rhysd/actionlint \
 	from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi' \
@@ -154,6 +154,6 @@ zinit wait lucid as'program' for \
 	from'gh-r' pick'watchexec/watchexec' mv'watchexec* -> watchexec' atclone'mkdir -p man/man1 && ln -fs ../../watchexec/watchexec.1 man/man1; ln -fs watchexec/completions/zsh _watchexec' atpull'%atclone' \
 		watchexec/watchexec
 
-zinit wait lucid as'completion' for \
+zinit as'completion' light-mode for \
 	https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
 	atinit'zicompinit' https://github.com/zsh-users/zsh-completions/blob/master/src/_yarn
