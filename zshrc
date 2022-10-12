@@ -93,8 +93,7 @@ _my-backward-delete-word() {
 	zle backward-delete-word
 }
 
-export PS1='
-%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
+export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
