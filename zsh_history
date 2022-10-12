@@ -22,8 +22,7 @@
  git ls-files . --exclude-standard --others
  git ls-files . --exclude-standard --others --ignored --exclude='!node_modules'
  git clean -fdx -e .husky -e node_modules -n
- git show --ignore-space-change
- git diff --staged --ignore-space-change
+ git diff --staged
  git rebase --interactive --autosquash
  git commit --fixup=
  git commit --amend --no-edit
