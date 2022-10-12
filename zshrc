@@ -29,7 +29,7 @@ touchp() {
 	done
 }
 
-cdfzf() {
+cdf() {
 	declare selected
 
 	if ! selected="$(fzf)"; then
