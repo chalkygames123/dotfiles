@@ -17,7 +17,11 @@ alias v='volta'
 alias c='code .'
 alias dcu='docker compose up'
 
-function touchp() {
+manzsh() {
+	man zshbuiltins | less -p "^       $1"
+}
+
+touchp() {
 	declare arg
 
 	for arg in "$@"; do
@@ -25,12 +29,14 @@ function touchp() {
 	done
 }
 
-function cdfzf() {
+cdfzf() {
 	declare selected
 
-	if ! selected=$(fzf); then
+	if ! selected="$(fzf)"; then
 		return
 	fi
+
+	readonly selected
 
 	if [[ -d $selected ]]; then
 		cd "$selected" || return
@@ -39,41 +45,49 @@ function cdfzf() {
 	fi
 }
 
-function gitcd() {
+cdg() {
 	declare selected
 
-	if ! selected=$(ghq list | fzf); then
+	if ! selected="$(ghq list | fzf)"; then
 		return
 	fi
+
+	readonly selected
 
 	cd "$(ghq root)/$selected" || return
 }
 
-function gitxargs() {
-	if [[ $# = 0 ]]; then
-		echo 'fatal: You must specify a command to run.'
+xargsg() {
+	if [[ ! $* ]]; then
+		echo 'fatal: The command to be executed must be specified.'
 
-		return
+		return 1
 	fi
 
-	declare dirs
+	declare -a ghq_list_args
+	read -r -A ghq_list_args <<< "$GHQ_LIST_ARGS"
+	readonly ghq_list_args
 
-	dirs=$(ghq list "$GHQ_LIST_ARGS")
+	declare -a results
 
-	(
-		echo "$dirs" | while IFS= read -r dir; do
-			printf '\e[34m%s\n' "$dir"
+	ghq list "${ghq_list_args[@]}" | while IFS= read -r repository; do
+		results+=("$(
+			cd "$(ghq root)/$repository" || return
+
+			printf '\e[34m%s\n' "$repository"
 			printf '─%.s' $(seq 1 "$COLUMNS")
 			printf '\e[m\n'
 
-			cd "$(ghq root)/$dir" && eval "$*"
+			eval "$*"
+		)")
+	done
 
-			printf '\n'
-		done
-	)
+	readonly results
+
+	echo "${(j:\n\n:)results}"
 }
 
-function _my-backward-delete-word() {
+_my-backward-delete-word() {
 	declare WORDCHARS=${WORDCHARS//[-\/]/}
 
 	zle backward-delete-word
