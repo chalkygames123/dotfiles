@@ -58,17 +58,17 @@ cdg() {
 }
 
 xargsg() {
+	declare -a ghq_list_args
+	declare -i i=1
+
 	if [[ ! $* ]]; then
 		echo 'fatal: The command to be executed must be specified.'
 
 		return 1
 	fi
 
-	declare -a ghq_list_args
 	read -r -A ghq_list_args <<< "$GHQ_LIST_ARGS"
 	readonly ghq_list_args
-
-	declare -i i=1
 
 	for repository in $(ghq list "${ghq_list_args[@]}"); do
 		cd "$(ghq root)/$repository" || return
