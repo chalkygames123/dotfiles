@@ -68,23 +68,20 @@ xargsg() {
 	read -r -A ghq_list_args <<< "$GHQ_LIST_ARGS"
 	readonly ghq_list_args
 
-	declare -a results
+	declare -i i=1
 
-	ghq list "${ghq_list_args[@]}" | while IFS= read -r repository; do
-		results+=("$(
-			cd "$(ghq root)/$repository" || return
+	for repository in $(ghq list "${ghq_list_args[@]}"); do
+		cd "$(ghq root)/$repository" || return
 
-			printf '\e[34m%s\n' "$repository"
-			printf '─%.s' $(seq 1 "$COLUMNS")
-			printf '\e[m\n'
+		[[ i -gt 1 ]] && printf '\n'
+		printf '\e[34m%s\n' "$repository"
+		printf '─%.s' $(seq 1 "$COLUMNS")
+		printf '\e[m\n'
 
-			eval "$*"
-		)")
+		eval "$*"
+
+		i=$(( i + 1 ))
 	done
-
-	readonly results
-
-	echo "${(j:\n\n:)results}"
 }
 
 _my-backward-delete-word() {
