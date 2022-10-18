@@ -12,8 +12,8 @@
  tree -aF -I '.git' --gitignore
  npm run build -- --dist-dir="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")"
  sirv dist --dev --etag
- pbpaste | svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri=unenc - | pbcopy
- pbpaste | svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty - | pbcopy
+ svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri=unenc --string "$(pbpaste)" | pbcopy
+ svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty --string "$(pbpaste)" | pbcopy
  svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
  mkdir "../$(basename "$PWD")-docs"
  open "../$(basename "$PWD")-docs"
