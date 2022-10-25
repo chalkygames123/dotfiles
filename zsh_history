@@ -24,6 +24,7 @@
  git clean -fdx -e .husky -e node_modules -n
  git log @{u}..
  git diff @{u}..
+ git diff --staged ':!*package-lock.json'
  git diff --staged
  git rebase --interactive --autosquash
  git commit --fixup=
