@@ -100,7 +100,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export HISTFILE="$HOME/dotfiles/zsh_history"
 export LESSHISTFILE=-
-export NODE_REPL_HISTORY=-
+export NODE_REPL_HISTORY=
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 zle -N _my-backward-delete-word
