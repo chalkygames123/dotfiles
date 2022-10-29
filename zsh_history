@@ -1,7 +1,7 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
  volta install @antfu/ni node@latest npm-check-updates sirv-cli svgo
  brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
- (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --staged)}}" | sed 's/\(.*\), /\1 and /')")
+ (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed 's/\(.*\), /\1 and /')")
  git config --global --edit
  vi ~/.zshrc
  vi ~/.zsh_history
@@ -24,8 +24,8 @@
  git clean -fdx -e .husky -e node_modules -n
  git log @{u}..
  git diff @{u}..
- git diff --staged ':!*package-lock.json'
- git diff --staged
+ git diff --cached ':!*package-lock.json'
+ git diff --cached
  git rebase --interactive --autosquash
  git commit --fixup=
  git commit --amend --no-edit
