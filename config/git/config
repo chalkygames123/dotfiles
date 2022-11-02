@@ -38,6 +38,8 @@
 	rebase = true
 [push]
 	default = current
+[sequence]
+	editor = code --wait
 [user]
 	name = Takuya Fukuju
 	email = chalkygames123@gmail.com
