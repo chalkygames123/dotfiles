@@ -102,6 +102,7 @@ export HISTFILE="$HOME/dotfiles/zsh_history"
 export LESSHISTFILE=-
 export NODE_REPL_HISTORY=
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+[[ ! -d $WAKATIME_HOME ]] && mkdir "$XDG_CONFIG_HOME/wakatime"
 
 zle -N _my-backward-delete-word
 bindkey '^[^?' _my-backward-delete-word
