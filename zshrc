@@ -38,11 +38,7 @@ cdf() {
 
 	readonly selected
 
-	if [[ -d $selected ]]; then
-		cd "$selected" || return
-	else
-		cd "$(dirname "$selected")" || return
-	fi
+	cd "$selected" || return
 }
 
 cdg() {
@@ -148,7 +144,7 @@ zinit as'program' light-mode for \
 		@sharkdp/fd \
 	from'gh-r' mv'bin/ec* -> ec' cp'ec -> editorconfig-checker' \
 		editorconfig-checker/editorconfig-checker \
-	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
+	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --type file --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
 		junegunn/fzf \
 	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
 		x-motemen/ghq \
