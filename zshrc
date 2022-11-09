@@ -149,6 +149,8 @@ zinit as'program' light-mode for \
 		junegunn/fzf \
 	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
 		x-motemen/ghq \
+	from'gh-r' pick'hyperfine/hyperfine' mv'hyperfine* -> hyperfine' atclone'mkdir -p man/man1 && ln -fs ../../hyperfine/hyperfine.1 man/man1; ln -fs hyperfine/autocomplete/hyperfine.bash _hyperfine' atpull'%atclone' \
+		@sharkdp/hyperfine \
 	from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
 		BurntSushi/ripgrep \
 	from'gh-r' pick'rnr/rnr' mv'rnr* -> rnr' \
