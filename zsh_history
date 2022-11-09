@@ -16,8 +16,8 @@
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri unenc --string "$(pbpaste)" | pbcopy
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty --string "$(pbpaste)" | pbcopy
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
- [[ $PWD =~ ~/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
- [[ $PWD =~ ~/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
+ [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
+ [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
  git reflog expire --expire now --all
  git push --push-option ci.skip
  git ls-files . --exclude-standard --others
