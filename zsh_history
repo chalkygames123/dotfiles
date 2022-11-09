@@ -1,7 +1,7 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
  volta install @antfu/ni node@latest npm-check-updates sirv-cli svgo
  brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
- (cd ~/dotfiles/ && git commit -m "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed 's/\(.*\), /\1 and /')")
+ (cd ~/dotfiles/ && git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed 's/\(.*\), /\1 and /')")
  git config --global --edit
  vi ~/.zshrc
  vi ~/.zsh_history
@@ -22,15 +22,15 @@
  git push --push-option ci.skip
  git ls-files . --exclude-standard --others
  git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
- git clean -fdx -e .husky -e node_modules -n
- git log @{u}.. --patch
- git diff @{u}..
+ git clean -d --force --exclude '.husky' --exclude 'node_modules' -x --dry-run
+ git log @{upstream}.. --patch
+ git diff @{upstream}..
  git diff --cached ':!*package-lock.json'
  git diff --cached
  git rebase --interactive --autosquash
  git commit --fixup=
  git commit --amend --no-edit
- pbpaste | git commit -F - --edit
+ pbpaste | git commit --file - --edit
  git commit --reuse-message @ --edit
- git commit -m ''
+ git commit --message ''
  exec $SHELL -l
