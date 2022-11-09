@@ -141,10 +141,10 @@ zinit as'program' light-mode for \
 		direnv/direnv \
 	from'gh-r' pick'dust/dust' mv'dust* -> dust' \
 		bootandy/dust \
-	from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' \
-		@sharkdp/fd \
 	from'gh-r' mv'bin/ec* -> ec' cp'ec -> editorconfig-checker' \
 		editorconfig-checker/editorconfig-checker \
+	from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' \
+		@sharkdp/fd \
 	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --type file --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
 		junegunn/fzf \
 	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
