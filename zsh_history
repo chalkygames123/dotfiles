@@ -23,7 +23,7 @@
  git ls-files . --exclude-standard --others
  git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
  git clean -fdx -e .husky -e node_modules -n
- git log @{u}..
+ git log @{u}.. --patch
  git diff @{u}..
  git diff --cached ':!*package-lock.json'
  git diff --cached
