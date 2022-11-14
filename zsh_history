@@ -1,5 +1,5 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
- volta install @antfu/ni node@latest npm-check-updates sirv-cli svgo
+ OLD="$(volta list --format plain)" zsh -c 'volta install @antfu/ni node@latest npm-check-updates sirv-cli svgo && diff --unified=0 --color=always <(echo "$OLD") <(volta list --format plain) | tail -n +4'
  brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
  (cd ~/dotfiles/ && git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed 's/\(.*\), /\1 and /')")
  git config --global --edit
