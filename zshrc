@@ -128,6 +128,10 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+zinit light-mode for \
+	zsh-users/zsh-autosuggestions \
+	zsh-users/zsh-syntax-highlighting
+
 zinit as'program' light-mode for \
 	from'gh-r' pick'actionlint' atclone'mkdir -p man/man1 && ln -fs ../actionlint.1 man/man1' atpull'%atclone' \
 		rhysd/actionlint \
