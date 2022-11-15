@@ -161,7 +161,7 @@ zinit as'program' light-mode for \
 		ismaelgv/rnr \
 	from'gh-r' pick'shellcheck/shellcheck' mv'shellcheck* -> shellcheck' \
 		koalaman/shellcheck \
-	from'gh-r' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$PWD"; export PATH="$VOLTA_HOME/bin:$PATH"' \
+	from'gh-r' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$HOME/.volta"; export PATH="$VOLTA_HOME/bin:$PATH"' \
 		volta-cli/volta \
 	from'gh-r' pick'watchexec/watchexec' mv'watchexec* -> watchexec' atclone'mkdir -p man/man1 && ln -fs ../../watchexec/watchexec.1 man/man1; ln -fs watchexec/completions/zsh _watchexec' atpull'%atclone' \
 		watchexec/watchexec
