@@ -1,5 +1,5 @@
 alias a='git add .'
-alias b='if git rev-parse --is-inside-work-tree; then open "${"$(git remote get-url origin)"%.git}"; fi'
+alias b='git rev-parse --is-inside-work-tree && open "${"$(git remote get-url origin)"%.git}"'
 alias bb='git branch --all --verbose --verbose'
 alias c='code .'
 alias d='git diff'
