@@ -67,7 +67,7 @@ xargsg() {
 	read -r -A ghq_list_args <<< "$GHQ_LIST_ARGS"
 	readonly ghq_list_args
 
-	for repository in $(ghq list "${ghq_list_args[@]}"); do
+	for repository in $(ghq list "${ghq_list_args[@]}"); do (
 		cd "$(ghq root)/$repository" || return
 
 		[[ i -gt 1 ]] && printf '\n'
@@ -78,7 +78,7 @@ xargsg() {
 		eval "$*"
 
 		i=$(( i + 1 ))
-	done
+	) done
 }
 
 _my-backward-delete-word() {
