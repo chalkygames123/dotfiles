@@ -129,7 +129,7 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 zinit light-mode for \
-spaceship-prompt/spaceship-prompt \
+	spaceship-prompt/spaceship-prompt \
 	zsh-users/zsh-autosuggestions \
 	zsh-users/zsh-syntax-highlighting
 
