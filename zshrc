@@ -160,6 +160,8 @@ zinit as'program' light-mode for \
 		BurntSushi/ripgrep \
 	from'gh-r' pick'rnr/rnr' mv'rnr* -> rnr' \
 		ismaelgv/rnr \
+	from'gh-r' mv'shfmt* -> shfmt' \
+		@mvdan/sh \
 	from'gh-r' pick'shellcheck/shellcheck' mv'shellcheck* -> shellcheck' \
 		koalaman/shellcheck \
 	from'gh-r' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$HOME/.volta"; export PATH="$VOLTA_HOME/bin:$PATH"' \
