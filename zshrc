@@ -71,7 +71,7 @@ xargsg() {
 		cd "$(ghq root)/$repository" || return
 
 		[[ i -gt 1 ]] && printf '\n'
-		printf '\e[34m%s\n' "$repository"
+		printf '\n\e[34m%s\n' "$repository"
 		printf '─%.s' $(seq 1 "$COLUMNS")
 		printf '\e[m\n'
 
