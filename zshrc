@@ -109,6 +109,7 @@ bindkey '^[[Z' reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 
+setopt AUTO_CD
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 setopt MAGIC_EQUAL_SUBST
