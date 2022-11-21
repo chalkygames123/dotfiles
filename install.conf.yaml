@@ -25,6 +25,5 @@
     - killall Dock
     - command: |-
         echo 'NOTE: Some of the changes will take effect the next time you log in.\n'
-      description: ""
       quiet: true
       stdout: true
