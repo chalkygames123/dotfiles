@@ -94,7 +94,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$HOME/go/bin:$PATH"
 export HISTFILE="$HOME/.zsh_history"
 export LESSHISTFILE=-
 export NODE_REPL_HISTORY=
