@@ -56,7 +56,7 @@ cdg() {
 
 xargsg() {
 	declare -a ghq_list_args
-	declare -i i=1
+	declare -i i=0
 
 	if [[ ! $* ]]; then
 		echo 'fatal: The command to be executed must be specified.'
@@ -67,18 +67,20 @@ xargsg() {
 	read -r -A ghq_list_args <<< "$GHQ_LIST_ARGS"
 	readonly ghq_list_args
 
-	for repository in $(ghq list "${ghq_list_args[@]}"); do (
-		cd "$(ghq root)/$repository" || return
+	for repository in $(ghq list "${ghq_list_args[@]}"); do
+		(
+			cd "$(ghq root)/$repository" || return
 
-		[[ i -gt 1 ]] && printf '\n'
-		printf '\n\e[34m%s\n' "$repository"
-		printf '─%.s' $(seq 1 "$COLUMNS")
-		printf '\e[m\n'
+			[[ i -gt 0 ]] && printf '\n'
+			printf '\e[34m%s\n' "$repository"
+			printf '─%.s' $(seq 1 "$COLUMNS")
+			printf '\e[m\n'
 
-		eval "$*"
+			eval "$*"
+		)
 
 		i=$(( i + 1 ))
-	) done
+	done
 }
 
 _my-backward-delete-word() {
