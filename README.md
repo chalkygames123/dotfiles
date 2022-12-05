@@ -10,3 +10,5 @@ Make sure you have Command Line Tools for Xcode installed. If not, run `xcode-se
 2. Run `brew bundle`
 3. Run `./install` (this will remove existing `~/.zsh_history`)
 4. Run `unset HISTFILE; rm -rf ~/.zsh_sessions` and then reopen the terminal
+
+Optionally, you can run `./dump_applications` to back up your applications.
