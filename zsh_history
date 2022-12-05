@@ -29,6 +29,7 @@
  git diff --cached
  git rebase --interactive --autosquash
  git commit --fixup=
+ git reset --soft @^ && <.git/COMMIT_EDITMSG | git commit --file - --edit
  git commit --amend --no-edit
  pbpaste | git commit --file - --edit
  git commit --reuse-message @ --edit
