@@ -100,7 +100,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export HISTFILE="$HOME/.zsh_history"
-export LESSHISTFILE=-
+export LESSHISTFILE='-'
 export NODE_REPL_HISTORY=
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 [[ ! -d $WAKATIME_HOME ]] && mkdir "$XDG_CONFIG_HOME/wakatime"
