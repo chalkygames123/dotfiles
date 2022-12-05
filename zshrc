@@ -141,6 +141,8 @@ zinit light-mode for \
 zinit as'program' light-mode for \
 	from'gh-r' pick'actionlint' atclone'mkdir -p man/man1 && ln -fs ../actionlint.1 man/man1' atpull'%atclone' \
 		rhysd/actionlint \
+	from'gh-r' pick'auto-commit' mv'auto-commit* -> auto-commit' \
+		m1guelpf/auto-commit \
 	from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME=ansi' \
 		@sharkdp/bat \
 	from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' \
