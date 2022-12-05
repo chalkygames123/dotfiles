@@ -6,10 +6,10 @@
  vi ~/.zshrc
  vi ~/.zsh_history
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
- fd --hidden --no-ignore --type file '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User --exec-batch ls -AFGl \; --exec-batch rm
- fd --hidden --no-ignore --type file '^\.DS_Store$' . --exec-batch ls -AFGl \; --exec-batch rm
- fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type directory --exec-batch ls -AFGl \; --exec-batch chmod 755 \; --exec-batch xattr -c
- fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type file --exec-batch ls -AFGl \; --exec-batch chmod 644 \; --exec-batch xattr -c
+ fd --hidden --no-ignore --type file '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User --exec ls -AFGl \; --exec rm
+ fd --hidden --no-ignore --type file '^\.DS_Store$' . --exec ls -AFGl \; --exec rm
+ fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type directory --exec ls -AFGl \; --exec chmod 755 \; --exec xattr -c
+ fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type file --exec ls -AFGl \; --exec chmod 644 \; --exec xattr -c
  tree -aF -I '.git' --gitignore
  npm run build -- --dist-dir "$(basename $PWD)_$(date "+%Y%m%d%H%M%S")"
  sirv dist --dev --etag
