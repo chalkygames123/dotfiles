@@ -1,3 +1,42 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-system_profiler -json SPApplicationsDataType | jq -r '[.SPApplicationsDataType[] | select((.obtained_from | test("^(identified_developer|mac_app_store)$")) and (.path | test("^/Applications/.+?\\.app/|/Applications/Utilities|/Library") | not) and (.signed_by | index("Developer ID Application: Adobe Inc. (JQ525L2MZD)") | not))] | group_by(.obtained_from)[] | sort_by(._name)[] | "\(.obtained_from) \"\(._name)\""' > applications
+cd "$(dirname "$0")" || return
+
+declare installed_applications
+declare added_applications
+declare added_applications_count
+declare removed_applications
+declare removed_applications_count
+
+installed_applications="$(system_profiler -json SPApplicationsDataType | jq -r '[.SPApplicationsDataType[] | select((.obtained_from | test("^(identified_developer|mac_app_store)$")) and (.path | test("^/Applications/.+?\\.app/|/Applications/Utilities|/Library") | not) and (.signed_by | index("Developer ID Application: Adobe Inc. (JQ525L2MZD)") | not))] | group_by(.obtained_from)[] | sort_by(._name)[] | "\(.obtained_from) \"\(._name)\""')"
+readonly installed_applications
+
+if echo "$installed_applications" | cmp -s applications -; then
+  echo 'Already up to date'
+else
+  added_applications="$(echo "$installed_applications" | diff -u applications - | tail -n +4 | grep '^\+' | sed 's/\+//')"
+  readonly added_applications
+
+  removed_applications="$(echo "$installed_applications" | diff -u - applications | tail -n +4 | grep '^\+' | sed 's/\+//')"
+  readonly removed_applications
+
+  if [[ -n $added_applications ]]; then
+    added_applications_count="$(echo "$added_applications" | wc -l | tr -d '[:space:]')"
+    readonly added_applications_count
+
+    echo "Added $added_applications_count application$([[ added_applications_count -gt 1 ]] && printf 's'):"
+    echo "$added_applications"
+  fi
+
+  [[ -n $added_applications && -n $removed_applications ]] && printf '\n'
+
+  if [[ -n $removed_applications ]]; then
+    removed_applications_count="$(echo "$removed_applications" | wc -l | tr -d '[:space:]')"
+    readonly removed_applications_count
+
+    echo "Removed $removed_applications_count application$([[ removed_applications_count -gt 1 ]] && printf 's'):"
+    echo "$removed_applications"
+  fi
+
+  echo "$installed_applications" > applications
+fi
