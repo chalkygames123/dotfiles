@@ -8,7 +8,13 @@ declare added_applications_count
 declare removed_applications
 declare removed_applications_count
 
-installed_applications="$(system_profiler -json SPApplicationsDataType | jq -r '[.SPApplicationsDataType[] | select((.obtained_from | test("^(identified_developer|mac_app_store)$")) and (.path | test("^/Applications/.+?\\.app/|/Applications/Utilities|/Library") | not) and (.signed_by | index("Developer ID Application: Adobe Inc. (JQ525L2MZD)") | not))] | group_by(.obtained_from)[] | sort_by(._name)[] | "\(.obtained_from) \"\(._name)\""')"
+installed_applications="$(system_profiler -json SPApplicationsDataType | jq -r '[
+	.SPApplicationsDataType[] | select(
+		(.obtained_from | test("^(identified_developer|mac_app_store)$")) and
+		(.path | test("^/Applications/.+?\\.app/|/Applications/Utilities|/Library") | not) and
+		(.signed_by | index("Developer ID Application: Adobe Inc. (JQ525L2MZD)") | not)
+	)
+] | group_by(.obtained_from)[] | sort_by(._name)[] | "\(.obtained_from) \"\(._name)\""')"
 readonly installed_applications
 
 if echo "$installed_applications" | cmp -s applications -; then
