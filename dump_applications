@@ -18,31 +18,31 @@ installed_applications="$(system_profiler -json SPApplicationsDataType | jq -r '
 readonly installed_applications
 
 if echo "$installed_applications" | cmp -s applications -; then
-  echo 'Already up to date'
+	echo 'Already up to date'
 else
-  added_applications="$(echo "$installed_applications" | diff -u applications - | tail -n +4 | grep '^\+' | sed 's/\+//')"
-  readonly added_applications
+	added_applications="$(echo "$installed_applications" | diff -u applications - | tail -n +4 | grep '^\+' | sed 's/\+//')"
+	readonly added_applications
 
-  removed_applications="$(echo "$installed_applications" | diff -u - applications | tail -n +4 | grep '^\+' | sed 's/\+//')"
-  readonly removed_applications
+	removed_applications="$(echo "$installed_applications" | diff -u - applications | tail -n +4 | grep '^\+' | sed 's/\+//')"
+	readonly removed_applications
 
-  if [[ -n $added_applications ]]; then
-    added_applications_count="$(echo "$added_applications" | wc -l | tr -d '[:space:]')"
-    readonly added_applications_count
+	if [[ -n $added_applications ]]; then
+		added_applications_count="$(echo "$added_applications" | wc -l | tr -d '[:space:]')"
+		readonly added_applications_count
 
-    echo "Added $added_applications_count application$([[ added_applications_count -gt 1 ]] && printf 's'):"
-    echo "$added_applications"
-  fi
+		echo "Added $added_applications_count application$([[ added_applications_count -gt 1 ]] && printf 's'):"
+		echo "$added_applications"
+	fi
 
-  [[ -n $added_applications && -n $removed_applications ]] && printf '\n'
+	[[ -n $added_applications && -n $removed_applications ]] && printf '\n'
 
-  if [[ -n $removed_applications ]]; then
-    removed_applications_count="$(echo "$removed_applications" | wc -l | tr -d '[:space:]')"
-    readonly removed_applications_count
+	if [[ -n $removed_applications ]]; then
+		removed_applications_count="$(echo "$removed_applications" | wc -l | tr -d '[:space:]')"
+		readonly removed_applications_count
 
-    echo "Removed $removed_applications_count application$([[ removed_applications_count -gt 1 ]] && printf 's'):"
-    echo "$removed_applications"
-  fi
+		echo "Removed $removed_applications_count application$([[ removed_applications_count -gt 1 ]] && printf 's'):"
+		echo "$removed_applications"
+	fi
 
-  echo "$installed_applications" > applications
+	echo "$installed_applications" >applications
 fi
