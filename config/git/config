@@ -14,6 +14,8 @@
 	s = status
 	sh = show
 	st = stash
+[commit]
+	gpgsign = true
 [core]
 	editor = subl --wait
 	pager = delta
@@ -27,6 +29,15 @@
 	colorMoved = dimmed-zebra
 [fetch]
 	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
 [log]
@@ -39,17 +50,6 @@
 [push]
 	default = current
 [user]
-	name = Takuya Fukuju
 	email = chalkygames123@gmail.com
+	name = Takuya Fukuju
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtworH8VpU49fBqd/nSX34UsNWON7d0EgzylkroUPvj
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-[commit]
-	gpgsign = true
