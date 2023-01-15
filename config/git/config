@@ -26,7 +26,7 @@
 	tabs = 2
 [diff]
 	algorithm = histogram
-	colorMoved = dimmed-zebra
+	colorMoved = default
 [fetch]
 	prune = true
 [filter "lfs"]
