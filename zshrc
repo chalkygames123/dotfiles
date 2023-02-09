@@ -112,12 +112,11 @@ bindkey '^[[Z' reverse-menu-complete
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 
+setopt COMPLETE_ALIASES
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 setopt MAGIC_EQUAL_SUBST
 unsetopt FLOW_CONTROL
-
-eval "$(starship init zsh)"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -148,8 +147,6 @@ zinit as'program' light-mode for \
 		cli/cli \
 	from'gh-r' pick'delta/delta' mv'delta* -> delta' \
 		dandavison/delta \
-	from'gh-r' pick'direnv' src'zdirenv.zsh' mv'direnv* -> direnv' atclone'./direnv hook zsh > zdirenv.zsh' atpull'%atclone' \
-		direnv/direnv \
 	from'gh-r' pick'dust/dust' mv'dust* -> dust' \
 		bootandy/dust \
 	from'gh-r' mv'bin/ec* -> ec' cp'ec -> editorconfig-checker' \
@@ -178,3 +175,8 @@ zinit as'program' light-mode for \
 zinit as'completion' light-mode for \
 	https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
 	atinit'zicompinit' https://github.com/zsh-users/zsh-completions/blob/master/src/_yarn
+
+eval "$(starship init zsh)"
+
+eval "$(op completion zsh)"; compdef _op op
+source "$XDG_CONFIG_HOME/op/plugins.sh"
