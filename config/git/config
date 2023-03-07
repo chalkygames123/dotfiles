@@ -27,6 +27,9 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [fetch]
 	prune = true
 [filter "lfs"]
