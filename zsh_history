@@ -2,7 +2,7 @@
  LIST_COMMAND=$'volta list --format plain | awk \'$1 == "package" { print $2 }\' | sed \'s/(.*)@.*/\1/\'' OLD="$(eval "$LIST_COMMAND")" zsh -c $'volta install $(echo "$OLD") && diff --unified=0 --color=always <(echo "$OLD") <(eval "$LIST_COMMAND") | tail -n +4'
  brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
  (cd ~/dotfiles/ && git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')")
- git config --global --edit
+ vi ~/.config/git/config
  vi ~/.zshrc
  vi ~/.zsh_history
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
