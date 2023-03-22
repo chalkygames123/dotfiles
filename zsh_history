@@ -20,6 +20,7 @@
  [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
  git reflog expire --expire now --all
  git push --push-option ci.skip
+ git push origin @^:main
  git ls-files . --exclude-standard --others
  git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
  git clean -d --force --exclude '.husky' --exclude 'node_modules' -x --dry-run
