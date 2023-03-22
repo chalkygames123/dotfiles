@@ -24,7 +24,7 @@
  git ls-files . --exclude-standard --others
  git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
  git clean -d --force --exclude '.husky' --exclude 'node_modules' -x --dry-run
- git log @{upstream}.. --patch
+ git log @{upstream}.. --ignore-space-change --patch
  git show --ignore-space-change ':!*package-lock.json' @^
  git show --ignore-space-change @^
  git diff @{upstream}..
