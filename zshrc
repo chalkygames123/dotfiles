@@ -1,5 +1,5 @@
 alias a='git add .'
-alias b='[[ $(git rev-parse --is-inside-work-tree) && -d .git/refs/remotes/origin ]] && open "${"$(git remote get-url origin)"%.git}"'
+alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
 alias bb='git branch --all --verbose --verbose'
 alias c='code .'
 alias d='git diff'
