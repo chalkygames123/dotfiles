@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 alias a='git add .'
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
 alias bb='git branch --all --verbose --verbose'
@@ -180,3 +182,6 @@ eval "$(starship init zsh)"
 
 eval "$(op completion zsh)"; compdef _op op
 source "$XDG_CONFIG_HOME/op/plugins.sh"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
