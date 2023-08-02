@@ -12,7 +12,7 @@
  fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type file --exec ls -AFGl \; --exec chmod 644 \; --exec xattr -c
  tree -aF -I '.git' --gitignore
  DIST_DIR="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")" npm run build
- sirv dist --dev --etag
+ sirv --dev --etag dist
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri unenc --string "$(pbpaste)" | pbcopy
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty --string "$(pbpaste)" | pbcopy
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
