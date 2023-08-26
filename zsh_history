@@ -33,6 +33,7 @@
  git diff --cached --ignore-space-change -- ':!*package-lock.json'
  git diff --cached --ignore-space-change
  git rebase --interactive --autosquash
+ git stash list --date=local
  git add --all && git stash push --keep-index --message ''
  git commit --fixup=
  git reset --soft @^ && <.git/COMMIT_EDITMSG | git commit --file - --edit
