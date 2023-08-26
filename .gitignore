@@ -1,8 +1,9 @@
-config/*
-!config/git
-!config/op
-config/op/*
-!config/op/plugins
-!config/op/plugins.sh
-config/op/plugins/used_items
-Brewfile.lock.json
+/config/*
+!/config/1Password/
+!/config/git/
+!/config/op/
+/config/op/*
+!/config/op/plugins/
+!/config/op/plugins.sh
+/config/op/plugins/used_items/
+/Brewfile.lock.json
