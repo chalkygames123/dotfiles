@@ -16,6 +16,7 @@
     - defaults write -g "InitialKeyRepeat" -float "10"
     - defaults write -g "KeyRepeat" -float "1"
     - defaults write -g "ApplePressAndHoldEnabled" -bool "false"
+    - defaults write com.apple.screencapture "disable-shadow" -bool "true"
     - defaults write com.apple.screencapture "show-thumbnail" -bool "false"
     - defaults write com.apple.dock "appswitcher-all-displays" -bool "true"
     - defaults write com.apple.dock "autohide" -bool "true"
