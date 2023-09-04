@@ -8,5 +8,8 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# Added by Toolbox App
+export PATH="$PATH:/Users/takuya.fukuju/Library/Application Support/JetBrains/Toolbox/scripts"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
