@@ -2,7 +2,6 @@
  LIST_COMMAND=$'volta list --format plain | awk \'$1 == "package" { print $2 }\'' OLD="$(eval "$LIST_COMMAND")" zsh -c $'volta install $(echo "$OLD" | sed -E "s/(.*)@.*/\\1/") && diff --unified=0 --color=always <(echo "$OLD") <(eval "$LIST_COMMAND") | tail -n +4'
  brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
  (cd ~/dotfiles/ && git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')")
- vi ~/.config/git/config
  vi ~/.zshrc
  vi ~/.zsh_history
  rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
@@ -18,6 +17,7 @@
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
  [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
  [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
+ git config --global --edit
  git reflog expire --expire now --all
  git push --push-option ci.skip
  git push origin @^:main
