@@ -17,7 +17,6 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = code --wait
 	pager = delta
 	quotepath = false
 [delta]
@@ -52,6 +51,8 @@
 	rebase = true
 [push]
 	default = current
+[sequence]
+	editor = code --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
