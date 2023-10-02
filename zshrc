@@ -101,7 +101,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 export HISTFILE="$HOME/dotfiles/zsh_history"
 export LESSHISTFILE='-'
 export NODE_REPL_HISTORY=''
