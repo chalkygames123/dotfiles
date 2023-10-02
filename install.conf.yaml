@@ -11,8 +11,7 @@
     ~/.zshrc:
 
 - shell:
-    - find ~/.config/op -type d -exec chmod 700 {} \;
-    - find ~/.config/op -type f -exec chmod 600 {} \;
+    - chmod 700 ~/.config/op
     - defaults write -g "InitialKeyRepeat" -float "10"
     - defaults write -g "KeyRepeat" -float "1"
     - defaults write -g "ApplePressAndHoldEnabled" -bool "false"
