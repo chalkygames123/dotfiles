@@ -96,11 +96,6 @@ _my-backward-delete-word() {
 
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-
 export HISTFILE="$HOME/dotfiles/zsh_history"
 export LESSHISTFILE='-'
 export NODE_REPL_HISTORY=''
