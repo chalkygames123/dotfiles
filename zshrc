@@ -24,23 +24,26 @@ alias ss="git status --ignored --show-stash"
 alias v="volta"
 alias gam="$HOME/bin/gam/gam"
 
+setopt CORRECT
 setopt HIST_IGNORE_SPACE
-setopt INC_APPEND_HISTORY
+setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
-unsetopt FLOW_CONTROL
 
 bindkey '^U' backward-kill-line
 bindkey '^^' redo
 bindkey '^[[Z' reverse-menu-complete
 
-zstyle ':completion:*' use-cache true
-zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*:default' menu select
 
-export HISTFILE="$HOME/dotfiles/zsh_history"
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 export WORDCHARS="${WORDCHARS//[-\/]/}"
+
+export path=(
+	"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin"
+	$path
+)
 
 manzsh() {
 	man zshbuiltins | less -p "^       $1"
