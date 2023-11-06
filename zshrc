@@ -28,6 +28,7 @@ setopt CORRECT
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
+setopt NO_SHARE_HISTORY
 
 bindkey '^U' backward-kill-line
 bindkey '^^' redo
