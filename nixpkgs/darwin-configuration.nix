@@ -60,6 +60,8 @@
 
 	# Create /etc/zshrc that loads the nix-darwin environment.
 	programs.zsh.enable = true;  # default shell on catalina
+	programs.zsh.enableBashCompletion = false;
+	programs.zsh.enableCompletion = false;
 	programs.zsh.enableSyntaxHighlighting = true;
 	programs.zsh.promptInit = "";
 	# programs.fish.enable = true;

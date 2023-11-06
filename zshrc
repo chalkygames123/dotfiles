@@ -31,9 +31,6 @@ setopt MAGIC_EQUAL_SUBST
 
 bindkey '^U' backward-kill-line
 bindkey '^^' redo
-bindkey '^[[Z' reverse-menu-complete
-
-zstyle ':completion:*:default' menu select
 
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
@@ -110,7 +107,6 @@ xargsg() {
 	done
 }
 
-eval "$(op completion zsh)"; compdef _op op
 source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 # Fig post block. Keep at the bottom of this file.
