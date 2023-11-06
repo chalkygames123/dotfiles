@@ -1,6 +1,5 @@
  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
  LIST_COMMAND=$'volta list --format plain | awk \'$1 == "package" { print $2 }\'' OLD="$(eval "$LIST_COMMAND")" zsh -c $'volta install $(echo "$OLD" | sed -E "s/(.*)@.*/\\1/") && diff --unified=0 --color=always <(echo "$OLD") <(eval "$LIST_COMMAND") | tail -n +4'
- brew upgrade; brew cleanup; zinit update --parallel; rm ~/.zcompdump; compinit
  (cd ~/dotfiles/ && git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')")
  vi ~/.zshrc
  vi ~/.zsh_history

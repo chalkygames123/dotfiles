@@ -4,4 +4,3 @@
 /config/op/*
 !/config/op/plugins/
 !/config/op/plugins.sh
-/Brewfile.lock.json
