@@ -1,5 +1,4 @@
 /config/*
-!/config/1Password/
 !/config/git/
 !/config/op/
 /config/op/*
