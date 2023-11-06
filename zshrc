@@ -1,27 +1,46 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-alias a='git add --all'
+alias a="git add --all"
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
-alias bb='git branch --all --verbose --verbose'
-alias c='code .'
-alias d='git diff'
-alias dcu='docker compose up'
-alias g='git'
-alias l='git log --graph'
-alias ll='ls -AFGl'
-alias n='npm'
-alias y='yarn'
-alias pn='pnpm'
-alias nb='nr build'
-alias nd='nr dev'
-alias ns='nr start'
-alias o='open .'
-alias p='git pull --all'
-alias rr='git remote --verbose'
-alias s='git status'
-alias ss='git status --ignored --show-stash'
-alias v='volta'
+alias bb="git branch --all --verbose --verbose"
+alias c="code ."
+alias d="git diff"
+alias dcu="docker compose up"
+alias g="git"
+alias l="git log --graph"
+alias ll="ls -AFGl"
+alias n="npm"
+alias y="yarn"
+alias pn="pnpm"
+alias nb="nr build"
+alias nd="nr dev"
+alias ns="nr start"
+alias o="open ."
+alias p="git pull --all"
+alias rr="git remote --verbose"
+alias s="git status"
+alias ss="git status --ignored --show-stash"
+alias v="volta"
+alias gam="$HOME/bin/gam/gam"
+
+setopt HIST_IGNORE_SPACE
+setopt INC_APPEND_HISTORY
+setopt MAGIC_EQUAL_SUBST
+unsetopt FLOW_CONTROL
+
+bindkey '^U' backward-kill-line
+bindkey '^^' redo
+bindkey '^[[Z' reverse-menu-complete
+
+zstyle ':completion:*' use-cache true
+zstyle ':completion:*:default' menu select=2
+
+export HISTFILE="$HOME/dotfiles/zsh_history"
+export LESSHISTFILE="-"
+export NODE_REPL_HISTORY=""
+export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
+export WORDCHARS="${WORDCHARS//[-\/]/}"
 
 manzsh() {
 	man zshbuiltins | less -p "^       $1"
@@ -64,7 +83,7 @@ xargsg() {
 	declare -i i=0
 
 	if [[ ! $* ]]; then
-		echo 'fatal: The command to be executed must be specified.'
+		echo "fatal: The command to be executed must be specified."
 
 		return 1
 	fi
@@ -87,31 +106,6 @@ xargsg() {
 		i=$(( i + 1 ))
 	done
 }
-
-_my-backward-delete-word() {
-	declare WORDCHARS=${WORDCHARS//[-\/]/}
-
-	zle backward-delete-word
-}
-
-export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
-
-export HISTFILE="$HOME/dotfiles/zsh_history"
-export LESSHISTFILE='-'
-export NODE_REPL_HISTORY=''
-
-zle -N _my-backward-delete-word
-bindkey '^[^?' _my-backward-delete-word
-bindkey '^U' backward-kill-line
-bindkey '^^' redo
-bindkey '^[[Z' reverse-menu-complete
-zstyle ':completion:*' use-cache true
-zstyle ':completion:*:default' menu select=2
-
-setopt HIST_IGNORE_SPACE
-setopt INC_APPEND_HISTORY
-setopt MAGIC_EQUAL_SUBST
-unsetopt FLOW_CONTROL
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
