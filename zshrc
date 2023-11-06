@@ -110,62 +110,6 @@ xargsg() {
 	done
 }
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-		print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-		command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-		command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-				print -P "%F{33} %F{34}Installation successful.%f%b" || \
-				print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit's installer chunk
-
-zinit light-mode for \
-	zsh-users/zsh-autosuggestions \
-	zsh-users/zsh-syntax-highlighting
-
-zinit as'program' light-mode for \
-	from'gh-r' pick'actionlint' atclone'mkdir -p man/man1 && ln -fs ../actionlint.1 man/man1' atpull'%atclone' \
-		rhysd/actionlint \
-	from'gh-r' pick'auto-commit' mv'auto-commit* -> auto-commit' \
-		m1guelpf/auto-commit \
-	from'gh-r' pick'bat/bat' mv'bat* -> bat' atclone'mkdir -p man/man1 && ln -fs ../../bat/bat.1 man/man1; ln -fs bat/autocomplete/bat.zsh _bat' atpull'%atclone' atinit'export BAT_THEME="ansi"' \
-		@sharkdp/bat \
-	from'gh-r' pick'gh/bin/gh' mv'gh* -> gh' atclone'./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone' \
-		cli/cli \
-	from'gh-r' pick'delta/delta' mv'delta* -> delta' \
-		dandavison/delta \
-	from'gh-r' pick'dust/dust' mv'dust* -> dust' \
-		bootandy/dust \
-	from'gh-r' mv'bin/ec* -> ec' cp'ec -> editorconfig-checker' \
-		editorconfig-checker/editorconfig-checker \
-	from'gh-r' pick'fd/fd' mv'fd* -> fd' atclone'mkdir -p man/man1 && ln -fs ../../fd/fd.1 man/man1' atpull'%atclone' \
-		@sharkdp/fd \
-	from'gh-r' pick'fzf' atinit'export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --type file --color=always"; export FZF_DEFAULT_OPTS="--ansi"' \
-		junegunn/fzf \
-	from'gh-r' pick'ghq/ghq' mv'ghq* -> ghq' \
-		x-motemen/ghq \
-	from'gh-r' pick'hyperfine/hyperfine' mv'hyperfine* -> hyperfine' atclone'mkdir -p man/man1 && ln -fs ../../hyperfine/hyperfine.1 man/man1; ln -fs hyperfine/autocomplete/hyperfine.bash _hyperfine' atpull'%atclone' \
-		@sharkdp/hyperfine \
-	from'gh-r' pick'ripgrep/rg' mv'ripgrep* -> ripgrep' atclone'mkdir -p man/man1 && ln -fs ../../ripgrep/doc/rg.1 man/man1' atpull'%atclone' \
-		BurntSushi/ripgrep \
-	from'gh-r' pick'rnr/rnr' mv'rnr* -> rnr' \
-		ismaelgv/rnr \
-	from'gh-r' mv'shfmt* -> shfmt' \
-		@mvdan/sh \
-	from'gh-r' pick'shellcheck/shellcheck' mv'shellcheck* -> shellcheck' \
-		koalaman/shellcheck \
-	from'gh-r' pick'volta' atclone'./volta completions zsh > _volta' atpull'%atclone' atinit'export VOLTA_HOME="$HOME/.volta"; export PATH="$VOLTA_HOME/bin:$PATH"; VOLTA_FEATURE_PNPM=1' \
-		volta-cli/volta \
-	from'gh-r' pick'watchexec/watchexec' mv'watchexec* -> watchexec' atclone'mkdir -p man/man1 && ln -fs ../../watchexec/watchexec.1 man/man1; ln -fs watchexec/completions/zsh _watchexec' atpull'%atclone' \
-		watchexec/watchexec
-
-zicompinit
-
 eval "$(op completion zsh)"; compdef _op op
 source "$XDG_CONFIG_HOME/op/plugins.sh"
 

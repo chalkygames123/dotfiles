@@ -3,6 +3,7 @@
 
 - link:
     ~/.config:
+    ~/.nixpkgs:
     ~/.vimrc:
     ~/.zprofile:
     ~/.zsh_history:
