@@ -34,8 +34,10 @@ bindkey '^U' backward-kill-line
 bindkey '^^' redo
 
 export BAT_THEME="ansi"
+export EDITOR="vim"
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --type file --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
+export LANG="ja_JP.UTF-8"
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
