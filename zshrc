@@ -33,13 +33,18 @@ setopt NO_SHARE_HISTORY
 bindkey '^U' backward-kill-line
 bindkey '^^' redo
 
+export BAT_THEME="ansi"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --type file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
+export VOLTA_HOME="$HOME/.volta"
 export WORDCHARS="${WORDCHARS//[-\/]/}"
 
 export path=(
 	"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin"
+	"$VOLTA_HOME/bin"
 	$path
 )
 
