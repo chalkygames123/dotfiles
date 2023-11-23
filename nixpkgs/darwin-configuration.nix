@@ -1,33 +1,37 @@
 { config, lib, pkgs, ... }:
 
 {
-	# List packages installed in system profile. To search by name, run:
-	# $ nix-env -qaP | grep wget
-	environment.systemPackages = with pkgs; [
-		_1password
-		actionlint
-		awscli2
-		bat
-		checkbashisms
-		delta
-		deno
-		du-dust
-		eza
-		fd
-		fzf
-		gh
-		ghq
-		git
-		jq
-		ripgrep
-		rnr
-		shellcheck
-		shfmt
-		starship
-		tree
-		volta
-		watchexec
+	imports = [
+		<home-manager/nix-darwin>
 	];
+
+	environment = {
+		darwinConfig = "$HOME/dotfiles/nixpkgs/darwin-configuration.nix";
+		systemPackages = with pkgs; [
+			_1password
+			actionlint
+			awscli2
+			bat
+			checkbashisms
+			delta
+			deno
+			du-dust
+			eza
+			fd
+			fzf
+			gh
+			ghq
+			git
+			jq
+			ripgrep
+			rnr
+			shellcheck
+			shfmt
+			tree
+			volta
+			watchexec
+		];
+	};
 
 	fonts = {
 		fontDir = {
@@ -42,6 +46,52 @@
 		];
 	};
 
+	home-manager = {
+		useGlobalPkgs = true;
+		useUserPackages = true;
+		users = {
+			"takuya.fukuju" = {
+				home = {
+					file = {
+						".nixpkgs" = {
+							source = ../nixpkgs;
+						};
+						".vimrc" = {
+							source = ../vimrc;
+						};
+						".zprofile" = {
+							source = ../zprofile;
+						};
+						".zsh_history" = {
+							source = ../zsh_history;
+						};
+						".zshenv" = {
+							source = ../zshenv;
+						};
+						".zshrc" = {
+							source = ../zshrc;
+						};
+					};
+					stateVersion = "23.05";
+				};
+				xdg = {
+					configFile = {
+						"git" = {
+							source = ../config/git;
+						};
+						"op/plugins" = {
+							source = ../config/op/plugins;
+						};
+						"op/plugins.sh" = {
+							source = ../config/op/plugins.sh;
+						};
+					};
+					enable = true;
+				};
+			};
+		};
+	};
+
 	nixpkgs = {
 		config = {
 			allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -50,23 +100,49 @@
 		};
 	};
 
-	# Use a custom configuration.nix location.
-	# $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-	# environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
+	services = {
+		nix-daemon = {
+			enable = true;
+		};
+	};
 
-	# Auto upgrade nix package and the daemon service.
-	services.nix-daemon.enable = true;
-	# nix.package = pkgs.nix;
+	system = {
+		activationScripts = {
+			postUserActivation = {
+				text = ''
+					/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+				'';
+			};
+		};
+		defaults = {
+			CustomUserPreferences = {
+				NSGlobalDomain = {
+					ApplePressAndHoldEnabled = false;
+					InitialKeyRepeat = 10;
+					KeyRepeat = 1;
+					NSNavPanelExpandedStateForSaveMode2 = true;
+				};
+				"com.apple.dock" = {
+					appswitcher-all-displays = true;
+					autohide-delay = 0;
+					showhidden = true;
+					size-immutable = true;
+					static-only = true;
+				};
+				"com.apple.screencapture" = {
+					disable-shadow = true;
+					show-thumbnail = true;
+				};
+			};
+		};
+		stateVersion = 4;
+	};
 
-	# Create /etc/zshrc that loads the nix-darwin environment.
-	programs.zsh.enable = true;  # default shell on catalina
-	programs.zsh.enableBashCompletion = false;
-	programs.zsh.enableCompletion = false;
-	programs.zsh.enableSyntaxHighlighting = true;
-	programs.zsh.promptInit = "";
-	# programs.fish.enable = true;
-
-	# Used for backwards compatibility, please read the changelog before changing.
-	# $ darwin-rebuild changelog
-	system.stateVersion = 4;
+	users = {
+		users = {
+			"takuya.fukuju" = {
+				home = "/Users/takuya.fukuju";
+			};
+		};
+	};
 }
