@@ -100,6 +100,13 @@
 		};
 	};
 
+	programs = {
+		zsh = {
+			enable = true;
+			enableSyntaxHighlighting = true;
+		};
+	};
+
 	services = {
 		nix-daemon = {
 			enable = true;
