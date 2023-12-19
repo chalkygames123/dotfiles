@@ -23,13 +23,13 @@
  git ls-files . --exclude-standard --others
  git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
  git clean -d --force --exclude '.husky' --exclude 'node_modules' -x --dry-run
- git log @{upstream}.. --ignore-space-change --patch -- ':!*package-lock.json'
+ git log @{upstream}.. --ignore-space-change --patch -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
  git log @{upstream}.. --ignore-space-change --patch
- git show --ignore-space-change @ -- ':!*package-lock.json'
+ git show --ignore-space-change @ -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
  git show --ignore-space-change @
- git diff @{upstream}.. --ignore-space-change -- ':!*package-lock.json'
+ git diff @{upstream}.. --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
  git diff @{upstream}.. --ignore-space-change
- git diff --cached --ignore-space-change -- ':!*package-lock.json'
+ git diff --cached --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
  git diff --cached --ignore-space-change
  git rebase --interactive --autosquash
  git stash list --date=local
