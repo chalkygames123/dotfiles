@@ -42,6 +42,7 @@ export LANG="ja_JP.UTF-8"
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
+export VOLTA_FEATURE_PNPM=1
 export VOLTA_HOME="$HOME/.volta"
 export WORDCHARS="${WORDCHARS//[-\/]/}"
 
