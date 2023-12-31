@@ -27,6 +27,7 @@ alias gam="$HOME/bin/gam/gam"
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
+setopt NO_FLOW_CONTROL
 setopt NO_SHARE_HISTORY
 
 bindkey '^U' backward-kill-line
