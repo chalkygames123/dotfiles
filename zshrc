@@ -24,7 +24,6 @@ alias ss="git status --ignored --show-stash"
 alias v="volta"
 alias gam="$HOME/bin/gam/gam"
 
-setopt CORRECT
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
