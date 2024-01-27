@@ -26,7 +26,11 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
-	tool = vscode
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
 [fetch]
@@ -47,6 +51,8 @@
 	date = iso8601
 [merge]
 	conflictStyle = zdiff3
+[pager]
+	difftool = true
 [pull]
 	rebase = true
 [push]

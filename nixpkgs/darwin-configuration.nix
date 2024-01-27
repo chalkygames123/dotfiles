@@ -15,6 +15,7 @@
 			checkbashisms
 			delta
 			deno
+			difftastic
 			du-dust
 			eza
 			fd
