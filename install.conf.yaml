@@ -1,0 +1,16 @@
+- clean:
+    ~/:
+
+- link:
+    ~/.config:
+    ~/.nixpkgs:
+    ~/.vimrc:
+    ~/.zprofile:
+    ~/.zsh_history:
+      force: true
+    ~/.zshenv:
+    ~/.zshrc:
+
+- shell:
+    - chmod 700 ~/.config/op/
+    - chmod 700 ~/.config/op/plugins/used_items/

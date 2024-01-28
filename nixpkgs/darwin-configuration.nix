@@ -1,12 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-	imports = [
-		<home-manager/nix-darwin>
-	];
-
 	environment = {
-		darwinConfig = "$HOME/dotfiles/nixpkgs/darwin-configuration.nix";
 		systemPackages = with pkgs; [
 			_1password
 			actionlint
@@ -45,52 +40,6 @@
 				];
 			})
 		];
-	};
-
-	home-manager = {
-		useGlobalPkgs = true;
-		useUserPackages = true;
-		users = {
-			"takuya.fukuju" = {
-				home = {
-					file = {
-						".nixpkgs" = {
-							source = ../nixpkgs;
-						};
-						".vimrc" = {
-							source = ../vimrc;
-						};
-						".zprofile" = {
-							source = ../zprofile;
-						};
-						".zsh_history" = {
-							source = ../zsh_history;
-						};
-						".zshenv" = {
-							source = ../zshenv;
-						};
-						".zshrc" = {
-							source = ../zshrc;
-						};
-					};
-					stateVersion = "23.05";
-				};
-				xdg = {
-					configFile = {
-						"git" = {
-							source = ../config/git;
-						};
-						"op/plugins" = {
-							source = ../config/op/plugins;
-						};
-						"op/plugins.sh" = {
-							source = ../config/op/plugins.sh;
-						};
-					};
-					enable = true;
-				};
-			};
-		};
 	};
 
 	nixpkgs = {
