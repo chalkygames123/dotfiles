@@ -1,6 +1,4 @@
 /config/*
+!/config/gh/
 !/config/git/
 !/config/op/
-/config/op/*
-!/config/op/plugins/
-!/config/op/plugins.sh
