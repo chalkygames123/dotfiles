@@ -26,13 +26,12 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
+	external = difft
 	tool = difftastic
 [difftool]
 	prompt = false
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
-[difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
 [fetch]
 	prune = true
 [filter "lfs"]
