@@ -13,4 +13,5 @@
 
 - shell:
     - chmod 700 ~/.config/op/
+    - chmod 600 ~/.config/op/config
     - chmod 700 ~/.config/op/plugins/used_items/
