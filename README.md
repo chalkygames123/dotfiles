@@ -4,8 +4,6 @@
 
 Make sure you have [Nix](https://github.com/NixOS/nix) and [nix-darwin](https://github.com/LnL7/nix-darwin) installed.
 
-Also, make sure you have [Home Manager](https://github.com/nix-community/home-manager) channel added.
-
 ## Usage
 
 1. Run `./install` (this will remove existing `~/.zsh_history`)
