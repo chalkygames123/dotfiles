@@ -1,5 +1,6 @@
 /config/*
 !/config/gh/
+!/config/gh-copilot/
 !/config/git/
 !/config/op/
 /config/op/config
