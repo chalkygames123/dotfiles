@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-Make sure you have [Nix](https://github.com/NixOS/nix) and [nix-darwin](https://github.com/LnL7/nix-darwin) installed.
+- You have [Nix](https://github.com/NixOS/nix) and [nix-darwin](https://github.com/LnL7/nix-darwin) installed
+- You have nixpkgs-unstable channel added with `nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs`
 
 ## Usage
 
