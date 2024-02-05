@@ -13,7 +13,7 @@
 
 ## Usage
 
-Back up your applications into `applications`:
+Back up a list of your applications into `applications`:
 
 ```shell
 ./dump_applications
