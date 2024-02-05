@@ -16,6 +16,7 @@
     ghq
     git
     jq
+    nixpkgs-fmt
     ripgrep
     rnr
     shellcheck
