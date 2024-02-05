@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-- Install Nix with the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer)
-- Install [nix-darwin](https://github.com/LnL7/nix-darwin) with flakes
+- Install Nix with the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer).
+- Install [nix-darwin](https://github.com/LnL7/nix-darwin) with flakes.
 
 ## Getting started
 
