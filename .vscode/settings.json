@@ -1,4 +1,5 @@
 {
+	"git.autoRepositoryDetection": "openEditors",
 	"git.detectSubmodules": false,
 	"search.exclude": {
 		"dotbot": true
