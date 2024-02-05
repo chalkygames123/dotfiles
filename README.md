@@ -11,4 +11,13 @@
 2. Run `./install` (this will remove existing `~/.zsh_history`).
 3. Run `unset HISTFILE; rm -rf ~/.zsh_sessions` and then reopen the terminal.
 
-Optionally, you can run `./dump_applications` to back up your applications. Note that this will not work if Spotlight is prevented from searching the applications folder.
+## Usage
+
+Back up your applications into `applications`:
+
+```shell
+./dump_applications
+```
+
+> [!NOTE]
+> This script will not work if the application folder is excluded from Spotlight searches.
