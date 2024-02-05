@@ -47,6 +47,7 @@ export VOLTA_HOME="$HOME/.volta"
 export WORDCHARS="${WORDCHARS//[-\/]/}"
 
 export path=(
+	"$HOME/.local/bin"
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 	"$VOLTA_HOME/bin"
 	$path

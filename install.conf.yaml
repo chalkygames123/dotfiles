@@ -3,7 +3,6 @@
 
 - link:
     ~/.config:
-    ~/.nixpkgs:
     ~/.vimrc:
     ~/.zsh_history:
       force: true
@@ -11,6 +10,7 @@
     ~/.zshrc:
 
 - shell:
+    - darwin-rebuild switch --flake ~/.config/nix-darwin
     - chmod 700 ~/.config/op/
     - chmod 600 ~/.config/op/config
     - chmod 700 ~/.config/op/plugins/used_items/
