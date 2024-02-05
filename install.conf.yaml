@@ -13,4 +13,6 @@
     - darwin-rebuild switch --flake ~/.config/nix-darwin
     - chmod 700 ~/.config/op/
     - chmod 600 ~/.config/op/config
+    - chmod 700 ~/.config/op/plugins/
     - chmod 700 ~/.config/op/plugins/used_items/
+    - chmod 600 ~/.config/op/plugins/used_items/*
