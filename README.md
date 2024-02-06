@@ -13,31 +13,31 @@
 
 ## Usage
 
-Apply changes to flake files to the system:
+### Apply changes to flake files to the system:
 
 ```shell
 make switch
 ```
 
-Delete all old generations:
+### Delete all old generations:
 
 ```shell
 make clean
 ```
 
-Lint flake files:
+### Lint flake files:
 
 ```shell
 make lint
 ```
 
-Format flake files:
+### Format flake files:
 
 ```shell
 make format
 ```
 
-Back up a list of your applications into `applications`:
+### Back up a list of your applications into `applications`:
 
 ```shell
 ./dump_applications
