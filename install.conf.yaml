@@ -2,6 +2,7 @@
     ~/:
 
 - link:
+    ~/.aws:
     ~/.config:
     ~/.vimrc:
     ~/.zsh_history:
@@ -15,4 +16,4 @@
     - chmod 600 ~/.config/op/config
     - chmod 700 ~/.config/op/plugins/
     - chmod 700 ~/.config/op/plugins/used_items/
-    - chmod 600 ~/.config/op/plugins/used_items/*
+    - chmod 600 ~/.config/op/plugins/used_items/*.json
