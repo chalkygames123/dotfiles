@@ -7,9 +7,10 @@
 
 ## Getting started
 
-1. If you already have files or directories listed in [`install.conf.yaml#link`](./install.conf.yaml), merge them into your clone of this repository.
-2. Run `./install` (this will remove existing `~/.zsh_history`).
-3. Run `unset HISTFILE; rm -rf ~/.zsh_sessions` and then reopen the terminal.
+1. If you already have files or directories listed in [`install.conf.yaml#link`](./install.conf.yaml), merge them into your clone of this repository as needed.
+2. Run `./install` to bootstrap dotfiles.
+3. Run `make switch` to configure the system with flake files.
+4. Run `unset HISTFILE; rm -rf ~/.zsh_sessions` and reopen the terminal.
 
 ## Usage
 
