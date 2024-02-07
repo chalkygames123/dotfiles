@@ -22,6 +22,7 @@ alias pu="git push"
 alias rr="git remote --verbose"
 alias s="git status"
 alias ss="git status --ignored --show-stash"
+alias sw="git switch"
 alias v="volta"
 alias gam="$HOME/bin/gam/gam"
 

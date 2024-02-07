@@ -14,6 +14,7 @@
 	s = status
 	sh = show
 	st = stash
+	sw = switch
 [commit]
 	gpgsign = true
 [core]
