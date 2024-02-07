@@ -9,8 +9,8 @@
 	p = pull
 	pu = push
 	r = rebase
-	re = revert
-	res = reset
+	re = reset
+	rev = revert
 	s = status
 	sh = show
 	st = stash
