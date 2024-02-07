@@ -1,6 +1,7 @@
 { inputs, lib, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     _1password
+    act
     actionlint
     awscli2
     bat
