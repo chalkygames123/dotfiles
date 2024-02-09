@@ -7,7 +7,7 @@
  fd --hidden --no-ignore --type file '^\.DS_Store$' . --exec ls -AFGl \; --exec rm
  fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type directory --exec ls -AFGl \; --exec chmod 755 \; --exec xattr -c
  fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type file --exec ls -AFGl \; --exec chmod 644 \; --exec xattr -c
- tree -aF -I '.git' --gitignore
+ tree -aF -I '.git/' --gitignore
  DIST_DIR="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")" npm run build
  sirv --dev --etag dist
  svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri unenc --string "$(pbpaste)" | pbcopy
