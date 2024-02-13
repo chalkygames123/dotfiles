@@ -30,7 +30,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
 setopt NO_FLOW_CONTROL
-setopt NO_SHARE_HISTORY
 
 bindkey '^U' backward-kill-line
 bindkey '^^' redo
@@ -44,6 +43,7 @@ export LANG="ja_JP.UTF-8"
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
+export SAVEHIST=0
 export VOLTA_FEATURE_PNPM=1
 export VOLTA_HOME="$HOME/.volta"
 export WORDCHARS="${WORDCHARS//[-\/]/}"
