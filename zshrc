@@ -120,6 +120,26 @@ xargsg() {
 	done
 }
 
+gh_copilot_suggest_git() {
+	gh copilot suggest --target git "$@"
+}
+alias 'git?'='gh_copilot_suggest_git'
+
+gh_copilot_suggest_gh() {
+	gh copilot suggest --target gh "$@"
+}
+alias 'gh?'='gh_copilot_suggest_gh'
+
+gh_copilot_suggest_shell() {
+	gh copilot suggest --target shell "$@"
+}
+alias '??'='gh_copilot_suggest_shell'
+
+gh_copilot_explain() {
+	gh copilot explain "$@"
+}
+alias '?'='gh_copilot_explain'
+
 source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 # CodeWhisperer post block. Keep at the bottom of this file.
