@@ -101,7 +101,7 @@ xargsg() {
 		return 1
 	fi
 
-	read -r -A ghq_list_args <<< "$GHQ_LIST_ARGS"
+	read -r -A ghq_list_args <<<"$GHQ_LIST_ARGS"
 	readonly ghq_list_args
 
 	for repository in $(ghq list "${ghq_list_args[@]}"); do
@@ -116,7 +116,7 @@ xargsg() {
 			eval "$*"
 		)
 
-		i=$(( i + 1 ))
+		i=$((i + 1))
 	done
 }
 
