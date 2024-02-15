@@ -56,6 +56,7 @@
 [pull]
 	rebase = true
 [push]
+	autoSetupRemote = true
 	default = current
 [user]
 	email = chalkygames123@gmail.com
