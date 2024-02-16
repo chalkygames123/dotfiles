@@ -6,6 +6,7 @@
     awscli2
     bandwhich
     bat
+    bottom
     broot
     checkbashisms
     delta
