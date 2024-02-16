@@ -140,6 +140,8 @@ gh_copilot_explain() {
 }
 alias '?'='gh_copilot_explain'
 
+eval "$(starship init zsh)"
+
 source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 # CodeWhisperer post block. Keep at the bottom of this file.

@@ -23,6 +23,7 @@
     rnr
     shellcheck
     shfmt
+    starship
     statix
     tree
     volta
