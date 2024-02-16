@@ -42,8 +42,6 @@
     "1password-cli"
   ];
   nixpkgs.hostPlatform = "aarch64-darwin";
-  programs.zsh.enable = true;
-  programs.zsh.enableSyntaxHighlighting = true;
   services.nix-daemon.enable = true;
   system.activationScripts.postUserActivation.text = ''
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
