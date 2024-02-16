@@ -4,12 +4,16 @@
     act
     actionlint
     awscli2
+    bandwhich
     bat
+    broot
     checkbashisms
     delta
     deno
     difftastic
+    diskus
     du-dust
+    dua
     editorconfig-checker
     eza
     fd
@@ -17,17 +21,22 @@
     gh
     ghq
     git
+    grex
     jq
     nixpkgs-fmt
+    onefetch
     ripgrep
     rnr
+    sd
     shellcheck
     shfmt
     starship
     statix
+    tealdeer
     tree
     volta
     watchexec
+    zoxide
   ];
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
