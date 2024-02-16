@@ -7,17 +7,6 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.md]
-indent_style = unset
-
-[*.{yaml,yml}]
+[{*.{md,nix,yaml,yml},flake.lock}]
 indent_style = space
 indent_size = 2
-
-[flake.lock]
-indent_style = space
-indent_size = 2
-
-[zsh_history]
-indent_style = space
-indent_size = 1

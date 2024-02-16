@@ -10,6 +10,7 @@
     deno
     difftastic
     du-dust
+    editorconfig-checker
     eza
     fd
     fzf
@@ -44,8 +45,8 @@
   programs.zsh.enableSyntaxHighlighting = true;
   services.nix-daemon.enable = true;
   system.activationScripts.postUserActivation.text = ''
-    					/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    				'';
+    /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  '';
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.defaults.CustomUserPreferences.NSGlobalDomain.ApplePressAndHoldEnabled = false;
   system.defaults.CustomUserPreferences.NSGlobalDomain.InitialKeyRepeat = 10;
