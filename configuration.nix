@@ -42,6 +42,7 @@
     "1password-cli"
   ];
   nixpkgs.hostPlatform = "aarch64-darwin";
+  security.pam.enableSudoTouchIdAuth = true;
   services.nix-daemon.enable = true;
   system.activationScripts.postUserActivation.text = ''
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
