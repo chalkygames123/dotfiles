@@ -1,28 +1,28 @@
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
-LIST_COMMAND=$'volta list --format plain | awk \'$1 == "package" { print $2 }\'' OLD="$(eval "$LIST_COMMAND")" zsh -c $'volta install $(echo "$OLD" | sed -E "s/(.*)@.*/\\1/") && diff --unified=0 --color=always <(echo "$OLD") <(eval "$LIST_COMMAND") | tail -n +4'
+LIST_COMMAND=$'volta list --format=plain | awk \'$1 == "package" { print $2 }\'' OLD="$(eval "$LIST_COMMAND")" zsh -c $'volta install $(echo "$OLD" | sed -E "s/(.*)@.*/\\1/") && diff --unified=0 --color=always <(echo "$OLD") <(eval "$LIST_COMMAND") | tail -n +4'
 vi ~/.zshrc
 vi ~/.zsh_history
 rm ~/Library/Application\ Support/Google/Chrome/Default/Favicons
-fd --hidden --no-ignore --type file '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User --exec ls -AFGl \; --exec rm
-fd --hidden --no-ignore --type file '^\.DS_Store$' . --exec ls -AFGl \; --exec rm
-fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type directory --exec ls -AFGl \; --exec chmod 755 \; --exec xattr -c
-fd --hidden --no-ignore --exclude '{.git,.husky,node_modules}' --type file --exec ls -AFGl \; --exec chmod 644 \; --exec xattr -c
+fd --hidden --no-ignore --type=file '^state\.vscdb(|\.backup)$' ~/Library/Application\ Support/Code/User --exec-batch rm -v {}
+fd --hidden --no-ignore --type=file '^\.DS_Store$' --exec-batch rm -v {}
+fd --hidden --no-ignore --type=directory --exclude='{.git,.husky,node_modules}/' --exec-batch chmod {} 755 --exec-batch xattr -c
+fd --hidden --no-ignore --type=file --exclude='{.git,.husky,node_modules}/' --exec-batch chmod {} 644 --exec-batch xattr -c
 tree -aF -I '.git/' --gitignore
 DIST_DIR="$(basename $PWD)_$(date "+%Y%m%d%H%M%S")" npm run build
 sirv --dev --etag dist
-svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri unenc --string "$(pbpaste)" | pbcopy
-svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty --string "$(pbpaste)" | pbcopy
-svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
+svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri=unenc --string="$(pbpaste)" | pbcopy
+svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty --string="$(pbpaste)" | pbcopy
+svgo --config=~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
 [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
 [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
-git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')"
+git commit --message="$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')"
 git config --global --edit
-git reflog expire --expire now --all
-git push --push-option ci.skip
+git reflog expire --expire=now --all
+git push --push-option=ci.skip
 git push origin @^:main
 git ls-files . --exclude-standard --others
-git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
-git clean -d --force --exclude '.husky' --exclude 'node_modules' -x --dry-run
+git ls-files . --exclude-standard --others --ignored --exclude='!node_modules'
+git clean -d --force --exclude='.husky/' --exclude='node_modules/' -x --dry-run
 git log @{upstream}.. --ignore-space-change --patch -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 git log @{upstream}.. --ignore-space-change --patch
 git show --ignore-space-change @ -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
@@ -35,9 +35,9 @@ git rebase --interactive --autosquash
 git stash list --date=local
 git add --all && git stash push --keep-index --message ''
 git commit --fixup=
-git reset --soft @^ && <.git/COMMIT_EDITMSG | git commit --file - --edit
+git reset --soft @^ && <.git/COMMIT_EDITMSG | git commit --file=- --edit
 git commit --amend --no-edit
-pbpaste | git commit --file - --edit
-git commit --reuse-message @ --edit
-git commit --message ''
+pbpaste | git commit --file=- --edit
+git commit --reuse-message=@ --edit
+git commit --message=''
 exec $SHELL -l

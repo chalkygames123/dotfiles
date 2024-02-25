@@ -34,7 +34,7 @@ bindkey '^^' redo
 
 export BAT_THEME="ansi"
 export EDITOR="vim"
-export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git --type file --color=always"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
 export HISTFILE="$HOME/dotfiles/zsh_history"
 export LANG="ja_JP.UTF-8"
