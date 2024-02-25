@@ -31,11 +31,13 @@ git diff @{upstream}.. --ignore-space-change -- ':^*package-lock.json' ':^*yarn.
 git diff @{upstream}.. --ignore-space-change
 git diff --cached --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 git diff --cached --ignore-space-change
+git rebase --committer-date-is-author-date
 git rebase --interactive --autosquash
 git stash list --date=local
 git add --all && git stash push --keep-index --message ''
 git commit --fixup=
 git reset --soft @^ && <.git/COMMIT_EDITMSG | git commit --file=- --edit
+GIT_COMMITTER_DATE="$(git show --no-patch --format='%ad')" git commit --amend --no-edit
 git commit --amend --no-edit
 pbpaste | git commit --file=- --edit
 git commit --reuse-message=@ --edit
