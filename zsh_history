@@ -31,7 +31,7 @@ git diff @{upstream}.. --ignore-space-change -- ':^*package-lock.json' ':^*yarn.
 git diff @{upstream}.. --ignore-space-change
 git diff --cached --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 git diff --cached --ignore-space-change
-git rebase --committer-date-is-author-date
+git rebase --interactive --autosquash --committer-date-is-author-date
 git rebase --interactive --autosquash
 git stash list --date=local
 git add --all && git stash push --keep-index --message ''
