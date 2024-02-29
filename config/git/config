@@ -33,6 +33,7 @@
 	ra = rebase --abort
 	rem = remote --verbose
 	re = reset
+	res = restore
 	rev = revert
 	sh = show --ignore-space-change --ext-diff
 	shx = show --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
