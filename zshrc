@@ -75,8 +75,14 @@ cdf() {
 cdg() {
 	declare selected
 
-	if ! selected="$(ghq list | fzf)"; then
-		return
+	if [[ $1 ]]; then
+		if ! selected="$(ghq list | fzf --query=$1)"; then
+			return
+		fi
+	else
+		if ! selected="$(ghq list | fzf)"; then
+			return
+		fi
 	fi
 
 	readonly selected
