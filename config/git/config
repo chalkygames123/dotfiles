@@ -51,6 +51,7 @@
 	pager = delta
 	quotepath = false
 [delta]
+	interactive = true
 	side-by-side = true
 	syntax-theme = GitHub
 	tabs = 2
@@ -79,6 +80,8 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
 [log]
 	abbrevCommit = true
 	date = iso8601
