@@ -26,19 +26,20 @@ setopt NO_FLOW_CONTROL
 bindkey '^U' backward-kill-line
 bindkey '^^' redo
 
-export BAT_THEME="ansi"
 export EDITOR="vim"
-export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
-export FZF_DEFAULT_OPTS="--ansi"
 export HISTFILE="$HOME/dotfiles/zsh_history"
 export LANG="ja_JP.UTF-8"
 export LESSHISTFILE="-"
-export NODE_REPL_HISTORY=""
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 export SAVEHIST=0
+export WORDCHARS="${WORDCHARS//[-\/]/}"
+
+export BAT_THEME="ansi"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
+export NODE_REPL_HISTORY=""
 export VOLTA_FEATURE_PNPM=1
 export VOLTA_HOME="$HOME/.volta"
-export WORDCHARS="${WORDCHARS//[-\/]/}"
 
 export path=(
 	"$HOME/.local/bin"
