@@ -65,6 +65,8 @@
 	prompt = false
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [fetch]
 	all = true
 	prune = true
@@ -96,6 +98,8 @@
 	autoSetupRemote = true
 	default = current
 	useForceIfIncludes = true
+[sequence]
+	editor = code --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
