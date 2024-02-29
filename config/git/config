@@ -24,7 +24,8 @@
 	llpx = log @{upstream}.. --pretty=fuller --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	m = merge
 	p = pull
-	P = push
+	pu = push
+	puf = push --force-with-lease
 	r = rebase
 	ri = rebase --interactive --autosquash
 	rid = rebase --interactive --autosquash --committer-date-is-author-date
