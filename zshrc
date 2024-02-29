@@ -1,27 +1,21 @@
-alias a="git add --all"
+alias o="open ."
+alias v="volta"
+alias z="zoxide"
+
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
-alias bb="git branch --all --verbose --verbose"
 alias c="code ."
-alias d="git diff"
-alias dcu="docker compose up"
+alias d="docker compose up"
 alias g="git"
-alias l="git log --graph"
-alias ll="eza --long --all"
+alias l="eza --long --all"
+
 alias n="npm"
-alias y="yarn"
 alias pn="pnpm"
+alias y="yarn"
+
 alias nb="nr build"
 alias nd="nr dev"
 alias ns="nr start"
-alias o="open ."
-alias p="git pull --all"
-alias pu="git push"
-alias rr="git remote --verbose"
-alias s="git status"
-alias ss="git status --ignored --show-stash"
-alias sw="git switch"
-alias v="volta"
-alias z="zoxide"
+
 alias gam="$HOME/bin/gam/gam"
 
 setopt HIST_IGNORE_SPACE

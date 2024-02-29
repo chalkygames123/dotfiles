@@ -1,20 +1,50 @@
 [alias]
 	a = add
+	aa = add --all
 	b = branch
-	c = checkout
-	d = diff
+	bb = branch --all --verbose --verbose
+	ch = checkout
+	clx = clean -d --force --exclude='.husky/' --exclude='node_modules/' -x
+	clxn = clean -d --force --exclude='.husky/' --exclude='node_modules/' -x --dry-run
+	clx = clean -d --force --exclude='.husky/' --exclude='node_modules/'
+	clxn = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run
+	c = commit
+	ca = commit --amend
+	can = commit --no-edit --amend
+	d = diff --ignore-space-change
+	dc = diff --cached --ignore-space-change
+	dx = diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	dcx = diff --cached --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	f = fetch
-	l = log
+	l = log --graph
+	lp = log @{upstream}.. --patch --ignore-space-change --ext-diff
+	lpx = log @{upstream}.. --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	ll = log --pretty=fuller --graph
+	llp = log @{upstream}.. --pretty=fuller --patch --ignore-space-change --ext-diff
+	llpx = log @{upstream}.. --pretty=fuller --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	m = merge
 	p = pull
-	pu = push
+	P = push
 	r = rebase
+	ri = rebase --interactive --autosquash
+	rid = rebase --interactive --autosquash --committer-date-is-author-date
+	rc = rebase --continue
+	ra = rebase --abort
+	rem = remote --verbose
 	re = reset
 	rev = revert
+	sh = show --ignore-space-change --ext-diff
+	shx = show --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	shh = show --pretty=fuller --ignore-space-change --ext-diff
+	shhx = show --pretty=fuller --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	st = stash push
+	stl = stash list --date=local
+	stp = stash pop
+	stu = stash --include-untracked
 	s = status
-	sh = show
-	st = stash
+	ss = status --ignored --show-stash
 	sw = switch
+	swc = switch --create
 [commit]
 	gpgsign = true
 [core]
@@ -34,12 +64,15 @@
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
 [fetch]
+	all = true
 	prune = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
 	required = true
 	smudge = git-lfs smudge -- %f
+[format]
+	pretty = oneline
 [gpg]
 	format = ssh
 [gpg "ssh"]
