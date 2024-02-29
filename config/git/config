@@ -48,6 +48,7 @@
 [commit]
 	gpgsign = true
 [core]
+	editor = subl --wait
 	pager = delta
 	quotepath = false
 [delta]
