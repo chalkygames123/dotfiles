@@ -16,12 +16,16 @@
 	dx = diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	dcx = diff --cached --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	f = fetch
-	l = log --graph
-	lp = log @{upstream}.. --patch --ignore-space-change --ext-diff
-	lpx = log @{upstream}.. --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	l = log -10 --graph
+	lp = log -10 --patch --ignore-space-change --ext-diff
+	lpu = log --patch --ignore-space-change --ext-diff @{upstream}..
+	lpx = log -10 --patch --ignore-space-change --ext-diff ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	lpux = log --patch --ignore-space-change --ext-diff @{upstream}.. ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	ll = log --pretty=fuller --graph
-	llp = log @{upstream}.. --pretty=fuller --patch --ignore-space-change --ext-diff
-	llpx = log @{upstream}.. --pretty=fuller --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	llp = log --pretty=fuller --patch --ignore-space-change --ext-diff
+	llpu = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}..
+	llpx = log --pretty=fuller --patch --ignore-space-change --ext-diff ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	llpux = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}.. ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	m = merge
 	p = pull
 	pu = push
