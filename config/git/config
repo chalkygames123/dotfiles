@@ -10,7 +10,7 @@
 	clxn = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run
 	c = commit
 	ca = commit --amend
-	can = commit --no-edit --amend
+	cna = commit --no-edit --amend
 	d = diff --ignore-space-change
 	dc = diff --cached --ignore-space-change
 	dx = diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
