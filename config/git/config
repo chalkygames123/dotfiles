@@ -28,6 +28,7 @@
 	llpux = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}.. ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	m = merge
 	p = pull
+	pf = pull --force origin main
 	pu = push
 	puf = push --force-with-lease
 	r = rebase
