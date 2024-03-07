@@ -4,10 +4,10 @@
 	b = branch
 	bb = branch --all --verbose --verbose
 	ch = checkout
+	cl = clean -d --force --exclude='.husky/' --exclude='node_modules/'
+	cln = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run
 	clx = clean -d --force --exclude='.husky/' --exclude='node_modules/' -x
-	clxn = clean -d --force --exclude='.husky/' --exclude='node_modules/' -x --dry-run
-	clx = clean -d --force --exclude='.husky/' --exclude='node_modules/'
-	clxn = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run
+	clnx = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run -x
 	c = commit
 	ca = commit --amend
 	cna = commit --no-edit --amend
