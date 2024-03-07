@@ -8,6 +8,8 @@
 	cln = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run
 	clx = clean -d --force --exclude='.husky/' --exclude='node_modules/' -x
 	clnx = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run -x
+	clxx = clean -d --force --exclude='.husky/' --exclude='node_modules/' -X
+	clnxx = clean -d --force --exclude='.husky/' --exclude='node_modules/' --dry-run -X
 	c = commit
 	ca = commit --amend
 	cna = commit --no-edit --amend
