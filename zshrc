@@ -38,7 +38,6 @@ export BAT_THEME="ansi"
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
 export NODE_REPL_HISTORY=""
-export VOLTA_FEATURE_PNPM=1
 export VOLTA_HOME="$HOME/.volta"
 
 export path=(
