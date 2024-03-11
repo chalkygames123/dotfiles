@@ -39,7 +39,7 @@
 	rc = rebase --continue
 	ra = rebase --abort
 	rem = remote --verbose
-	ref = reflog --date=iso-local
+	ref = reflog
 	re = reset
 	res = restore
 	rev = revert
