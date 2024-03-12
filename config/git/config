@@ -15,19 +15,19 @@
 	cna = commit --no-edit --amend
 	d = diff --ignore-space-change
 	dc = diff --cached --ignore-space-change
-	dx = diff --ignore-space-change ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
-	dcx = diff --cached --ignore-space-change ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	dx = diff --ignore-space-change -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	dcx = diff --cached --ignore-space-change -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
 	f = fetch
 	l = log -10
 	lp = log -10 --patch --ignore-space-change --ext-diff
 	lpu = log --patch --ignore-space-change --ext-diff @{upstream}..
-	lpx = log -10 --patch --ignore-space-change --ext-diff ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
-	lpux = log --patch --ignore-space-change --ext-diff @{upstream}.. ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	lpx = log -10 --patch --ignore-space-change --ext-diff -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	lpux = log --patch --ignore-space-change --ext-diff @{upstream}.. -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
 	ll = log --pretty=fuller
 	llp = log --pretty=fuller --patch --ignore-space-change --ext-diff
 	llpu = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}..
-	llpx = log --pretty=fuller --patch --ignore-space-change --ext-diff ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
-	llpux = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}.. ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	llpx = log --pretty=fuller --patch --ignore-space-change --ext-diff -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	llpux = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}.. -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
 	m = merge
 	p = pull
 	pf = pull --force origin main
@@ -44,9 +44,9 @@
 	res = restore
 	rev = revert
 	sh = show --ignore-space-change --ext-diff
-	shx = show --ignore-space-change --ext-diff ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	shx = show --ignore-space-change --ext-diff -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
 	shh = show --pretty=fuller --ignore-space-change --ext-diff
-	shhx = show --pretty=fuller --ignore-space-change --ext-diff ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	shhx = show --pretty=fuller --ignore-space-change --ext-diff -- ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
 	st = stash push
 	stl = stash list --date=iso-local
 	stp = stash pop
