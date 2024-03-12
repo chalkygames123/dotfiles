@@ -20,14 +20,9 @@
 	f = fetch
 	l = log -10
 	lp = log -10 --patch --ignore-space-change --ext-diff
-	lpu = log -10 --patch --ignore-space-change --ext-diff @{upstream}..
+	lpu = log --patch --ignore-space-change --ext-diff @{upstream}..
 	lpx = log -10 --patch --ignore-space-change --ext-diff ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
-	lpux = log -10 --patch --ignore-space-change --ext-diff @{upstream}.. ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
-	ln = log
-	lnp = log --patch --ignore-space-change --ext-diff
-	lnpu = log --patch --ignore-space-change --ext-diff @{upstream}..
-	lnpx = log --patch --ignore-space-change --ext-diff ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
-	lnpux = log --patch --ignore-space-change --ext-diff @{upstream}.. ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
+	lpux = log --patch --ignore-space-change --ext-diff @{upstream}.. ':^*'{package-lock.json,yarn.lock,pnpm-lock.yaml}
 	ll = log --pretty=fuller
 	llp = log --pretty=fuller --patch --ignore-space-change --ext-diff
 	llpu = log --pretty=fuller --patch --ignore-space-change --ext-diff @{upstream}..
