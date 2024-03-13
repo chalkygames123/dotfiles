@@ -1,7 +1,6 @@
 { inputs, lib, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     _1password
-    act
     actionlint
     awscli2
     bandwhich
@@ -12,10 +11,7 @@
     delta
     deno
     difftastic
-    diskus
-    du-dust
     dua
-    editorconfig-checker
     eza
     fd
     fzf
