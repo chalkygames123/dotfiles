@@ -32,6 +32,12 @@ make format
 make switch
 ```
 
+### Update flake lock file
+
+```shell
+make update
+```
+
 ### Delete all old generations
 
 ```shell
