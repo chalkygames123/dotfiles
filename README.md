@@ -14,18 +14,6 @@
 
 ## Usage
 
-### Apply changes to flake files to the system
-
-```shell
-make switch
-```
-
-### Delete all old generations
-
-```shell
-make clean
-```
-
 ### Lint flake files
 
 ```shell
@@ -36,6 +24,18 @@ make lint
 
 ```shell
 make format
+```
+
+### Apply changes to flake files to the system
+
+```shell
+make switch
+```
+
+### Delete all old generations
+
+```shell
+make clean
 ```
 
 ### Back up a list of your applications into `applications`
