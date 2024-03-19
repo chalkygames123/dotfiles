@@ -46,8 +46,10 @@
 	sh = show --pretty=fuller --ignore-space-change --ext-diff
 	shx = show --pretty=fuller --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	st = stash push
+	stk = stash push --keep-index
 	stl = stash list --date=iso-local
 	stp = stash pop
+	stpi = stash pop --index
 	stu = stash --include-untracked
 	s = status
 	ss = status --ignored --show-stash
