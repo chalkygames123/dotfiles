@@ -43,10 +43,8 @@
 	re = reset
 	res = restore
 	rev = revert
-	sh = show --ignore-space-change --ext-diff
-	shx = show --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
-	shh = show --pretty=fuller --ignore-space-change --ext-diff
-	shhx = show --pretty=fuller --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	sh = show --pretty=fuller --ignore-space-change --ext-diff
+	shx = show --pretty=fuller --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	st = stash push
 	stl = stash list --date=iso-local
 	stp = stash pop
