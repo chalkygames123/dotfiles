@@ -118,23 +118,25 @@ xargsg() {
 	done
 }
 
+source "$HOME/dotfiles/gh_copilot_alias_zsh"
+
 gh_copilot_suggest_git() {
-	gh copilot suggest --target git -- "$@"
+	ghcs --target=git -- "$@"
 }
 alias 'git?'='gh_copilot_suggest_git'
 
 gh_copilot_suggest_gh() {
-	gh copilot suggest --target gh -- "$@"
+	ghcs --target=gh -- "$@"
 }
 alias 'gh?'='gh_copilot_suggest_gh'
 
 gh_copilot_suggest_shell() {
-	gh copilot suggest --target shell -- "$@"
+	ghcs --target=shell -- "$@"
 }
 alias '??'='gh_copilot_suggest_shell'
 
 gh_copilot_explain() {
-	gh copilot explain -- "$@"
+	ghce -- "$@"
 }
 alias '?'='gh_copilot_explain'
 
