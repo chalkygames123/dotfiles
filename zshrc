@@ -1,9 +1,9 @@
-alias o="open ."
+alias o="open"
 alias v="volta"
 alias z="zoxide"
 
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
-alias c="code ."
+alias c="code"
 alias d="docker compose up"
 alias g="git"
 alias l="eza --long --all"
