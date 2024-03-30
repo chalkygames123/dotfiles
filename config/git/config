@@ -14,9 +14,9 @@
 	ca = commit --amend
 	cna = commit --no-edit --amend
 	d = diff --ignore-space-change
-	dc = diff --cached --ignore-space-change
+	ds = diff --staged --ignore-space-change
 	dx = diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
-	dcx = diff --cached --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+	dsx = diff --staged --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 	f = fetch
 	l = log -10
 	lp = log -10 --patch --ignore-space-change --ext-diff
@@ -45,11 +45,12 @@
 	rev = revert
 	sh = show --pretty=fuller --ignore-space-change --ext-diff
 	shx = show --pretty=fuller --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
-	st = stash push
+	st = stash
 	stk = stash push --keep-index
 	stl = stash list --date=iso-local
 	stp = stash pop
 	stpi = stash pop --index
+	sts = stash --staged
 	stu = stash --include-untracked
 	s = status
 	ss = status --ignored --show-stash
