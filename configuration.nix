@@ -31,7 +31,6 @@
     statix
     tealdeer
     tree
-    volta
     watchexec
     zoxide
   ];
