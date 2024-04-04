@@ -60,7 +60,7 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = subl --wait
+	editor = cursor --wait
 	pager = delta
 	quotepath = false
 [delta]
@@ -111,7 +111,7 @@
 	default = current
 	useForceIfIncludes = true
 [sequence]
-	editor = code --wait
+	editor = cursor --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
