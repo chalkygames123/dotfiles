@@ -3,13 +3,13 @@
 	aa = add --all
 	b = branch
 	bb = branch --all --verbose --verbose
-	ch = checkout
+	c = checkout
 	cl = clean -d --force --interactive
 	clx = clean -d --force --interactive --exclude='.husky/' --exclude='node_modules/' -x
 	clxx = clean -d --force --interactive -X
-	c = commit
-	ca = commit --amend
-	cna = commit --no-edit --amend
+	co = commit
+	coa = commit --amend
+	cona = commit --no-edit --amend
 	d = diff --ignore-space-change
 	ds = diff --staged --ignore-space-change
 	dx = diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
