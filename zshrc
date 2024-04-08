@@ -14,21 +14,25 @@ alias y="yarn"
 
 alias nb="nr build"
 alias nd="nr dev"
-alias nf="nr -F"
-
-nfb() {
-	nr -F "$1" build "${@:2}"
-}
-
-nfd() {
-	nr -F "$1" dev "${@:2}"
-}
-
-nx() {
-	na -F "$1" exec "${@:2}"
-}
-
 alias ns="nr start"
+
+alias nrf="nr -F"
+
+pnbf() {
+	nrf "$1" build "${@:2}"
+}
+
+pndf() {
+	nrf "$1" dev "${@:2}"
+}
+
+pndf() {
+	nrf "$1" start "${@:2}"
+}
+
+pnxf() {
+	pn -F "$1" exec "${@:2}"
+}
 
 alias gam="$HOME/bin/gam/gam"
 
