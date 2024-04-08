@@ -21,15 +21,15 @@ pnfr() {
 }
 
 pnfb() {
-	pnpm --filter="$1" build "${@:2}"
+	pnpm --filter="$1" run build "${@:2}"
 }
 
 pnfd() {
-	pnpm --filter="$1" dev "${@:2}"
+	pnpm --filter="$1" run dev "${@:2}"
 }
 
 pnfd() {
-	pnpm --filter="$1" start "${@:2}"
+	pnpm --filter="$1" run start "${@:2}"
 }
 
 pnfx() {
