@@ -16,22 +16,24 @@ alias nb="nr build"
 alias nd="nr dev"
 alias ns="nr start"
 
-alias nrf="nr -F"
-
-pnbf() {
-	nrf "$1" build "${@:2}"
+pnfr() {
+	pnpm --filter="$1" run "${@:2}"
 }
 
-pndf() {
-	nrf "$1" dev "${@:2}"
+pnfb() {
+	pnpm --filter="$1" build "${@:2}"
 }
 
-pndf() {
-	nrf "$1" start "${@:2}"
+pnfd() {
+	pnpm --filter="$1" dev "${@:2}"
 }
 
-pnxf() {
-	pn -F "$1" exec "${@:2}"
+pnfd() {
+	pnpm --filter="$1" start "${@:2}"
+}
+
+pnfx() {
+	pnpm --filter="$1" exec "${@:2}"
 }
 
 alias gam="$HOME/bin/gam/gam"
