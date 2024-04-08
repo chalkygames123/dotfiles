@@ -15,11 +15,19 @@ alias y="yarn"
 alias nb="nr build"
 alias nd="nr dev"
 alias nf="nr -F"
-nx() {
-	args=("${@:2}")
 
-	na -F "$1" exec "${args[@]}"
+nfb() {
+	nr -F "$1" build "${@:2}"
 }
+
+nfd() {
+	nr -F "$1" dev "${@:2}"
+}
+
+nx() {
+	na -F "$1" exec "${@:2}"
+}
+
 alias ns="nr start"
 
 alias gam="$HOME/bin/gam/gam"
