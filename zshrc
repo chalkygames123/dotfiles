@@ -1,4 +1,5 @@
 alias o="open"
+alias v="volta"
 alias z="zoxide"
 
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
@@ -37,9 +38,14 @@ export BAT_THEME="ansi"
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
 export NODE_REPL_HISTORY=""
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export VOLTA_FEATURE_PNPM=1
+export VOLTA_HOME="$HOME/.volta"
 
 export path=(
 	"$HOME/.local/bin"
+	"$PNPM_HOME"
+	"$VOLTA_HOME/bin"
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 	$path
 )
@@ -136,7 +142,5 @@ gh_copilot_explain() {
 alias '?'='gh_copilot_explain'
 
 eval "$(starship init zsh)"
-
-eval "$(vfox activate zsh)"
 
 source "$XDG_CONFIG_HOME/op/plugins.sh"
