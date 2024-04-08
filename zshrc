@@ -14,6 +14,12 @@ alias y="yarn"
 
 alias nb="nr build"
 alias nd="nr dev"
+alias nf="nr -F"
+nx() {
+	args=("${@:2}")
+
+	na -F "$1" exec "${args[@]}"
+}
 alias ns="nr start"
 
 alias gam="$HOME/bin/gam/gam"
