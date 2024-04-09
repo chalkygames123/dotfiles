@@ -16,27 +16,23 @@ alias nb="nr build"
 alias nd="nr dev"
 alias ns="nr start"
 
-pnfr() {
+nrf() {
 	pnpm --filter="$1" run "${@:2}"
 }
 
-pnfb() {
+nbf() {
 	pnpm --filter="$1" run build "${@:2}"
 }
 
-pnfd() {
+ndf() {
 	pnpm --filter="$1" run dev "${@:2}"
 }
 
-pnfd() {
-	pnpm --filter="$1" run dev "${@:2}"
-}
-
-pnfs() {
+nsf() {
 	pnpm --filter="$1" run start "${@:2}"
 }
 
-pnfx() {
+nxf() {
 	pnpm --filter="$1" exec "${@:2}"
 }
 
