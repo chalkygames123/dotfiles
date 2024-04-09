@@ -29,6 +29,10 @@ pnfd() {
 }
 
 pnfd() {
+	pnpm --filter="$1" run dev "${@:2}"
+}
+
+pnfs() {
 	pnpm --filter="$1" run start "${@:2}"
 }
 
