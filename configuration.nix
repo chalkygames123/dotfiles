@@ -31,6 +31,7 @@
     statix
     tealdeer
     tree
+    vim
     volta
     watchexec
     zoxide
