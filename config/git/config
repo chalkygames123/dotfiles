@@ -59,7 +59,7 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = cursor --wait
+	editor = code-insiders --wait
 	pager = delta
 	quotepath = false
 [delta]
@@ -77,7 +77,7 @@
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
 [difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code-insiders --wait --diff $LOCAL $REMOTE
 [fetch]
 	all = true
 	prune = true
@@ -110,7 +110,7 @@
 	default = current
 	useForceIfIncludes = true
 [sequence]
-	editor = cursor --wait
+	editor = code-insiders --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
