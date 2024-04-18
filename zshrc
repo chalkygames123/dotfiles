@@ -106,8 +106,8 @@ setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
 setopt NO_FLOW_CONTROL
 
-bindkey '^U' backward-kill-line
-bindkey '^^' redo
+bindkey "^U" backward-kill-line
+bindkey "^^" redo
 
 export EDITOR="vim"
 export HISTFILE="$HOME/dotfiles/zsh_history"
@@ -192,10 +192,10 @@ xargsg() {
 		(
 			cd "$(ghq root)/$repository" || return
 
-			[[ i -gt 0 ]] && printf '\n'
-			printf '\e[34m%s\n' "$repository"
-			printf '─%.s' $(seq 1 "$COLUMNS")
-			printf '\e[m\n'
+			[[ i -gt 0 ]] && printf "\n"
+			printf "\e[34m%s\n" "$repository"
+			printf "─%.s" $(seq 1 "$COLUMNS")
+			printf "\e[m\n"
 
 			eval "$*"
 		)
@@ -207,22 +207,22 @@ xargsg() {
 gh_copilot_suggest_git() {
 	gh copilot suggest --target git -- "$@"
 }
-alias 'git?'='gh_copilot_suggest_git'
+alias "git?"="gh_copilot_suggest_git"
 
 gh_copilot_suggest_gh() {
 	gh copilot suggest --target gh -- "$@"
 }
-alias 'gh?'='gh_copilot_suggest_gh'
+alias "gh?"="gh_copilot_suggest_gh"
 
 gh_copilot_suggest_shell() {
 	gh copilot suggest --target shell -- "$@"
 }
-alias '??'='gh_copilot_suggest_shell'
+alias "??"="gh_copilot_suggest_shell"
 
 gh_copilot_explain() {
 	gh copilot explain -- "$@"
 }
-alias '?'='gh_copilot_explain'
+alias "?"="gh_copilot_explain"
 
 eval "$(starship init zsh)"
 
