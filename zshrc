@@ -98,7 +98,7 @@ cdg() {
 	declare selected
 
 	if [[ $1 ]]; then
-		if ! selected="$(ghq list | fzf --query=$1)"; then
+		if ! selected="$(ghq list | fzf --query $1)"; then
 			return
 		fi
 	else
@@ -142,17 +142,17 @@ xargsg() {
 }
 
 gh_copilot_suggest_git() {
-	gh copilot suggest --target=git -- "$@"
+	gh copilot suggest --target git -- "$@"
 }
 alias 'git?'='gh_copilot_suggest_git'
 
 gh_copilot_suggest_gh() {
-	gh copilot suggest --target=gh -- "$@"
+	gh copilot suggest --target gh -- "$@"
 }
 alias 'gh?'='gh_copilot_suggest_gh'
 
 gh_copilot_suggest_shell() {
-	gh copilot suggest --target=shell -- "$@"
+	gh copilot suggest --target shell -- "$@"
 }
 alias '??'='gh_copilot_suggest_shell'
 
