@@ -14,26 +14,89 @@ alias y="yarn"
 
 alias nb="nr build"
 alias nd="nr dev"
-alias ns="nr start"
+
+nif() {
+	case $(na "?") in
+		*yarn)
+			yarn workspace "$1" add "${@:2}"
+			;;
+		*pnpm)
+			pnpm --filter "$1" add "${@:2}"
+			;;
+		*npm)
+			npm --workspace "$1" install "${@:2}"
+			;;
+		*)
+			echo "fatal: The package manager is not recognized."
+			return 1
+			;;
+	esac
+}
+
+nunf() {
+	case $(na "?") in
+		*yarn)
+			yarn workspace "$1" remove "${@:2}"
+			;;
+		*pnpm)
+			pnpm --filter "$1" remove "${@:2}"
+			;;
+		*npm)
+			npm --workspace "$1" uninstall "${@:2}"
+			;;
+		*)
+			echo "fatal: The package manager is not recognized."
+			return 1
+			;;
+	esac
+}
+
+run_command() {
+	case $(na "?") in
+		*yarn)
+			yarn workspace "$1" run "${@:2}"
+			;;
+		*pnpm)
+			pnpm --filter "$1" run "${@:2}"
+			;;
+		*npm)
+			npm --workspace "$1" run "${@:2}"
+			;;
+		*)
+			echo "fatal: The package manager is not recognized."
+			return 1
+			;;
+	esac
+}
 
 nrf() {
-	pnpm --filter="$1" run "${@:2}"
+	run_command "$1" "${@:2}"
 }
 
 nbf() {
-	pnpm --filter="$1" run build "${@:2}"
+	run_command "$1" build "${@:2}"
 }
 
 ndf() {
-	pnpm --filter="$1" run dev "${@:2}"
-}
-
-nsf() {
-	pnpm --filter="$1" run start "${@:2}"
+	run_command "$1" dev "${@:2}"
 }
 
 nxf() {
-	pnpm --filter="$1" exec "${@:2}"
+	case $(na "?") in
+		*yarn)
+			yarn workspace "$1" exec "${@:2}"
+			;;
+		*pnpm)
+			pnpm --filter "$1" exec "${@:2}"
+			;;
+		*npm)
+			npm --workspace "$1" exec "${@:2}"
+			;;
+		*)
+			echo "fatal: The package manager is not recognized."
+			return 1
+			;;
+	esac
 }
 
 alias gam="$HOME/bin/gam/gam"
