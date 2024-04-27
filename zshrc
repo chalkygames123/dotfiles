@@ -12,9 +12,6 @@ alias n="npm"
 alias pn="pnpm"
 alias y="yarn"
 
-alias nb="nr build"
-alias nd="nr dev"
-
 nif() {
 	case $(na "?") in
 		*yarn)
@@ -51,7 +48,7 @@ nunf() {
 	esac
 }
 
-run_command() {
+nrf() {
 	case $(na "?") in
 		*yarn)
 			yarn workspace "$1" run "${@:2}"
@@ -67,18 +64,6 @@ run_command() {
 			return 1
 			;;
 	esac
-}
-
-nrf() {
-	run_command "$1" "${@:2}"
-}
-
-nbf() {
-	run_command "$1" build "${@:2}"
-}
-
-ndf() {
-	run_command "$1" dev "${@:2}"
 }
 
 nxf() {
