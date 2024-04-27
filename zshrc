@@ -126,9 +126,9 @@ export VOLTA_FEATURE_PNPM=1
 export VOLTA_HOME="$HOME/.volta"
 
 export path=(
-	"$HOME/.local/bin"
-	"$PNPM_HOME"
 	"$VOLTA_HOME/bin"
+	"$PNPM_HOME"
+	"$HOME/.local/bin"
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 	$path
 )
