@@ -84,6 +84,10 @@ nxf() {
 	esac
 }
 
+npm-diff() {
+	npm diff --diff="$1@$2" --diff="$1@$3"
+}
+
 alias gam="$HOME/bin/gam/gam"
 
 setopt HIST_IGNORE_SPACE
