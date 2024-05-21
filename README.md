@@ -26,16 +26,16 @@ make lint
 make format
 ```
 
-### Apply changes to flake files to the system
-
-```shell
-make switch
-```
-
 ### Update flake lock file
 
 ```shell
 make update
+```
+
+### Apply changes to flake files to the system
+
+```shell
+make switch
 ```
 
 ### Delete all old generations
