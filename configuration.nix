@@ -8,6 +8,7 @@
     bottom
     broot
     checkbashisms
+    cloudflared
     delta
     deno
     difftastic
