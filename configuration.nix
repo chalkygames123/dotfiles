@@ -22,6 +22,7 @@
     jq
     nixpkgs-fmt
     onefetch
+    pipx
     ripgrep
     rnr
     sd
