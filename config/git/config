@@ -59,7 +59,6 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = code-insiders --reuse-window --wait
 	pager = delta
 	quotepath = false
 [delta]
@@ -109,8 +108,6 @@
 	autoSetupRemote = true
 	default = current
 	useForceIfIncludes = true
-[sequence]
-	editor = code-insiders --reuse-window --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
