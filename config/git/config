@@ -67,16 +67,7 @@
 	syntax-theme = GitHub
 	tabs = 2
 [diff]
-	algorithm = histogram
-	colorMoved = default
 	external = difft
-	tool = difftastic
-[difftool]
-	prompt = false
-[difftool "difftastic"]
-	cmd = difft "$LOCAL" "$REMOTE"
-[difftool "vscode"]
-	cmd = code-insiders --reuse-window --wait --diff $LOCAL $REMOTE
 [fetch]
 	all = true
 	prune = true
@@ -93,15 +84,9 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
-[interactive]
-	diffFilter = delta --color-only
 [log]
 	abbrevCommit = true
 	date = iso-local
-[merge]
-	conflictStyle = zdiff3
-[pager]
-	difftool = true
 [pull]
 	rebase = true
 [push]
