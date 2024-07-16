@@ -5,6 +5,7 @@
     ~/.aws:
     ~/.config:
     ~/.vimrc:
+    ~/.zprofile:
     ~/.zsh_history:
       force: true
     ~/.zshenv:
@@ -12,7 +13,20 @@
 
 - shell:
     - chmod 700 ~/.config/op/
-    - chmod 600 ~/.config/op/config
     - chmod 700 ~/.config/op/plugins/
     - chmod 700 ~/.config/op/plugins/used_items/
     - chmod 600 ~/.config/op/plugins/used_items/*.json
+    - defaults write -g "ApplePressAndHoldEnabled" -bool "false"
+    - defaults write -g "InitialKeyRepeat" -float "10"
+    - defaults write -g "KeyRepeat" -float "1"
+    - defaults write -g "NSNavPanelExpandedStateForSaveMode2" -bool "true"
+    - defaults write com.apple.dock "appswitcher-all-displays" -bool "true"
+    - defaults write com.apple.dock "autohide-delay" -float "0"
+    - defaults write com.apple.dock "showhidden" -bool "true"
+    - defaults write com.apple.dock "size-immutable" -bool "true"
+    - defaults write com.apple.dock "static-only" -bool "true"
+    - killall Dock
+    - command: |-
+        echo 'NOTE: Some of the changes will take effect the next time you log in.\n'
+      quiet: true
+      stdout: true

@@ -11,6 +11,7 @@ svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --prett
 svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
 [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
 [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
+brew upgrade; brew cleanup; rm ~/.zcompdump; compinit
 git reflog expire --expire now --all
 git push --push-option ci.skip
 git push origin @^:main
