@@ -17,7 +17,7 @@
     - chmod 700 ~/.config/op/plugins/used_items/
     - chmod 600 ~/.config/op/plugins/used_items/*.json
     - defaults write -g "ApplePressAndHoldEnabled" -bool "false"
-    - defaults write -g "InitialKeyRepeat" -float "10"
+    - defaults write -g "InitialKeyRepeat" -float "15"
     - defaults write -g "KeyRepeat" -float "1"
     - defaults write -g "NSNavPanelExpandedStateForSaveMode2" -bool "true"
     - defaults write com.apple.dock "appswitcher-all-displays" -bool "true"
