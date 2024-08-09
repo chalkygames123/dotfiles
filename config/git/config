@@ -93,6 +93,8 @@
 	autoSetupRemote = true
 	default = current
 	useForceIfIncludes = true
+[rerere]
+	enabled = true
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
