@@ -1,5 +1,4 @@
 alias o="open"
-alias v="volta"
 alias z="zoxide"
 
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
@@ -111,11 +110,8 @@ export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --co
 export FZF_DEFAULT_OPTS="--ansi"
 export NODE_REPL_HISTORY=""
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export VOLTA_FEATURE_PNPM=1
-export VOLTA_HOME="$HOME/.volta"
 
 export path=(
-	"$VOLTA_HOME/bin"
 	"$PNPM_HOME"
 	"$HOME/.local/bin"
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
