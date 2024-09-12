@@ -41,6 +41,7 @@
 	rem = remote --verbose
 	ref = reflog
 	re = reset
+	rek = reset --keep
 	res = restore
 	rev = revert
 	sh = show --pretty=fuller --ignore-space-change --ext-diff
