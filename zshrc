@@ -210,3 +210,11 @@ gh_copilot_explain() {
 alias "?"="gh_copilot_explain"
 
 source "$XDG_CONFIG_HOME/op/plugins.sh"
+
+# pnpm
+export PNPM_HOME="/Users/takuya.fukuju/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
