@@ -11,7 +11,7 @@ alias n="npm"
 alias pn="pnpm"
 alias y="yarn"
 
-nif() {
+niw() {
 	case $(na "?") in
 		*yarn)
 			yarn workspace "$1" add "${@:2}"
@@ -29,25 +29,7 @@ nif() {
 	esac
 }
 
-nunf() {
-	case $(na "?") in
-		*yarn)
-			yarn workspace "$1" remove "${@:2}"
-			;;
-		*pnpm)
-			pnpm --filter "$1" remove "${@:2}"
-			;;
-		*npm)
-			npm --workspace "$1" uninstall "${@:2}"
-			;;
-		*)
-			echo "fatal: The package manager is not recognized."
-			return 1
-			;;
-	esac
-}
-
-nrf() {
+nrw() {
 	case $(na "?") in
 		*yarn)
 			yarn workspace "$1" run "${@:2}"
@@ -65,7 +47,25 @@ nrf() {
 	esac
 }
 
-nxf() {
+nunw() {
+	case $(na "?") in
+		*yarn)
+			yarn workspace "$1" remove "${@:2}"
+			;;
+		*pnpm)
+			pnpm --filter "$1" remove "${@:2}"
+			;;
+		*npm)
+			npm --workspace "$1" uninstall "${@:2}"
+			;;
+		*)
+			echo "fatal: The package manager is not recognized."
+			return 1
+			;;
+	esac
+}
+
+nexw() {
 	case $(na "?") in
 		*yarn)
 			yarn workspace "$1" exec "${@:2}"
