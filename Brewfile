@@ -33,6 +33,8 @@ brew "ghq"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# High-level command-line interface for Git
+brew "git-town"
 # Command-line tool for generating regular expressions
 brew "grex"
 # Lightweight and flexible command-line JSON processor
