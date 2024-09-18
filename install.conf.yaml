@@ -22,6 +22,8 @@
     - defaults write -g "NSNavPanelExpandedStateForSaveMode2" -bool "true"
     - defaults write com.apple.dock "appswitcher-all-displays" -bool "true"
     - defaults write com.apple.dock "autohide-delay" -float "0"
+    - defaults write com.apple.dock "autohide" -bool "true"
+    - defaults write com.apple.dock "show-recents" -bool "false"
     - defaults write com.apple.dock "showhidden" -bool "true"
     - defaults write com.apple.dock "size-immutable" -bool "true"
     - defaults write com.apple.dock "static-only" -bool "true"
