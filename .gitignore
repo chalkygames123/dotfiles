@@ -2,5 +2,8 @@
 !/config/gh/
 !/config/gh-copilot/
 !/config/git/
+!/config/karabiner/
+/config/karabiner/*
+!/config/karabiner/karabiner.json
 !/config/op/
 /config/op/config
