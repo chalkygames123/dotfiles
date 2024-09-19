@@ -53,8 +53,6 @@ brew "starship"
 brew "tealdeer"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# JavaScript toolchain manager for reproducible environments
-brew "volta"
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-fira-code-nerd-font"
