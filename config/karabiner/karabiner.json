@@ -61,7 +61,8 @@
                     }
                 ]
             },
-            "name": "JIS"
+            "name": "JIS",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "jis" }
         },
         {
             "complex_modifications": {
@@ -111,7 +112,10 @@
             },
             "name": "ANSI",
             "selected": true,
-            "virtual_hid_keyboard": { "country_code": 1 }
+            "virtual_hid_keyboard": {
+                "country_code": 1,
+                "keyboard_type_v2": "ansi"
+            }
         }
     ]
 }
