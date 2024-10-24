@@ -31,6 +31,8 @@ brew "gh"
 brew "ghq"
 # Distributed revision control system
 brew "git"
+# Automatic git commit --fixup
+brew "git-absorb"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # High-level command-line interface for Git
