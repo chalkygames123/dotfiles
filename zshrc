@@ -9,6 +9,7 @@ alias l="eza --long --all"
 
 alias n="npm"
 alias pn="pnpm"
+alias pnf="pnpm -F"
 alias y="yarn"
 
 npm-diff() {
