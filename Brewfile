@@ -1,4 +1,6 @@
 tap "homebrew/bundle"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
 # Official Amazon AWS command-line interface
@@ -45,10 +47,10 @@ brew "jq"
 brew "ripgrep"
 # Intuitive find & replace CLI
 brew "sd"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# SQL linter and auto-formatter for Humans
+brew "sqlfluff"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Very fast implementation of tldr in Rust
