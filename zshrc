@@ -1,14 +1,12 @@
-alias o="open"
-alias z="zoxide"
-
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
 alias c="code"
 alias g="git"
 alias l="eza --long --all"
-
 alias n="npm"
+alias o="open"
 alias pn="pnpm"
 alias pnf="pnpm -F"
+alias z="zoxide"
 
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
