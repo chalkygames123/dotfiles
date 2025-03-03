@@ -12,13 +12,54 @@ svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --prett
 [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
 [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
 brew bundle dump --force --formula --cask --tap --describe
-git reflog expire --expire now --all
-git push --push-option ci.skip
-git push origin @^:main
+git add --all
+git branch --all --verbose --verbose
+git clean -d --force --interactive
+git clean -d --force --interactive --exclude='.husky/' --exclude='node_modules/' -x
+git clean -d --force --interactive -X
+git commit --amend
+git commit --date "$(git show --no-patch --pretty '%ad')" --no-edit --amend
+git commit --date now --no-edit --amend
+git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')"
+git commit --message "$(pbpaste)"
+git commit --no-edit --amend
+git diff --ignore-space-change
+git diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git diff --staged --ignore-space-change
+git diff --staged --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git log --patch --ignore-space-change --ext-diff
+git log --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git log --patch --ignore-space-change --ext-diff '@{upstream}..'
+git log --patch --ignore-space-change --ext-diff '@{upstream}..' -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git log --pretty=fuller
+git log --pretty=fuller --patch --ignore-space-change --ext-diff
+git log --pretty=fuller --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git log --pretty=fuller --patch --ignore-space-change --ext-diff '@{upstream}..'
+git log --pretty=fuller --patch --ignore-space-change --ext-diff '@{upstream}..' -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git log --pretty=fuller '@{upstream}^..'
+git log '@{upstream}^..'
 git ls-files . --exclude-standard --others
 git ls-files . --exclude-standard --others --ignored --exclude '!node_modules'
-git commit --date now --no-edit --amend
-git commit --date "$(git show --no-patch --pretty '%ad')" --no-edit --amend
-git commit --message "$(pbpaste)"
-git commit --message "$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')"
+git merge --abort
+git pull --force origin main
+git push --force-with-lease
+git push --push-option ci.skip
+git push origin @^:main
+git rebase --abort
+git rebase --continue
+git rebase --interactive --autosquash
+git rebase --interactive --autosquash --committer-date-is-author-date
+git reflog expire --expire now --all
+git remote --verbose
+git reset --keep
+git show --pretty=fuller --ignore-space-change --ext-diff
+git show --pretty=fuller --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git stash --include-untracked
+git stash --staged
+git stash list --date=iso-local
+git stash pop
+git stash pop --index
+git stash push --keep-index
+git status --ignored --show-stash
+git switch --create
 exec $SHELL -l
