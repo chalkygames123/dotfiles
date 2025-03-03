@@ -11,10 +11,6 @@ alias n="npm"
 alias pn="pnpm"
 alias pnf="pnpm -F"
 
-npm-diff() {
-	npm diff --diff="$1@$2" --diff="$1@$3"
-}
-
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt MAGIC_EQUAL_SUBST
