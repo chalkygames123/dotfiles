@@ -27,6 +27,9 @@ git diff --ignore-space-change
 git diff --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 git diff --staged --ignore-space-change
 git diff --staged --ignore-space-change -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
+git log --max-count=10
+git log --max-count=20
+git log --max-count=30
 git log --patch --ignore-space-change --ext-diff
 git log --patch --ignore-space-change --ext-diff -- ':^*package-lock.json' ':^*yarn.lock' ':^*pnpm-lock.yaml'
 git log --patch --ignore-space-change --ext-diff '@{upstream}..'
