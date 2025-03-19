@@ -11,7 +11,7 @@ My minimalistic dotfiles for macOS, bootstrapped with [Dotbot](https://github.co
 
 1. Clone this repository to your home directory.
 2. Review your existing configuration:
-   - Check if you already have any files listed in [`install.conf.yaml` under the `link` section](./install.conf.yaml) (such as `.zshrc` or `.gitconfig`).
+   - Check if you already have any files listed in [`install.conf.yaml`](./install.conf.yaml) under the `link` section (such as `.zshrc` or `.gitconfig`).
    - If you do, either back them up or merge their contents into the corresponding files in this repository.
 3. Run `./install` to bootstrap dotfiles.
 4. Clean up your environment to ensure the new configurations take effect:
@@ -27,7 +27,7 @@ My minimalistic dotfiles for macOS, bootstrapped with [Dotbot](https://github.co
 
 ## Backing up your applications
 
-You can use the following script to back up your currently installed applications to the `applications` file:
+To back up your currently installed applications to the [`applications`](./applications) file, run:
 
 ```shell
 ./dump_applications
