@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+tap "oven-sh/bun"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -17,6 +18,8 @@ brew "bottom"
 brew "broot"
 # Checks for bashisms in shell scripts
 brew "checkbashisms"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # Diff that understands syntax
 brew "difftastic"
 # View disk space usage and delete unwanted data, fast
@@ -43,6 +46,10 @@ brew "git-town"
 brew "grex"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Platform built on V8 to build network applications
+brew "node"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Intuitive find & replace CLI
@@ -57,6 +64,12 @@ brew "starship"
 brew "tealdeer"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Find security issues in GitHub Actions setups
+brew "zizmor"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-fira-code-nerd-font"
