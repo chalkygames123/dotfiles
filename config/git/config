@@ -5,6 +5,7 @@
 [commit]
 	gpgsign = true
 [core]
+	editor = code --reuse-window --wait
 	pager = delta
 	quotepath = false
 [delta]
@@ -14,6 +15,8 @@
 	tabs = 2
 [diff]
 	external = difft
+[difftool "vscode"]
+	cmd = code --reuse-window --wait --diff $LOCAL $REMOTE
 [fetch]
 	all = true
 	prune = true
@@ -41,6 +44,8 @@
 	useForceIfIncludes = true
 [rerere]
 	enabled = true
+[sequence]
+	editor = code --reuse-window --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
