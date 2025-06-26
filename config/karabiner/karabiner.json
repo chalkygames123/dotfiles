@@ -69,6 +69,7 @@
                 "rules": [
                     {
                         "description": "Change left_command/right_command to japanese_eisuu/japanese_kana, respectively. (Post left_command/right_command if pressed alone)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
