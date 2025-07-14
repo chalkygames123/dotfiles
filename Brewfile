@@ -46,6 +46,8 @@ brew "git-town"
 brew "grex"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Postgres C API library
+brew "libpq"
 # Platform built on V8 to build network applications
 brew "node"
 # Fast, disk space efficient package manager
