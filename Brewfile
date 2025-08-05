@@ -75,5 +75,3 @@ brew "oven-sh/bun/bun"
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-fira-code-nerd-font"
-# CLI for GitKraken
-cask "gitkraken-cli"
