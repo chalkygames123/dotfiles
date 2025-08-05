@@ -48,8 +48,6 @@ brew "grex"
 brew "jq"
 # Postgres C API library
 brew "libpq"
-# Platform built on V8 to build network applications
-brew "node"
 # Fast, disk space efficient package manager
 brew "pnpm"
 # Search tool like grep and The Silver Searcher
