@@ -42,6 +42,8 @@ brew "git-absorb"
 brew "git-delta"
 # High-level command-line interface for Git
 brew "git-town"
+# Audit git repos for secrets
+brew "gitleaks"
 # Command-line tool for generating regular expressions
 brew "grex"
 # Lightweight and flexible command-line JSON processor
