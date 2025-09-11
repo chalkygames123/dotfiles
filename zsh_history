@@ -6,9 +6,7 @@ fd --hidden --no-ignore --type directory --exclude '{.git,.husky,node_modules}/'
 fd --hidden --no-ignore --type file --exclude '{.git,.husky,node_modules}/' --exec-batch chmod {} 644 --exec-batch xattr -c
 tree -a -I '.git/' --gitignore --noreport -F
 sirv --dev --etag dist
-svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --datauri unenc --string "$(pbpaste)" | pbcopy
-svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty --string "$(pbpaste)" | pbcopy
-svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
+svgo --multipass --eol lf --final-newline --recursive
 [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
 [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
 brew bundle dump --global --force --formula --cask --tap --describe
@@ -66,4 +64,3 @@ git stash pop --index
 git stash push --keep-index
 git status --ignored --show-stash
 git switch --create
-exec $SHELL -l
