@@ -2,6 +2,7 @@
 !/config/gh/
 !/config/gh-copilot/
 !/config/git/
+!/config/homebrew/
 !/config/karabiner/
 /config/karabiner/*
 !/config/karabiner/karabiner.json
