@@ -11,7 +11,8 @@ svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --prett
 svgo --config ~/ghq/github.com/chalkygames123/svgo-config/svgo.config.js --pretty "$(pbpaste)"
 [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
 [[ $PWD =~ ^$HOME/ghq/ ]] && open "$HOME/Documents/${PWD#~/ghq/}"
-brew bundle dump --force --formula --cask --tap --describe
+brew bundle dump --global --force --formula --cask --tap --describe
+brew bundle install --global
 git add --all
 git branch --all --verbose --verbose
 git clean -d --force --interactive
