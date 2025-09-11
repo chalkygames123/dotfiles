@@ -18,6 +18,8 @@ brew "bottom"
 brew "broot"
 # Checks for bashisms in shell scripts
 brew "checkbashisms"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # Diff that understands syntax
 brew "difftastic"
 # View disk space usage and delete unwanted data, fast
@@ -46,6 +48,8 @@ brew "gitleaks"
 brew "grex"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Intuitive find & replace CLI
