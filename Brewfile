@@ -46,8 +46,6 @@ brew "gitleaks"
 brew "grex"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Postgres C API library
-brew "libpq"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Intuitive find & replace CLI

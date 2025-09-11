@@ -34,7 +34,6 @@ export path=(
 	"$PNPM_HOME"
 	"$HOME/.local/bin"
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
-	"/opt/homebrew/opt/libpq/bin"
 	$path
 )
 
