@@ -1,3 +1,4 @@
+/aws/sso/*
 /config/*
 !/config/gh/
 !/config/gh-copilot/

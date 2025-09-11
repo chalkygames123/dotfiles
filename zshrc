@@ -129,3 +129,5 @@ gh_copilot_explain() {
 alias "?"="gh_copilot_explain"
 
 source "$XDG_CONFIG_HOME/op/plugins.sh"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
