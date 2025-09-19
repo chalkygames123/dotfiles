@@ -33,6 +33,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export path=(
 	"$PNPM_HOME"
 	"$HOME/.local/bin"
+	"/opt/homebrew/opt/libpq/bin"
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 	$path
 )
