@@ -5,6 +5,7 @@
     ~/.aws:
     ~/.config:
     ~/.vimrc:
+    ~/.warp:
     ~/.zprofile:
     ~/.zsh_history:
       force: true
