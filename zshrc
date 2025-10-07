@@ -111,4 +111,6 @@ xargsg() {
 
 source "$XDG_CONFIG_HOME/op/plugins.sh"
 
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
