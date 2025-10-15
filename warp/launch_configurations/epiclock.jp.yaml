@@ -23,69 +23,52 @@
 
 ---
 name: Rhelixa-inc/epiclock.jp
-active_window_index: 0
 windows:
-  - active_tab_index: 0
-    tabs:
+  - tabs:
+      - title: root
+        layout:
+          split_direction: horizontal
+          panes:
+            - cwd: &repo_cwd /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
+            - cwd: *repo_cwd
+              commands:
+                - exec: |
+                    # Supabase containers already running:
+
+                    docker container ls --filter 'label=com.supabase.cli.project' --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}'
       - title: admin
         layout:
           split_direction: horizontal
           panes:
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
-              is_focused: true
+            - cwd: *repo_cwd
+            - cwd: *repo_cwd
               commands:
-                - exec: git status
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
-              commands:
-                - exec: |
-                    # Snippets to start development:
-
-                    # pnpm -F admin exec supabase start
-                    # pnpm -F admin run dev
-
-                    # Supabase containers already running:
-
-                    docker container ls --filter 'label=com.supabase.cli.project' --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}'
+                - exec: "# To start development, run: pnpm -F admin run dev"
         color: red
       - title: db
         layout:
           split_direction: horizontal
           panes:
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
-              is_focused: true
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
+            - cwd: *repo_cwd
+            - cwd: *repo_cwd
               commands:
-                - exec: |
-                    # Snippets to start development:
-
-                    # pnpm -F db exec supabase start
-                    # pnpm -F db run dev
+                - exec: "# To start development, run: pnpm -F db run dev"
         color: yellow
       - title: my
         layout:
           split_direction: horizontal
           panes:
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
-              is_focused: true
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
+            - cwd: *repo_cwd
+            - cwd: *repo_cwd
               commands:
-                - exec: |
-                    # Snippets to start development:
-
-                    # pnpm -F my exec supabase start
-                    # pnpm -F my run dev
+                - exec: "# To start development, run: pnpm -F my run dev"
         color: green
       - title: web
         layout:
           split_direction: horizontal
           panes:
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
-              is_focused: true
-            - cwd: /Users/takuya.fukuju/ghq/github.com/Rhelixa-inc/epiclock.jp
+            - cwd: *repo_cwd
+            - cwd: *repo_cwd
               commands:
-                - exec: |
-                    # Snippets to start development:
-
-                    # pnpm -F web exec supabase start
-                    # pnpm -F web run dev
+                - exec: "# To start development, run: pnpm -F web run dev"
         color: blue
