@@ -1,0 +1,4 @@
+---
+"terminal:cancel_command": none
+"workspace:close_other_tabs": alt-cmd-t
+"workspace:close_tabs_right_active_tab": ctrl-cmd-w
