@@ -104,6 +104,14 @@
                             "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 779,
+                        "vendor_id": 2131
+                    },
+                    "ignore_vendor_events": true
                 }
             ],
             "name": "ANSI",
