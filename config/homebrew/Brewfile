@@ -45,11 +45,13 @@ brew "git-town"
 brew "gitleaks"
 # Command-line tool for generating regular expressions
 brew "grex"
+# Post-modern modal text editor
+brew "helix"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Postgres C API library
 brew "libpq"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Fast, disk space efficient package manager
 brew "pnpm"
