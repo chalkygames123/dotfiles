@@ -6,6 +6,8 @@ alias n="npm"
 alias o="open"
 alias pn="pnpm"
 alias pnf="pnpm -F"
+alias pnr="pnpm run"
+alias pnx="pnpm exec"
 alias z="zoxide"
 
 setopt HIST_IGNORE_SPACE
