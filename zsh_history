@@ -4,7 +4,7 @@ fd --hidden --no-ignore --type file '^state\.vscdb(|\.backup)$' ~/Library/Applic
 fd --hidden --no-ignore --type file '^\.DS_Store$' --exec-batch rm -v {}
 fd --hidden --no-ignore --type directory --exclude '{.git,.husky,node_modules}/' --exec-batch chmod {} 755 --exec-batch xattr -c
 fd --hidden --no-ignore --type file --exclude '{.git,.husky,node_modules}/' --exec-batch chmod {} 644 --exec-batch xattr -c
-tree -a -I '.git/' --gitignore --noreport -F
+tree -a -I '.git/' --gitignore
 sirv --dev --etag dist
 svgo --multipass --eol lf --final-newline --recursive
 [[ $PWD =~ ^$HOME/ghq/ ]] && mkdir -p "$HOME/Documents/${PWD#~/ghq/}"
