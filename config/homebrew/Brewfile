@@ -1,3 +1,4 @@
+tap "anomalyco/tap"
 tap "oven-sh/bun"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
@@ -51,6 +52,8 @@ brew "helix"
 brew "jq"
 # Postgres C API library
 brew "libpq"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Fast, disk space efficient package manager
@@ -73,8 +76,14 @@ brew "tree"
 brew "uv"
 # Find security issues in GitHub Actions setups
 brew "zizmor"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
 cask "font-fira-code-nerd-font"
+# Git client for simultaneous branches on top of your existing workflow
+cask "gitbutler"
