@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "oven-sh/bun"
+tap "steipete/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -50,6 +51,8 @@ brew "grex"
 brew "helix"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Opinionated formatter for jq
+brew "jqfmt"
 # Postgres C API library
 brew "libpq"
 # Simple tool to make locally trusted development certificates
@@ -80,6 +83,8 @@ brew "zizmor"
 brew "anomalyco/tap/opencode"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# Google CLI for Gmail, Calendar, Drive, and Contacts
+brew "steipete/tap/gogcli"
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-fira-code-nerd-font"
