@@ -7,6 +7,8 @@ brew "shellcheck"
 brew "actionlint"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# CLI tool for drawing AWS architecture
+brew "awsdac"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Bourne-Again SHell, a UNIX command interpreter
