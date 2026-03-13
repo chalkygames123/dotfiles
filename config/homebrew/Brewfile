@@ -85,7 +85,7 @@ brew "zizmor"
 brew "anomalyco/tap/opencode"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# Google CLI for Gmail, Calendar, Drive, and Contacts
+# Google CLI for Gmail, Calendar, Drive, Docs, Sheets, and more
 brew "steipete/tap/gogcli"
 # Command-line interface for 1Password
 cask "1password-cli"
