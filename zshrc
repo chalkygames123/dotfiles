@@ -1,14 +1,5 @@
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
-alias c="code"
-alias g="git"
-alias l="eza --long --all"
-alias n="npm"
-alias o="open"
-alias pn="pnpm"
-alias pnf="pnpm -F"
-alias pnr="pnpm run"
-alias pnx="pnpm exec"
-alias z="zoxide"
+alias ll="ls -A --color=auto -l"
 
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
@@ -39,18 +30,6 @@ export path=(
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 	$path
 )
-
-manzsh() {
-	man zshbuiltins | less -p "^       $1"
-}
-
-touchp() {
-	declare arg
-
-	for arg in "$@"; do
-		mkdir -p "$(dirname "$arg")" && touch "$arg"
-	done
-}
 
 cdf() {
 	declare selected
