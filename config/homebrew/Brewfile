@@ -1,18 +1,9 @@
-tap "anomalyco/tap"
-tap "oven-sh/bun"
-tap "steipete/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
-# Official Amazon AWS command-line interface
-brew "awscli"
-# CLI tool for drawing AWS architecture
-brew "awsdac"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Yet another cross-platform graphical process/system monitor
@@ -23,8 +14,6 @@ brew "broot"
 brew "checkbashisms"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
-# Diff that understands syntax
-brew "difftastic"
 # View disk space usage and delete unwanted data, fast
 brew "dua-cli"
 # Modern, maintained replacement for ls
@@ -45,50 +34,32 @@ brew "git-absorb"
 brew "git-delta"
 # High-level command-line interface for Git
 brew "git-town"
-# Audit git repos for secrets
-brew "gitleaks"
-# Command-line tool for generating regular expressions
-brew "grex"
+# Google Suite CLI
+brew "gogcli"
 # Post-modern modal text editor
 brew "helix"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Opinionated formatter for jq
-brew "jqfmt"
 # Postgres C API library
 brew "libpq"
-# Simple tool to make locally trusted development certificates
-brew "mkcert"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Fast, disk space efficient package manager
-brew "pnpm"
+# Vulnerability scanner which uses the OSV database
+brew "osv-scanner"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Intuitive find & replace CLI
-brew "sd"
 # Autoformat shell script source code
 brew "shfmt"
 # SQL linter and auto-formatter for Humans
 brew "sqlfluff"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Very fast implementation of tldr in Rust
-brew "tealdeer"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Find security issues in GitHub Actions setups
 brew "zizmor"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
-# Google CLI for Gmail, Calendar, Drive, Docs, Sheets, and more
-brew "steipete/tap/gogcli"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
 cask "font-fira-code-nerd-font"
-# Git client for simultaneous branches on top of your existing workflow
-cask "gitbutler"
