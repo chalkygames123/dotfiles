@@ -90,6 +90,10 @@ xargsg() {
 	done
 }
 
+autoload -Uz compinit && compinit
+
+source "$HOME/dotfiles/ni.zsh"
+
 source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
