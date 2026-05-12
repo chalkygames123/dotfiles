@@ -9,7 +9,7 @@ git commit --amend
 git log '@{upstream}^..'
 git log --max-count=10
 git push --force-with-lease --force-if-includes
-git rebase --interactive --autosquash --committer-date-is-author-date
+git rebase --interactive --autosquash
 git stash list --date=iso-local
 git status --ignored --show-stash
 git switch --create
