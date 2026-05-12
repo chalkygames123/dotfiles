@@ -1,5 +1,8 @@
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
 alias ll="ls -A --color=auto -l"
+alias pn="pnpm"
+alias pnf="pnpm --filter"
+alias pnr="pnpm run"
 
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
