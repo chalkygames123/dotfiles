@@ -1,6 +1,5 @@
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
 alias ll="ls -A --color=auto -l"
-alias pn="pnpm"
 alias pnf="pnpm --filter"
 alias pnr="pnpm run"
 
@@ -27,6 +26,7 @@ export NODE_REPL_HISTORY=""
 export PNPM_HOME="$HOME/.local/share/pnpm"
 
 export path=(
+	"$PNPM_HOME/bin"
 	"$PNPM_HOME"
 	"$HOME/.local/bin"
 	"/opt/homebrew/opt/libpq/bin"
