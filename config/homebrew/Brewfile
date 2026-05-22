@@ -42,8 +42,6 @@ brew "helix"
 brew "jq"
 # Postgres C API library
 brew "libpq"
-# Vulnerability scanner which uses the OSV database
-brew "osv-scanner"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Autoformat shell script source code
