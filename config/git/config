@@ -5,7 +5,6 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = code --reuse-window --wait
 	pager = delta
 	quotepath = false
 [delta]
@@ -44,8 +43,6 @@
 	useForceIfIncludes = true
 [rerere]
 	enabled = true
-[sequence]
-	editor = code --reuse-window --wait
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
