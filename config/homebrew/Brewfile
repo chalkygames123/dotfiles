@@ -32,8 +32,6 @@ brew "git"
 brew "git-absorb"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# High-level command-line interface for Git
-brew "git-town"
 # Google Suite CLI
 brew "gogcli"
 # Post-modern modal text editor
