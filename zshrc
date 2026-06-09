@@ -3,7 +3,6 @@ alias g="git"
 alias ll="ls -A --color=auto -l"
 alias pnf="pnpm --filter"
 alias pnr="pnpm run"
-alias pnx="pnpm exec"
 
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
