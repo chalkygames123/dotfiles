@@ -1,6 +1,5 @@
 /config/*
 !/config/gh/
-!/config/gh-copilot/
 !/config/git/
 !/config/homebrew/
 !/config/karabiner/
