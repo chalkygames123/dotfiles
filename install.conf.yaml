@@ -12,10 +12,6 @@
     ~/.zshrc:
 
 - shell:
-    - chmod 700 ~/.config/op/
-    - chmod 700 ~/.config/op/plugins/
-    - chmod 700 ~/.config/op/plugins/used_items/
-    - chmod 600 ~/.config/op/plugins/used_items/*.json
     - defaults write -g "ApplePressAndHoldEnabled" -bool "false"
     - defaults write -g "InitialKeyRepeat" -float "15"
     - defaults write -g "KeyRepeat" -float "1"

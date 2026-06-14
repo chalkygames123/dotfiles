@@ -6,7 +6,5 @@
 !/config/karabiner/
 /config/karabiner/*
 !/config/karabiner/karabiner.json
-!/config/op/
-/config/op/config
 /warp/*
 !/warp/keybindings.yaml
