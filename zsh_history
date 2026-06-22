@@ -1,4 +1,4 @@
-brew bundle dump --global --force --formula --cask --tap --describe
+brew bundle dump --global --force --formula --cask --tap
 brew bundle install --global
 eza --long --all --header --time-style=relative
 fd --hidden --no-ignore --type=file '^\.DS_Store$' --exec-batch rm -v {} \;
