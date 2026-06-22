@@ -1,3 +1,4 @@
+tap "airbytehq/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -54,8 +55,12 @@ brew "tree"
 brew "uv"
 # Find security issues in GitHub Actions setups
 brew "zizmor"
+# CLI for Airbyte, designed for use by both humans and agents
+brew "airbytehq/tap/airbyte-agent-cli", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 cask "font-fira-code-nerd-font"
+# CLI for GitKraken
+cask "gitkraken-cli"
