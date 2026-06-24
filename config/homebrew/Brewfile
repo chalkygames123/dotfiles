@@ -1,4 +1,5 @@
 tap "airbytehq/tap"
+tap "cloudflare/cloudflare"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -13,6 +14,8 @@ brew "bottom"
 brew "broot"
 # Checks for bashisms in shell scripts
 brew "checkbashisms"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # View disk space usage and delete unwanted data, fast
