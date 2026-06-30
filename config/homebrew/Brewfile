@@ -16,8 +16,6 @@ brew "broot"
 brew "checkbashisms"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
 # View disk space usage and delete unwanted data, fast
 brew "dua-cli"
 # Modern, maintained replacement for ls
@@ -32,18 +30,20 @@ brew "gh"
 brew "ghq"
 # Distributed revision control system
 brew "git"
-# Automatic git commit --fixup
-brew "git-absorb"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Google Suite CLI
 brew "gogcli"
 # Post-modern modal text editor
 brew "helix"
+# Git-compatible distributed version control system
+brew "jj"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Postgres C API library
 brew "libpq"
+# Language Server for Postgres
+brew "postgres-language-server"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Autoformat shell script source code
@@ -65,5 +65,7 @@ cask "1password-cli"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 cask "font-fira-code-nerd-font"
+# Git client for simultaneous branches on top of your existing workflow
+cask "gitbutler"
 # CLI for GitKraken
 cask "gitkraken-cli"
