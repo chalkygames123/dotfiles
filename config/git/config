@@ -5,11 +5,7 @@
 [commit]
 	gpgsign = true
 [core]
-	pager = delta
 	quotepath = false
-[delta]
-	navigate = true
-	tabs = 2
 [diff]
 	colorMoved = default
 [fetch]
@@ -28,8 +24,6 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
-[interactive]
-	diffFilter = delta --color-only
 [log]
 	abbrevCommit = true
 	date = iso-local

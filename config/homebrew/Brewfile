@@ -26,8 +26,6 @@ brew "gh"
 brew "ghq"
 # Distributed revision control system
 brew "git"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
 # Google Suite CLI
 brew "gogcli"
 # Post-modern modal text editor
