@@ -12,6 +12,8 @@ brew "bottom"
 brew "broot"
 # Checks for bashisms in shell scripts
 brew "checkbashisms"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # View disk space usage and delete unwanted data, fast
 brew "dua-cli"
 # Modern, maintained replacement for ls
@@ -57,7 +59,5 @@ cask "1password-cli"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 cask "font-fira-code-nerd-font"
-# Git client for simultaneous branches on top of your existing workflow
-cask "gitbutler"
 # CLI for GitKraken
 cask "gitkraken-cli"
