@@ -13,28 +13,10 @@ setopt NO_FLOW_CONTROL
 bindkey "^U" backward-kill-line
 bindkey "^^" redo
 
-export EDITOR="vim"
 export HISTFILE="$HOME/dotfiles/zsh_history"
-export LANG="ja_JP.UTF-8"
-export LESSHISTFILE="-"
 export PS1=$'\n%B%F{magenta}%*%f %F{cyan}%c%f %F{magenta}%%%f %b'
 export SAVEHIST=0
 export WORDCHARS="${WORDCHARS//[-\/]/}"
-
-export BAT_THEME="ansi"
-export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
-export FZF_DEFAULT_OPTS="--ansi"
-export NODE_REPL_HISTORY=""
-export PNPM_HOME="$HOME/.local/share/pnpm"
-
-export path=(
-	"$PNPM_HOME/bin"
-	"$PNPM_HOME"
-	"$HOME/.local/bin"
-	"/opt/homebrew/opt/libpq/bin"
-	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
-	$path
-)
 
 cdf() {
 	declare selected
