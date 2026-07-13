@@ -52,9 +52,15 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change fn pressed alone to control+space.",
+                        "description": "Toggle Input Source by Fn (Fn → left_control+left_shift+j / left_control+left_shift+quote)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_mode_id": "com.apple.inputmethod.Roman" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "fn",
                                     "modifiers": { "optional": ["any"] }
@@ -62,8 +68,28 @@
                                 "to": [{ "key_code": "fn" }],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "spacebar",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "j",
+                                        "modifiers": ["left_control", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_mode_id": "com.apple.inputmethod.Japanese" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "fn",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "fn" }],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "quote",
+                                        "modifiers": ["left_control", "left_shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -71,7 +97,7 @@
                         ]
                     },
                     {
-                        "description": "Change caps_lock to command+control+option+shift.",
+                        "description": "Use Caps Lock as Hyperkey (caps_lock → left_control+left_shift+left_option+left_command)",
                         "manipulators": [
                             {
                                 "from": {
@@ -80,10 +106,36 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_shift", "left_option", "left_command"]
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable Tailspin shortcut (control+shift+option+command+, → vk_none)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "mandatory": ["control", "shift", "option", "command"] }
+                                },
+                                "to": [{ "key_code": "vk_none" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable sysdiagnose shortcut (control+shift+option+command+. → vk_none)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "mandatory": ["control", "shift", "option", "command"] }
+                                },
+                                "to": [{ "key_code": "vk_none" }],
                                 "type": "basic"
                             }
                         ]
@@ -142,7 +194,7 @@
                     "ignore_vendor_events": true,
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "f24" },
+                            "from": { "key_code": "f19" },
                             "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                         }
                     ]
