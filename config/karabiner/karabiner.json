@@ -52,51 +52,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Toggle Input Source by Fn (Fn → left_control+left_shift+j / left_control+left_shift+quote)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [{ "input_mode_id": "com.apple.inputmethod.Roman" }],
-                                        "type": "input_source_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "fn",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "fn" }],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "j",
-                                        "modifiers": ["left_control", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [{ "input_mode_id": "com.apple.inputmethod.Japanese" }],
-                                        "type": "input_source_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "fn",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "fn" }],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": ["left_control", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Use Caps Lock as Hyperkey (caps_lock → left_control+left_shift+left_option+left_command)",
                         "manipulators": [
                             {
