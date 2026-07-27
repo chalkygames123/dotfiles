@@ -8,6 +8,7 @@
 	quotepath = false
 [diff]
 	colorMoved = default
+	renames = true
 [fetch]
 	all = true
 	prune = true
@@ -35,6 +36,8 @@
 	autoSetupRemote = true
 	default = current
 	useForceIfIncludes = true
+[rebase]
+	updateRefs = true
 [rerere]
 	enabled = true
 [user]
