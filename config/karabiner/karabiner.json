@@ -5,28 +5,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change command+open_bracket to command+grave_accent_and_tilde.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change caps_lock to command+control+option+shift.",
+                        "description": "Use Caps Lock as Hyperkey (caps_lock → left_control+left_shift+left_option+left_command)",
                         "manipulators": [
                             {
                                 "from": {
@@ -35,10 +14,36 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_shift", "left_option", "left_command"]
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable Tailspin shortcut (control+shift+option+command+, → vk_none)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "mandatory": ["control", "shift", "option", "command"] }
+                                },
+                                "to": [{ "key_code": "vk_none" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable sysdiagnose shortcut (control+shift+option+command+. → vk_none)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "mandatory": ["control", "shift", "option", "command"] }
+                                },
+                                "to": [{ "key_code": "vk_none" }],
                                 "type": "basic"
                             }
                         ]
@@ -46,6 +51,7 @@
                 ]
             },
             "name": "JIS",
+            "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "jis" }
         },
         {
@@ -164,7 +170,6 @@
                 }
             ],
             "name": "ANSI",
-            "selected": true,
             "virtual_hid_keyboard": {
                 "country_code": 1,
                 "keyboard_type_v2": "ansi"
