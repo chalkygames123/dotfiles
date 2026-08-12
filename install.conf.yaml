@@ -2,6 +2,7 @@
     ~/:
 
 - link:
+    ~/.gitallowedsigners:
     ~/.config:
     ~/.vimrc:
     ~/.warp:
