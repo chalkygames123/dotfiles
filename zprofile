@@ -14,7 +14,6 @@ export LANG="ja_JP.UTF-8"
 export LESSHISTFILE="-"
 export NODE_REPL_HISTORY=""
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
 
 export path=(
 	"$PNPM_HOME/bin"

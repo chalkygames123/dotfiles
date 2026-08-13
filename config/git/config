@@ -22,7 +22,7 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	allowedSignersFile = ~/.gitallowedsigners
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
 [log]
@@ -43,4 +43,4 @@
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
-	signingkey = ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/66441cd6bddaa1a8789de4bb66732733.pub
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtworH8VpU49fBqd/nSX34UsNWON7d0EgzylkroUPvj

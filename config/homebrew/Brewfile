@@ -51,5 +51,3 @@ brew "zizmor"
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-fira-code-nerd-font"
-# Store SSH keys in the Secure Enclave
-cask "secretive"
