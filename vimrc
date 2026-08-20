@@ -44,6 +44,7 @@ set virtualedit=onemore
 set whichwrap+=<,>,h,l
 set wildmenu
 set wildmode=longest,full
+set wrapmargin=0
 syntax enable
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
