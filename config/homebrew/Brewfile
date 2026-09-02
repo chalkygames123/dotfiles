@@ -26,6 +26,8 @@ brew "gh"
 brew "ghq"
 # Distributed revision control system
 brew "git"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Google Suite CLI
 brew "gogcli"
 # Post-modern modal text editor
