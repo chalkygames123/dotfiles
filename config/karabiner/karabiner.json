@@ -5,17 +5,17 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Remap Move focus to next window shortcut (command+open_bracket → command+grave_accent_and_tilde)",
+                        "description": "Remap Hyper key + open_bracket to Hyper key + grave_accent_and_tilde",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": { "mandatory": ["command"] }
+                                    "modifiers": { "mandatory": ["left_control", "left_shift", "left_option", "left_command"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["command"]
+                                        "modifiers": ["left_control", "left_shift", "left_option", "left_command"]
                                     }
                                 ],
                                 "type": "basic"
