@@ -76,5 +76,3 @@ xargsg() {
 		i=$((i + 1))
 	done
 }
-
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
