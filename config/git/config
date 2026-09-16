@@ -40,6 +40,8 @@
 	updateRefs = true
 [rerere]
 	enabled = true
+[tag]
+	gpgsign = true
 [user]
 	email = chalkygames123@gmail.com
 	name = Takuya Fukuju
