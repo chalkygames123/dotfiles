@@ -6,6 +6,8 @@ fi
 # Comment this line if you don't want it to be added again.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
+source "$HOME/.cargo/env"
+
 export BAT_THEME="ansi"
 export EDITOR="vim"
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude=.git --type=file --color=always"
