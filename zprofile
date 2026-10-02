@@ -2,6 +2,12 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+if [[ -p "$HOME/.copilot/.env" ]]; then
+	export "$(grep -v '^#' "$HOME/.copilot/.env" | xargs)"
+
+	launchctl setenv HEROUI_PRO_PERSONAL_TOKEN "$HEROUI_PRO_PERSONAL_TOKEN"
+fi
+
 # Added by OrbStack: command-line tools and integration
 # Comment this line if you don't want it to be added again.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :

@@ -6,5 +6,7 @@
 !/config/karabiner/
 /config/karabiner/*
 !/config/karabiner/karabiner.json
+/copilot/*
+!/copilot/mcp-config.json
 /warp/*
 !/warp/keybindings.yaml

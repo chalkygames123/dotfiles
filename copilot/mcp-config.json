@@ -1,0 +1,66 @@
+{
+	"mcpServers": {
+		"Ambient Context": {
+			"type": "stdio",
+			"command": "/Applications/Ambient Context.app/Contents/MacOS/ambient-context",
+			"args": ["mcp"],
+			"tools": ["*"]
+		},
+		"Astro Docs": {
+			"type": "http",
+			"url": "https://mcp.docs.astro.build/mcp",
+			"tools": ["*"]
+		},
+		"Cloudflare": {
+			"type": "http",
+			"url": "https://mcp.cloudflare.com/mcp",
+			"tools": ["*"]
+		},
+		"Figma (local)": {
+			"type": "http",
+			"url": "http://127.0.0.1:3845/mcp",
+			"tools": ["*"]
+		},
+		"Figma (remote)": {
+			"type": "http",
+			"url": "https://mcp.figma.com/mcp",
+			"tools": ["*"]
+		},
+		"GitHub": {
+			"type": "http",
+			"url": "https://api.githubcopilot.com/mcp",
+			"tools": ["*"]
+		},
+		"MDN": {
+			"type": "http",
+			"url": "https://mcp.mdn.mozilla.net/",
+			"tools": ["*"]
+		},
+		"Mobbin": {
+			"type": "http",
+			"url": "https://api.mobbin.com/mcp",
+			"tools": ["*"]
+		},
+		"React Aria": {
+			"type": "stdio",
+			"command": "pnx",
+			"args": ["@react-aria/mcp"],
+			"tools": ["*"]
+		},
+		"Sentry": {
+			"type": "http",
+			"url": "https://mcp.sentry.dev/mcp",
+			"tools": ["*"]
+		},
+		"Supabase (local)": {
+			"type": "http",
+			"url": "http://localhost:54321/mcp",
+			"tools": ["*"]
+		},
+		"Supabase (remote)": {
+			"type": "http",
+			"url": "https://mcp.supabase.com/mcp?features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching",
+			"tools": ["*"]
+		}
+	}
+}
