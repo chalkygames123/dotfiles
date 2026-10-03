@@ -1,65 +1,58 @@
 {
 	"mcpServers": {
-		"Ambient Context": {
+		"ambient-context": {
 			"type": "stdio",
 			"command": "/Applications/Ambient Context.app/Contents/MacOS/ambient-context",
 			"args": ["mcp"],
 			"tools": ["*"]
 		},
-		"Astro Docs": {
+		"astro-docs": {
 			"type": "http",
 			"url": "https://mcp.docs.astro.build/mcp",
 			"tools": ["*"]
 		},
-		"Cloudflare": {
+		"cloudflare": {
 			"type": "http",
 			"url": "https://mcp.cloudflare.com/mcp",
 			"tools": ["*"]
 		},
-		"Figma (local)": {
-			"type": "http",
-			"url": "http://127.0.0.1:3845/mcp",
-			"tools": ["*"]
-		},
-		"Figma (remote)": {
+		"figma": {
 			"type": "http",
 			"url": "https://mcp.figma.com/mcp",
 			"tools": ["*"]
 		},
-		"GitHub": {
+		"heroui-pro": {
+			"type": "http",
+			"url": "https://mcp.heroui.pro/mcp",
+			"headers": {
+				"x-heroui-personal-token": "${HEROUI_PERSONAL_TOKEN}"
+			},
+			"tools": ["*"]
+		},
+		"github": {
 			"type": "http",
 			"url": "https://api.githubcopilot.com/mcp",
 			"tools": ["*"]
 		},
-		"MDN": {
-			"type": "http",
-			"url": "https://mcp.mdn.mozilla.net/",
-			"tools": ["*"]
-		},
-		"Mobbin": {
-			"type": "http",
-			"url": "https://api.mobbin.com/mcp",
-			"tools": ["*"]
-		},
-		"React Aria": {
+		"react-aria": {
 			"type": "stdio",
 			"command": "pnx",
 			"args": ["@react-aria/mcp"],
 			"tools": ["*"]
 		},
-		"Sentry": {
+		"sentry": {
 			"type": "http",
 			"url": "https://mcp.sentry.dev/mcp",
 			"tools": ["*"]
 		},
-		"Supabase (local)": {
-			"type": "http",
-			"url": "http://localhost:54321/mcp",
-			"tools": ["*"]
-		},
-		"Supabase (remote)": {
+		"supabase": {
 			"type": "http",
 			"url": "https://mcp.supabase.com/mcp?features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching",
+			"tools": ["*"]
+		},
+		"supabase-local": {
+			"type": "http",
+			"url": "http://localhost:54321/mcp",
 			"tools": ["*"]
 		}
 	}

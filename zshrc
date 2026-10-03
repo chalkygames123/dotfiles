@@ -1,4 +1,5 @@
 alias b='[[ $(git rev-parse --is-inside-work-tree) ]] && open "${"$(git remote get-url origin)"%.git}"'
+alias copilot='op run --env-file="$HOME/.copilot/.env" -- copilot'
 alias g="git"
 alias ll="ls -A --color=auto -l"
 alias pne="pnpm exec"
