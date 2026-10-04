@@ -1,5 +1,15 @@
 {
 	"mcpServers": {
+		"airbyte": {
+			"type": "http",
+			"url": "https://mcp.airbyte.com/mcp",
+			"tools": ["*"]
+		},
+		"airbyte-docs": {
+			"type": "http",
+			"url": "https://airbyte.mcp.kapa.ai",
+			"tools": ["*"]
+		},
 		"ambient-context": {
 			"type": "stdio",
 			"command": "/Applications/Ambient Context.app/Contents/MacOS/ambient-context",
