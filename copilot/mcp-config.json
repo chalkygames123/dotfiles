@@ -21,6 +21,12 @@
 			"url": "https://mcp.docs.astro.build/mcp",
 			"tools": ["*"]
 		},
+		"chrome-devtools": {
+			"type": "stdio",
+			"command": "pnx",
+			"args": ["chrome-devtools-mcp"],
+			"tools": ["*"]
+		},
 		"cloudflare": {
 			"type": "http",
 			"url": "https://mcp.cloudflare.com/mcp",
@@ -48,6 +54,11 @@
 			"type": "stdio",
 			"command": "pnx",
 			"args": ["@react-aria/mcp"],
+			"tools": ["*"]
+		},
+		"resend": {
+			"type": "http",
+			"url": "https://mcp.resend.com/mcp",
 			"tools": ["*"]
 		},
 		"sentry": {
