@@ -2,14 +2,14 @@ brew bundle dump --global --force --formula --cask --tap
 brew bundle install --global
 eza --long --all --header --time-style=relative
 fd --hidden --no-ignore --type=file '^\.DS_Store$' --exec-batch rm -v {} \;
-gh skill update --all
 git branch --all --verbose --verbose
 git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 git clean -d --force --interactive -x
-git commit --message="$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')"
 git commit --amend
-git log '@{upstream}^..'
+git commit --message="$(echo Update "${(j:, :)${(f)$(git diff --name-only --cached)}}" | sed -E 's/(.*), /\1 and /')"
 git log --max-count=10
+git log --pretty=fuller
+git log '@{upstream}^..'
 git push --force-with-lease --force-if-includes
 git rebase --interactive --autosquash
 git stash list --date=iso-local
