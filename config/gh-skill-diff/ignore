@@ -24,6 +24,7 @@ humanlayer/skills	build-iterated-agentic-loop/build-iterated-agentic-loop
 humanlayer/skills	design-control-loop/design-control-loop
 humanlayer/skills	improve-claude-md/improve-claude-md
 humanlayer/skills	narrow-react-prop-types/narrow-react-prop-types
+humanlayer/skills	rpi/rpi
 inkeep/open-knowledge	packs/codebase-wiki
 inkeep/open-knowledge	packs/entity-vault
 inkeep/open-knowledge	packs/knowledge-base
