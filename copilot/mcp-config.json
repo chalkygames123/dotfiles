@@ -1,5 +1,10 @@
 {
 	"mcpServers": {
+		"1password-dev": {
+			"type": "http",
+			"url": "https://www.1password.dev/mcp",
+			"tools": ["*"]
+		},
 		"airbyte": {
 			"type": "http",
 			"url": "https://mcp.airbyte.com/mcp",
