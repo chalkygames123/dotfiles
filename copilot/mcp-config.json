@@ -21,6 +21,11 @@
 			"url": "https://mcp.docs.astro.build/mcp",
 			"tools": ["*"]
 		},
+		"btt": {
+			"type": "http",
+			"url": "http://127.0.0.1:64832/mcp",
+			"tools": ["*"]
+		},
 		"chrome-devtools": {
 			"type": "stdio",
 			"command": "pnx",
