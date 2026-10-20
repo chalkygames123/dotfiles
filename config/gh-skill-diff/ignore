@@ -15,6 +15,7 @@ anthropics/skills	theme-factory
 anthropics/skills	web-artifacts-builder
 anthropics/skills	webapp-testing
 cloudflare/skills	cloudflare-one-migrations
+cloudflare/skills	gateway-workers
 emilkowalski/skills	animate-expo
 emilkowalski/skills	prototype
 emilkowalski/skills	write-swift
