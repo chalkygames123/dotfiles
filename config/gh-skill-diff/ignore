@@ -33,6 +33,16 @@ inkeep/open-knowledge	packs/software-lifecycle
 inkeep/open-knowledge	packs/worldbuilding
 inkeep/open-knowledge	packs/writing-pipeline
 inkeep/open-knowledge	write-skill
+mattpocock/skills	in-progress/claude-handoff
+mattpocock/skills	in-progress/loop-me
+mattpocock/skills	in-progress/setup-ts-deep-modules
+mattpocock/skills	in-progress/writing-beats
+mattpocock/skills	in-progress/writing-fragments
+mattpocock/skills	in-progress/writing-shape
+mattpocock/skills	misc/git-guardrails-claude-code
+mattpocock/skills	misc/migrate-to-shoehorn
+mattpocock/skills	misc/scaffold-exercises
+mattpocock/skills	misc/setup-pre-commit
 vercel-labs/agent-skills	deploy-to-vercel
 vercel-labs/agent-skills	react-native-skills
 vercel-labs/agent-skills	vercel-cli-with-tokens
