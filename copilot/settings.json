@@ -1,4 +1,7 @@
 {
   "autoTier": "efficiency",
+  "enabledPlugins": {
+    "browser-use": true
+  },
   "model": "auto"
 }
