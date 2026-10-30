@@ -54,4 +54,6 @@ brew "tree"
 brew "zizmor"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
 cask "font-fira-code-nerd-font"
