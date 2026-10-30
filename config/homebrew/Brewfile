@@ -38,8 +38,6 @@ brew "helix"
 brew "jq"
 # Postgres C API library
 brew "libpq"
-# Language Server for Postgres
-brew "postgres-language-server"
 # Modern replacement for ps written in Rust
 brew "procs"
 # Tools for and transforming and inspecting PDF files
