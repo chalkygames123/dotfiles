@@ -10,12 +10,6 @@
 			"url": "https://mcp.airbyte.com/mcp",
 			"tools": ["*"]
 		},
-		"ambient-context": {
-			"type": "stdio",
-			"command": "/Applications/Ambient Context.app/Contents/MacOS/ambient-context",
-			"args": ["mcp"],
-			"tools": ["*"]
-		},
 		"astro-docs": {
 			"type": "http",
 			"url": "https://mcp.docs.astro.build/mcp",
@@ -24,12 +18,6 @@
 		"btt": {
 			"type": "http",
 			"url": "http://127.0.0.1:64832/mcp",
-			"tools": ["*"]
-		},
-		"chrome-devtools": {
-			"type": "stdio",
-			"command": "pnx",
-			"args": ["chrome-devtools-mcp"],
 			"tools": ["*"]
 		},
 		"cloudflare": {
@@ -74,12 +62,6 @@
 		"supabase": {
 			"type": "http",
 			"url": "https://mcp.supabase.com/mcp?features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching",
-			"tools": ["*"]
-		},
-		"yab-browser": {
-			"type": "stdio",
-			"command": "/Applications/yab.app/Contents/MacOS/yab",
-			"args": ["mcp"],
 			"tools": ["*"]
 		}
 	}
