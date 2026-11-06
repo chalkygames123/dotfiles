@@ -17,7 +17,6 @@ anthropics/skills	webapp-testing
 cloudflare/skills	cloudflare-one-migrations
 cloudflare/skills	gateway-workers
 emilkowalski/skills	animate-expo
-emilkowalski/skills	prototype
 emilkowalski/skills	write-swift
 getsentry/sentry-for-ai	sentry-snapshots-cocoa
 googlechrome/modern-web-guidance	chrome-extensions
@@ -33,6 +32,7 @@ inkeep/open-knowledge	packs/software-lifecycle
 inkeep/open-knowledge	packs/worldbuilding
 inkeep/open-knowledge	packs/writing-pipeline
 inkeep/open-knowledge	write-skill
+mattpocock/skills	engineering/prototype
 mattpocock/skills	in-progress/chief-of-staff
 mattpocock/skills	in-progress/claude-handoff
 mattpocock/skills	in-progress/loop-me
