@@ -1,5 +1,4 @@
 {
-  "autoTier": "efficiency",
   "enabledPlugins": {
     "browser-use": true
   },
