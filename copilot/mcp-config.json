@@ -16,6 +16,17 @@
 			"args": ["chrome-devtools-mcp"],
 			"tools": ["*"]
 		},
+		"chrome-devtools-polypane": {
+			"type": "stdio",
+			"command": "pnx",
+			"args": [
+				"chrome-devtools-mcp",
+				"--browserUrl=http://127.0.0.1:5858",
+				"--experimentalIncludeAllPages=true",
+				"--categoryEmulation=false"
+			],
+			"tools": ["*"]
+		},
 		"cloudflare": {
 			"type": "http",
 			"url": "https://mcp.cloudflare.com/mcp",
