@@ -45,11 +45,6 @@
 			},
 			"tools": ["*"]
 		},
-		"github": {
-			"type": "http",
-			"url": "https://api.githubcopilot.com/mcp",
-			"tools": ["*"]
-		},
 		"react-aria": {
 			"type": "stdio",
 			"command": "pnx",
