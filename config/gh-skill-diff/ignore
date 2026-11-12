@@ -25,13 +25,6 @@ humanlayer/skills	design-control-loop/design-control-loop
 humanlayer/skills	improve-claude-md/improve-claude-md
 humanlayer/skills	narrow-react-prop-types/narrow-react-prop-types
 humanlayer/skills	rpi/rpi
-inkeep/open-knowledge	packs/codebase-wiki
-inkeep/open-knowledge	packs/entity-vault
-inkeep/open-knowledge	packs/knowledge-base
-inkeep/open-knowledge	packs/software-lifecycle
-inkeep/open-knowledge	packs/worldbuilding
-inkeep/open-knowledge	packs/writing-pipeline
-inkeep/open-knowledge	write-skill
 jakubkrehel/skills	afk
 jakubkrehel/skills	build-design
 mattpocock/skills	engineering/prototype
