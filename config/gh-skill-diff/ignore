@@ -17,6 +17,7 @@ anthropics/skills	webapp-testing
 cloudflare/skills	cloudflare-one-migrations
 cloudflare/skills	gateway-workers
 emilkowalski/skills	animate-expo
+emilkowalski/skills	prototype
 emilkowalski/skills	write-swift
 getsentry/sentry-for-ai	sentry-snapshots-cocoa
 googlechrome/modern-web-guidance	chrome-extensions
@@ -27,7 +28,6 @@ humanlayer/skills	narrow-react-prop-types/narrow-react-prop-types
 humanlayer/skills	rpi/rpi
 jakubkrehel/skills	afk
 jakubkrehel/skills	build-design
-mattpocock/skills	engineering/prototype
 mattpocock/skills	in-progress/chief-of-staff
 mattpocock/skills	in-progress/claude-handoff
 mattpocock/skills	in-progress/loop-me
