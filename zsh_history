@@ -11,8 +11,8 @@ git log --pretty=fuller
 git log @{upstream}^..
 git log --pretty=fuller @{upstream}^..
 git push --force-with-lease --force-if-includes
-git rebase --interactive --autosquash
-git -c sequence.editor=: rebase -i --root --autosquash --committer-date-is-author-date
+git rebase --interactive --autosquash --committer-date-is-author-date
+git -c sequence.editor=: rebase --interactive --root --autosquash --committer-date-is-author-date
 git stash list --date=iso-local
 git status --ignored --show-stash
 tree -a -I .git/ --gitignore
