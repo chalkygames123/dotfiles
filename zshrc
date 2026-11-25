@@ -60,7 +60,7 @@ xargsg() {
 		return 1
 	fi
 
-	read -r -A ghq_list_args <<<"$GHQ_LIST_ARGS"
+	read -r -A ghq_list_args <<<"$ghq_list_args"
 	readonly ghq_list_args
 
 	for repository in $(ghq list "${ghq_list_args[@]}"); do
