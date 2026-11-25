@@ -26,3 +26,7 @@ export path=(
 	"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 	$path
 )
+
+if (( $+commands[go] )); then
+	path=(${(@f)$(go env GOBIN)} $path)
+fi
