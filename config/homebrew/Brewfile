@@ -1,3 +1,4 @@
+tap "ewhauser/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -36,6 +37,8 @@ brew "gogcli"
 brew "googleworkspace-cli"
 # Post-modern modal text editor
 brew "helix"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Postgres C API library
@@ -54,6 +57,8 @@ brew "sqlfluff"
 brew "tree"
 # Find security issues in GitHub Actions setups
 brew "zizmor"
+# A fast shell script linter
+brew "ewhauser/tap/shuck-cli", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Brings the power of Copilot coding agent directly to your terminal
