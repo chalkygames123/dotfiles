@@ -4,10 +4,6 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 	typeset -U path
 fi
 
-# Added by OrbStack: command-line tools and integration
-# Comment this line if you don't want it to be added again.
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
 source "$HOME/.cargo/env"
 
 export BAT_THEME="ansi"
