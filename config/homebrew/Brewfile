@@ -6,8 +6,6 @@ brew "bat"
 brew "bottom"
 # New way to see and navigate directory trees
 brew "broot"
-# Checks for bashisms in shell scripts
-brew "checkbashisms"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # View disk space usage and delete unwanted data, fast
@@ -48,8 +46,6 @@ brew "qpdf"
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Autoformat shell script source code
-brew "shfmt"
 # SQL linter and auto-formatter for Humans
 brew "sqlfluff"
 # Display directories as trees (with optional color/HTML output)
