@@ -1,5 +1,8 @@
 {
   "trustedformulae": [
     "ewhauser/tap/shuck-cli"
+  ],
+  "trustedcasks": [
+    "https://github.com/jdx/jactionlint/jactionlint"
   ]
 }
